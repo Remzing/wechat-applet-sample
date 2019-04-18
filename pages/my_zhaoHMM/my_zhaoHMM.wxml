@@ -1,0 +1,48 @@
+<view class="content">
+  <view class='tab flex flex-align-start'>
+    <view class='tab-a'>验证身份</view>
+    <view class="{{swich==1 ?'tab-b':'tab-no'}} tab-b-no ">重置密码</view>
+    <view class="{{index==2 ?'tab-c':'tab-no'}} tab-c-no ">找回成功</view>
+  </view>
+  <!-- 验证身份 -->
+  <view class='form-body' wx:if="{{swich==0}}">
+    <view class='form-con'>
+      <view class='flex-align-start flex form-pin'>
+        <icon class='iconfont icon-shouji'></icon>
+        <input name="input" bindinput="phone" value="{{oldPhone}}" type='number' placeholder-class="phcolor" placeholder="请输入您的手机号码" />
+      </view>
+      <view class='flex-align-start flex form-pin'>
+        <icon class='iconfont icon-yanzhengma'></icon>
+        <input name="input" bindinput="pin_name" value="{{pin_name}}" type='number' placeholder-class="phcolor"  placeholder="请输入验证码" />
+        <view class='agin' bindtap="getCode">发送验证码</view>
+      </view>
+    </view>
+    <view class='form-btn' catchtap='changeTabSwich' >
+      下一步
+    </view>
+  </view>
+  <!-- 重置密码 -->
+  <view class='form-body' wx:if="{{flag}}">
+    <view class='form-con'>
+      <view class='flex-align-start flex form-pin'>
+        <icon class='iconfont icon-lasuo'></icon>
+        <input name="input" bindinput="pwd" value="{{pwd}}" type='number' placeholder-class="phcolor" placeholder="请填写您新的6~20位密码" />
+      </view>
+      <view class='flex-align-start flex form-pin'>
+        <icon class='iconfont icon-lasuo'></icon>
+        <input name="input" bindinput="pwd1" value="{{pwd1}}" type='number' placeholder-class="phcolor"  placeholder="请确认新密码" />
+      </view>
+    </view>
+    <view class='form-btn' catchtap='changeTabIndex' >
+      下一步
+    </view>
+  </view>
+  <!-- 找回成功 -->
+  <view  wx:if="{{index==2}}">
+    <view class='find flex-box-center'>
+      <icon class='iconfont icon-dui'></icon>
+      <view class='pwdSu'>密码重置成功！</view>
+      <view class='login-new-txt'><text>{{miao}}</text>秒后系统自动跳转</view>
+   </view>
+  </view>
+</view>

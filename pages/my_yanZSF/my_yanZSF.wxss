@@ -1,0 +1,181 @@
+/* pages/my_yanZSF/my_yanZSF.wxss */
+.step-box{
+  margin-top: 20rpx;
+}
+.step-box .item{
+  margin:0 -14px;
+  z-index: 999;
+}
+.step-box .item .num{
+  width: 50rpx;
+	height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 50%;
+	background-color: #eeeeee;
+  color: #bbbbbb;
+  text-align: center;
+  font-size: 28rpx;
+}
+.step-box .itemActive .num{
+  background-color: #494c5b !important;
+  color: #fff !important;
+}
+.step-box .itemActive .txt{
+  color: #353535;
+}
+.txt{
+  font-size: 24rpx;
+  color: #888888;
+  margin-top: 10rpx;
+}
+.bord{
+  width: 250rpx;
+  height: 6rpx;
+  background-color: #eeeeee;
+  margin-bottom:40rpx;
+  z-index: 10;
+}
+.bordActive{
+  background-color: #494c5b !important;
+}
+.no-card{
+  font-size: 24rpx;
+  color: #bbbbbb;
+  margin-top: 60rpx;
+}
+.no-card txt{
+  margin-bottom: 4rpx;
+}
+.no-card .iconfont{
+  font-size: 204rpx;
+  color: #dddddd;
+  
+}
+.no-card .btn{
+  width: 690rpx;
+  margin-top: 50rpx;
+}
+.kefu{
+  background-color: #fff;
+  border-color:transparent;
+  text-decoration: underline;
+  color: #888888;
+  font-size: 28rpx;
+  margin-top: 26rpx;
+  margin-bottom: 20rpx;
+}
+button[class="kefu"]::after {
+  border: 0;
+} 
+.person{
+  margin:60rpx 0;
+}
+.person image{
+  width: 436rpx;
+	min-height: 276rpx;
+  border-radius: 10rpx;
+}
+
+
+.inputview .names{
+  color: #353535;
+  font-size: 28rpx;
+}
+.inputview input{
+  text-align: right;
+}
+.inputview{
+  padding: 0 30rpx;
+  border-bottom: 1px solid #e5e5e5;
+  height: 99rpx;
+  line-height: 99rpx;
+}
+.agin-go{
+  height: 90rpx;
+	background-color: #f4f6f7;
+  line-height: 90rpx;
+  padding-left: 30rpx;
+  color: #888888;
+  font-size: 24rpx;
+}
+.agin-go text{
+  color: #ff8001;
+  margin-left: 10rpx;
+}
+.agin-go .iconfont{
+	color: #ff8001;
+  font-size: 30rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+/*复选框样式*/
+checkbox .wx-checkbox-input{
+  height: 24rpx;
+  width: 24rpx;
+  border-radius: 2px;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  color: #ff8001;
+  font-size:24rpx;
+}
+.checkbox .agreen{
+  color: #888888;
+  font-size: 26rpx;
+}
+.checkbox .agreen text{
+  color: #555555;
+}
+.checkbox-con{
+  margin-left: 40rpx;
+  margin-bottom: 50rpx;
+  margin-top: 40rpx;
+}
+.hascheck .btn{
+  width: 690rpx;
+  margin: 0 auto;
+}
+/*复选框样式  end*/
+.find .icon-dui{
+	font-size: 160rpx;
+  color: #ff8001;
+  margin:60rpx 0 30rpx 0;
+}
+.find .goSu{
+  font-size: 40rpx;
+  margin-bottom: 24rpx;
+}
+.find .goSuTxt{
+  font-size: 28rpx;
+  color: #888888;
+}
+.find .go-new{
+  width: 690rpx;
+  margin-top: 40rpx;
+}
+.card-bor{
+  height: 20rpx;
+  background-color: #f4f6f7;
+  width: 100%;
+  margin-top:40rpx;
+
+}
+
+.agin-code{
+  color: #ff8001;
+  font-size: 24rpx;
+  width: 90rpx;
+  line-height: 55rpx;
+  text-align: center;
+	height: 55rpx;
+  border-radius: 5rpx;
+	border: solid 1px #ff8001;
+}
+.backbtn{
+  background: #fff !important;
+  color: #494c5b !important;
+  border:1px solid #494c5b !important;
+  box-sizing:border-box
+}
+.wid-1{
+  width:500rpx; 
+}

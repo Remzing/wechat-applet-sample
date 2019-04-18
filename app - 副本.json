@@ -1,0 +1,322 @@
+{
+  "pages": [
+    "pages/guanggao/guanggao"
+    
+  ],
+  "subPackages": [
+    {
+      "root": "pages/index",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "pages/err",
+      "pages": [
+        "err"
+      ]
+    },
+    {
+    "root": "pages/car_fymx",
+      "pages": [
+        "car_fymx"
+      ]
+    },
+    {
+    "root": "pages/car_returncar",
+      "pages": [
+        "car_returncar"
+      ]
+    },
+    {
+    "root": "pages/car_xuanzcl",
+      "pages": [
+        "car_xuanzcl"
+      ]
+    },
+    {
+      "root": "pages/car_suocheyc",
+      "pages": [
+        "car_suocheyc"
+      ]
+    },
+    {
+      "root": "pages/car_addphoto",
+      "pages": [
+        "car_addphoto"
+      ]
+    },
+    {
+      "root": "pages/car_waiguan",
+      "pages": [
+        "car_waiguan"
+      ]
+    },
+    {
+      "root": "pages/car_detail",
+      "pages": [
+        "car_detail"
+      ]
+    },
+    {
+      "root": "pages/car_miaoshu",
+      "pages": [
+        "car_miaoshu"
+      ]
+    },
+    {
+      "root": "pages/car_zhaopianhd",
+      "pages": [
+        "car_zhaopianhd"
+      ]
+    },
+    {
+      "root": "pages/car_shouquanshez",
+      "pages": [
+        "car_shouquanshez"
+      ]
+    },
+    {
+      "root": "pages/car_querenshouq",
+      "pages": [
+        "car_querenshouq"
+      ]
+    },
+    {
+      "root": "pages/car_shujufenxi",
+      "pages": [
+        "car_shujufenxi"
+      ]
+    },
+    {
+      "root": "pages/car_tianxiexx",
+      "pages": [
+        "car_tianxiexx"
+      ]
+    },
+    {
+      "root": "pages/car_shiyongtj",
+      "pages": [
+        "car_shiyongtj"
+      ]
+    },
+    {
+      "root": "pages/car_pinpaichexi",
+      "pages": [
+        "car_pinpaichexi"
+      ]
+    },
+    {
+      "root": "pages/car_shangchuan",
+      "pages": [
+        "car_shangchuan"
+      ]
+    },
+    {
+      "root": "pages/car_info",
+      "pages": [
+        "car_info"
+      ]
+    },
+    {
+      "root": "pages/car_location",
+      "pages": [
+        "car_location"
+      ]
+    },
+    {
+      "root": "pages/car_pingjia",
+      "pages": [
+        "car_pingjia"
+      ]
+    },
+    {
+      "root": "pages/car_cancelorder",
+      "pages": [
+        "car_cancelorder"
+      ]
+    },
+    {
+      "root": "pages/car_zuchedp",
+      "pages": [
+        "car_zuchedp"
+      ]
+    },
+    {
+      "root": "pages/car_map_order",
+      "pages": [
+        "car_map_order"
+      ]
+    },
+    {
+      "root": "pages/log",
+      "pages": [
+        "log"
+      ]
+    },
+    {
+      "root": "pages/my_order",
+      "pages": [
+        "my_order"
+      ]
+    },
+    {
+      "root": "pages/my_yinHKGL",
+      "pages": [
+        "my_yinHKGL"
+      ]
+    },
+    {
+      "root": "pages/my_GSJS",
+      "pages": [
+        "my_GSJS"
+      ]
+    },
+    {
+      "root": "pages/my_chenWCY",
+      "pages": [
+        "my_chenWCY"
+      ]
+    },
+    {
+      "root": "pages/my_zhangHAQ",
+      "pages": [
+        "my_zhangHAQ"
+      ]
+    },
+    {
+      "root": "pages/my_yanZSF",
+      "pages": [
+        "my_yanZSF"
+      ]
+    },
+    {
+      "root": "pages/my_guanYW",
+      "pages": [
+        "my_guanYW"
+      ]
+    },
+    {
+      "root": "pages/my_zhaoHSJ",
+      "pages": [
+        "my_zhaoHSJ"
+      ]
+    },
+    {
+      "root": "pages/my_zhaoHMM",
+      "pages": [
+        "my_zhaoHMM"
+      ]
+    },
+    {
+      "root": "pages/my_GYWM",
+      "pages": [
+        "my_GYWM"
+      ]
+    },
+    {
+      "root": "pages/my_geRXX",
+      "pages": [
+        "my_geRXX"
+      ]
+    },
+    {
+      "root": "pages/my_xiTSZ",
+      "pages": [
+        "my_xiTSZ"
+      ]
+    },
+    {
+      "root": "pages/my_wenTiXQ",
+      "pages": [
+        "my_wenTiXQ"
+      ]
+    },
+    {
+      "root": "pages/my_keFuZX",
+      "pages": [
+        "my_keFuZX"
+      ]
+    },
+    {
+      "root": "pages/my_xiaoXi",
+      "pages": [
+        "my_xiaoXi"
+      ]
+    },
+    {
+      "root": "pages/my_GLYHK",
+      "pages": [
+        "my_GLYHK"
+      ]
+    },
+    {
+      "root": "pages/my_tiXJL",
+      "pages": [
+        "my_tiXJL"
+      ]
+    },
+    {
+      "root": "pages/my_tiXian",
+      "pages": [
+        "my_tiXian"
+      ]
+    },
+    {
+      "root": "pages/my_chongZ",
+      "pages": [
+        "my_chongZ"
+      ]
+    },
+    {
+      "root": "pages/my_shouYi",
+      "pages": [
+        "my_shouYi"
+      ]
+    },
+    {
+      "root": "pages/my_yuE",
+      "pages": [
+        "my_yuE"
+      ]
+    },
+    {
+      "root": "pages/my_bag",
+      "pages": [
+        "my_bag"
+      ]
+    },
+    {
+      "root": "pages/my_center",
+      "pages": [
+        "my_center"
+      ]
+    },
+    {
+      "root": "pages/my_login",
+      "pages": [
+        "my_login"
+      ]
+    },
+    {
+      "root": "pages/order_detail",
+      "pages": [
+        "order_detail"
+      ]
+    },
+    {
+      "root": "pages/car_wcyxg",
+      "pages": [
+        "car_wcyxg"
+      ]
+    }
+    
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

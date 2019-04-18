@@ -1,0 +1,220 @@
+<!--pages/my_yanZSF/my_yanZSF.wxml-->
+<!-- 步骤条 -->
+<view class='flex-box-center'>
+  <view class='step-box flex-box-start'>
+    <view class="flex-box-center item {{swichOne==1 ? 'itemActive' : ''}}">
+      <view class='num'>1</view>
+      <view class='txt'>身份证</view>
+    </view>
+    <view class="bord {{swichTwo==2 ? 'bordActive' : ''}}"></view>
+    <view class="flex-box-center item {{swichTwo==2 ? 'itemActive' : ''}}">
+      <view class='num'>2</view>
+      <view class='txt'>驾驶证</view>
+    </view>
+    <view class="bord {{swichThree==3 ? 'bordActive' : ''}}"></view>
+    <view class="flex-box-center item {{swichThree==3 ? 'itemActive' : ''}}">
+      <view class='num'>3</view>
+      <view class='txt'>信用卡</view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 1-0、上传身份证 -->
+<view class='no-card flex-box-center' wx:if="{{page==1}}">
+  <icon class='iconfont icon-credentials_icon'></icon>
+  <view class='txt'>请横向拍摄正页</view>
+  <view class='txt'>照片上不要有阴影和反光</view>
+  <view class='btn' data-state="1" catchtap='cardFlagShow'>上传本人身份证照片（正面）</view>
+  <button open-type="contact" class='kefu' send-message-title="在线官方客服" >客服中心</button>
+</view>
+
+
+<!-- 1-1、上传身份证后填写信息 -->
+<view class='has-card' wx:if="{{page==2}}">
+  <view class='person flex-box-center'>
+    <image src='{{sfzImg.url || ""}}' mode="aspectFill"></image>
+  </view>
+  <view class='flex-box-between inputview'>
+    <view class='names'>姓名</view>
+    <view class="wid-1">
+      <input class="wid-1" type="text" value="{{sfzData.name}}"  bindinput="nameInput" placeholder="手动输入身份证姓名" placeholder-class="placeholder-txt"/>
+    </view>
+  </view>
+  <view class='flex-box-between inputview'>
+    <view class='names'>身份证号码</view>
+    <view class="wid-1">
+      <input class="wid-1" type="idcard" value="{{sfzData.id}}"  bindinput="idInput" placeholder="手动输入身份证号码" placeholder-class="placeholder-txt"/>
+    </view>
+  </view>
+  
+  <view class='agin-go flex-box-start'>
+    <icon class='iconfont icon-gantanhao1'></icon>
+    <!-- 点击按钮返回第1-0步骤 -->
+    <view>信息有误？请修改以上信息或<text  data-state="1" catchtap='cardFlagShow'>重新上传照片</text></view>
+  </view>
+  <view class='no-card flex-box-center'>
+    <view class='person flex-box-center' wx:if="{{sfzScImg.url}}">
+      <image src='{{sfzScImg.url || ""}}' mode="aspectFill"></image>
+    </view>
+    <icon wx:if="{{!sfzScImg.url}}" class='iconfont icon-shouchishenfenzheng'></icon>
+    <view wx:if="{{!sfzScImg.url}}" class='txt'>请手持身份证正面</view>
+    <view wx:if="{{!sfzScImg.url}}" class='txt'>确保露出双肩和身份证信息</view>
+      <!-- 点击按钮跳到下一步骤条 -->
+    <view class='btn' data-state="2" catchtap='cardFlagShow'>
+    {{sfzScImg.url?'重新上传手持身份证':'上传手持身份证照片（正面）'}}</view>
+    <view style='margin-top:30rpx;' wx:if="{{sfzImg.url && sfzScImg.url}}" class='btn' catchtap='queRenSfz'>确认身份证信息无误</view>
+    <button open-type="contact" class='kefu' send-message-title="在线官方客服" >客服中心</button>
+  </view>
+</view>
+
+
+<!-- 2-0、上传驾驶证后填写信息 -->
+<view class='no-card flex-box-center' wx:if="{{page==3}}">
+  <icon class='iconfont icon-credentials_icon'></icon>
+  <view class='txt'>驾驶证和身份证必须是同一个人</view>
+  <view class='txt'>否则影响交易</view>
+  <view class='btn' data-state="3" catchtap='cardFlagShow'>上传驾驶证照片（仅正页）</view>
+  <button open-type="contact" class='kefu' send-message-title="在线官方客服" >客服中心</button>
+</view>
+
+
+<!-- 2-1、上传驾驶证后填写信息 -->
+<view class='has-card' wx:if="{{page==4}}">
+  <view class='person flex-box-center' wx:if="{{jszImg.url}}">
+    <image src='{{jszImg.url || ""}}' mode="aspectFill"></image>
+  </view>
+  <view class='flex-box-between inputview'>
+    <view class='names'>证件号码</view>
+    <view class="wid-1">
+      <input class="wid-1" type="text" value="{{jszData.id_card}}"  bindinput="id_cardInput" placeholder="手动输入证件号码" placeholder-class="placeholder-txt"/>
+    </view>
+  </view>
+  <view class='flex-box-between inputview'>
+    <view class='names'>姓名</view>
+    <view class="wid-1">
+      <input class="wid-1" type="text" value="{{jszData.name}}"  bindinput="jnameInput" placeholder="手动输入姓名" placeholder-class="placeholder-txt"/>
+    </view>
+  </view>
+  <picker class='' mode="date" value="{{jszData.first_licence_time}}" bindchange="first_licenceDateChange">
+    <view class='flex-box-between inputview'>
+      <view class='names'>初次领证日期</view>
+      <view class="wid-1">
+        <input class="wid-1" type="number" value="{{jszData.first_licence_time}}"  bindinput="first_licenceInput"  placeholder-class="placeholder-txt" disabled='true'/>
+      </view>
+      
+    </view>
+  </picker>
+  <view class='flex-box-between inputview'>
+    <view class='names'>驾车型</view>
+    <view class="wid-1">
+      <input class="wid-1" type="number" value="{{jszData.motorcycle_type}}"  bindinput="motorcycleInput" placeholder="手动输入驾车型" placeholder-class="placeholder-txt"/>
+    </view>
+    
+  </view>
+  <picker class='' mode="date" value="{{jszData.license_end_time}}" bindchange="license_endDateChange">
+    <view class='flex-box-between inputview'>
+      <view class='names'>有效期</view>
+      <view class="wid-1">
+        <input class="wid-1" type="number" value="{{jszData.license_end_time}}"  bindinput="license_endInput" disabled='true'   placeholder-class="placeholder-txt"/>
+      </view>
+      
+    </view>
+  </picker>
+  
+  <view class='agin-go flex-box-start'>
+    <icon class='iconfont icon-gantanhao1'></icon>
+    <!-- 点击按钮返回第2-0步骤 -->
+    <view>信息有误？请修改以上信息或<text data-state="3" catchtap='cardFlagShow'>重新上传照片</text></view>
+  </view>
+  <view class='hascheck'>
+    <!-- <checkbox-group bindchange="checkboxChange" class="checkbox-con">
+    <label class="checkbox flex-box-start-top" >
+      <checkbox value="{{checkValue}}" checked="{{true}}"/>
+      <view class='agreen'>已阅读并同意<text data-page="6" bindtap='goWenben'>《五车出行会员协议》</text></view>
+    </label>
+    </checkbox-group> -->
+        <!-- 点击按钮跳到3-1骤条 -->
+    <view class='btn' catchtap='queRenJsz'>确认以上为本人驾驶证且信息无误</view>
+    <view style='margin-top:30rpx;' class='btn backbtn' data-page="2" catchtap='fanhui'>返回上一步</view>
+    <button open-type="contact" class='kefu' send-message-title="在线官方客服" >客服中心</button>
+  </view>
+</view>
+
+
+<!-- 3-0、上传信用卡 -->
+<view class='credit-card' wx:if="{{page==5}}">
+  <view class='card-bor'></view>
+  <view class='flex-box-between inputview' style='border-top:none;'>
+    <view class='names'>持卡人</view>
+    <view class="wid-1">
+      <input class="wid-1" type="text" value="{{bank_user_name}}"  bindinput="bank_user_nameInput" placeholder="手动输入姓名" placeholder-class="placeholder-txt"/>
+    </view>
+  </view>
+  <view class='flex-box-between inputview'>
+    <view class='names'>卡号</view>
+    <view class="wid-1">
+      <input class="wid-1" type="number" value="{{bank_number}}"  bindinput="bank_numberInput" placeholder="请输入信用卡号" placeholder-class="placeholder-txt"/>
+    </view>
+  </view>
+  <view class='flex-box-between inputview'>
+    <view class='names'>银行名称</view>
+    <view class="wid-1">
+      <input class="wid-1" type="text" value="{{bank}}"  bindinput="bankInput" placeholder="请输入开卡银行" placeholder-class="placeholder-txt"/>
+    </view>
+  </view>
+  <view class='flex-box-between inputview'>
+    <view class='names'>cvn2</view>
+    <view class="wid-1">
+      <input class="wid-1" type="number" value="{{cvn2}}"  bindinput="cvn2Input" placeholder="卡背面的cvn2三位数字" placeholder-class="placeholder-txt"/>
+    </view>
+  </view>
+  <view class='flex-box-between inputview'>
+    <view class='names'>有效期</view>
+    <view class="wid-1">
+      <input class="wid-1" type="number" value="{{expired}}"  bindinput="expiredInput" placeholder="年在前月在后（例如2311）" placeholder-class="placeholder-txt"/>
+    </view>
+  </view>
+  <!-- <view class='flex-box-between inputview'>
+    <view class='names'>开户行</view>
+    <input type="number" value="{{names}}"  bindinput="namesInput" placeholder="请输入开户行" placeholder-class="placeholder-txt"/>
+  </view>
+  <view class='flex-box-between inputview'>
+    <view class='names'>绑定的手机号</view>
+    <input type="number" value="{{names}}"  bindinput="namesInput" placeholder="已绑定信用卡的号码" placeholder-class="placeholder-txt"/>
+  </view>
+  <view class='flex-box-between inputview'>
+    <view class='flex-box-between' style='width:572rpx;'>
+      <view class='names'>验证码</view>
+      <input type="number" value="{{names}}"  bindinput="namesInput" placeholder="请输入验证码" placeholder-class="placeholder-txt"/>
+    </view>
+    <view class='agin-code'>重送</view>
+  </view> -->
+  <view class='hascheck'>
+    <checkbox-group class="checkbox-con flex ali-cent"  style="margin-bottom:10rpx;">
+      <label class="checkbox flex-box-start-top " bindchange="checkboxChange" >
+        <checkbox value="{{checkValue}}" checked="{{true}}"/>
+        <view class='agreen'>已阅读并同意以下协议</view>
+      </label>
+    </checkbox-group>
+    <view style='margin-left:60rpx;margin-bottom:30rpx;'>
+      <text data-page="3" bindtap='goWenben'>《用户服务协议》</text>
+      <text data-page="7" bindtap='goWenben'>《平台服务规则》</text>
+    </view>
+        <!-- 点击按钮跳到下一步骤条 -->
+    <view class='btn' catchtap='cardFlagShowThree'>授权绑定</view>
+    <!-- <button open-type="contact" class='kefu' send-message-title="在线官方客服" >客服中心</button> -->
+  </view>
+</view>
+
+
+<!-- 3-1、最后一步，成功 -->
+<view  wx:if="{{page==6}}">
+  <view class='find flex-box-center'>
+    <icon class='iconfont icon-dui'></icon>
+    <view class='goSu'>恭喜您</view>
+    <view class='goSuTxt'>您的身份证与驾驶证已通过验证，将尽快为您审核</view>
+    <view class='go-new btn' bindtap="goIndex">返回首页</view>
+    <view class='go-new btn' bindtap="callPhone">联系客服</view>
+  </view>
+</view>

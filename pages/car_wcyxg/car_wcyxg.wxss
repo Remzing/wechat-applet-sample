@@ -1,0 +1,29 @@
+/* pages/my_guanYW/my_guanYW.wxss */
+page{
+  background-color: #f4f6f7;
+}
+.textarea-wrp{
+  background-color: #fff;
+  
+}
+
+.placeholder{
+  font-size: 28rpx;
+}
+textarea{
+  padding-top: 40rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  margin-top: 20rpx;
+}
+.btn{
+  width: 690rpx;
+  margin-top: 70rpx;
+}
+.Inp{
+  padding-left:30rpx;
+  padding-right:30rpx;
+  margin-top:20rpx;
+  height:100rpx;
+  line-height:100rpx;
+}

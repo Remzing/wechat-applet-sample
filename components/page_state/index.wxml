@@ -1,0 +1,41 @@
+
+
+<template name="pageState">
+  <block wx:if="{{state=='loading'}}">
+    <view class="fadein"
+    style="{{contheight? ('position: relative;height:'+contheight) : ''}}; {{contwidth?('width:'+contwidth):''}}">
+      <view class="loader4"></view>
+    </view>
+  </block>
+  <block wx:if="{{state=='loading2'}}">
+    <view class="fadein"
+    style="{{contheight? ('position: relative;height:'+contheight) : ''}}; {{contwidth?('width:'+contwidth):''}}">
+      <view class="fullscreen loader1">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{state=='error'}}">
+    <view class="flex flex-cent err-clk fullscreen fadein" data-full="1" style="{{contheight? ('height:'+contheight) : ''}}" bindtap="refresh">
+      <image style="width:212rpx;height:160rpx;margin-top:118rpx;" src="../../assets/imgs/err/err.png" />
+      <view class="err-pad1">网络请求</view>
+      <view class="err-pad">请求检查您的网络</view>
+      <button type="default" hover-class="defaultTap" catchtap="refresh">重新加载</button>
+      
+    </view>
+  </block>
+  <block wx:if="{{state=='error2'}}">
+    <view class="flex flex-cent err-clk fullscreen fadein" data-full="1" style="{{contheight? ('height:'+contheight) : ''}}" bindtap="refresh">
+      <image style="width:212rpx;height:160rpx;margin-top:118rpx;" src="../../assets/imgs/err/err1.png" />
+      <view class="err-pad1">蓝牙请求失败</view>
+      <view class="err-pad">请确保蓝牙已连接</view>
+      <button type="default" hover-class="defaultTap" catchtap="refresh">重新加载</button>
+    </view>
+  </block>
+</template>
+
+

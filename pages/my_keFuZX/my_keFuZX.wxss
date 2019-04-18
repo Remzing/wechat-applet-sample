@@ -1,0 +1,89 @@
+/* pages/my_xiaoXi/my_xiaoXi.wxss */
+page{
+  background-color: #f4f6f7;
+}
+.top{
+  background-color: #fff;
+  padding-bottom: 30rpx;
+}
+.top view{
+  width: 250rpx;
+	height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fc8916;
+  border-style: solid;
+  border-width: 1px;
+  background-color: #ffffff;
+}
+.top view:first-child{
+  border-radius: 35rpx 0px 0px 35rpx;
+}
+.top view:last-child{
+  border-radius: 0 35rpx 35rpx 0;
+}
+.checked{
+  background-color: #fc8916 !important;
+  color: #ffffff !important;
+  border-color: #fc8916 !important;
+}
+.tips-box{
+  background-color: #fff;
+  margin-top: 20rpx;
+  padding: 40rpx 0 0 60rpx;
+  margin-right: -6rpx;
+}
+.tips-box .icon-item{
+  width: 96rpx;
+  margin-right: 78rpx;
+  margin-bottom: 40rpx;
+}
+.tips-box .icon-item .iconfont{
+  color: #ff8001;
+  font-size: 30rpx;
+  width: 70rpx;
+	height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  background-color: #fef8f5;
+	border: solid 1px #ffdfd1;
+  border-radius: 50%;
+  margin-bottom: 10rpx;
+}
+.icon-txt{
+  font-size: 24rpx;
+}
+/*热点问题 start*/
+.hot-title{
+  color: #888888;
+  margin: 40rpx 0 22rpx 32rpx;
+  font-size: 28rpx;
+}
+.text-cons{
+  background-color: #fff;
+}
+.text-cons .text-item{
+  height: 108rpx;
+  line-height: 108rpx;
+  padding-left: 38rpx;
+  border-bottom: 1px solid #eee;
+}
+.text-cons .text-item:last-child{
+  border-bottom:none !important;
+}
+.text-cons .text-item .iconfont{
+  color: #dddddd;
+  font-size: 32rpx;
+  margin-right: 10rpx;
+}
+
+.text-cons .text-item .txt{
+  color: #353535;
+  font-size: 28rpx;
+}
+/*热点问题  end*/
+.btn{
+  width: 690rpx;
+  margin: 42rpx auto 30rpx auto;
+}

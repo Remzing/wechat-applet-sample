@@ -1,0 +1,6 @@
+<!--pages/my_GSJS/my_GSJS.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class='content'>
+  
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>

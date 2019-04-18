@@ -1,0 +1,26 @@
+<view class="content">
+  <view class="showIndex">{{imgList_index+1}}/{{imgList.length}}</view>
+  <view class="previewImage">
+    <swiper class="flex flex-align-center" current="{{previewImage_swiper_index}}" catchchange='changIndex' catchtap='hiddenImage'>
+      <block wx:for="{{imgList}}" wx:for-index="indexs">
+        <swiper-item class="flex flex-align-center">
+          <image catchtap="showOneImg" data-url="{{item}}" src="{{item.car_image}}" class="swiper-image" mode="widthFix" data-image="{{item}}" catchlongpress="longcatch" catchtap='hiddenImage' />
+          <!-- <view class="other">{{indexs}}</view> -->
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="flx-bot" wx:if="{{page==1}}">
+    <view class="flex hint-case">
+      <view class="iconfont icon-gantanhao1 col-ff8001"></view>
+      <view class="col-888">如以上车主提供的照片与实际不相符，需拍照上传(免责条款）</view>
+    </view>
+    <view class="flex comf-but">
+      <button class="but-cancel" type="default"  plain="plain" bindtap="bufuhe" hover-class="defaultTap">不符合</button>
+      <button class="but-sure" type="default" plain="plain" bindtap="defaultTap" hover-class="defaultTap">符合</button>
+    </view>
+  </view>
+  <view class="bot-one-but"  wx:if="{{page==2}}" style="bottom:60rpx;">
+    <button type="default" size="defaultSize" loading="" plain="plain}" bindtap="defaultTap" hover-class="defaultTap">删除</button>
+  </view>
+</view>

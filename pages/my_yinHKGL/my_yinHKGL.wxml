@@ -1,0 +1,23 @@
+<!--pages/my_yinHKGL/my_yinHKGL.wxml-->
+<view class='mark'>
+  请绑定持卡人本人的银行卡
+</view>
+<view class='card'>
+  <view class='flex-box-between inputview'>
+    <view class='names'>持卡人</view>
+    <input type="text" value="{{bank_user_name}}"  bindinput="nameInput" placeholder="手动输入持卡人" placeholder-class="placeholder-txt"/>
+  </view>
+  <view class='flex-box-between inputview'>
+    <view class='names'>开户行</view>
+    <input type="text" value="{{bank_address}}"  bindinput="bankAddressInput" placeholder="手动输入开户行" placeholder-class="placeholder-txt"/>
+  </view>
+  <view class='flex-box-between inputview'>
+    <view class='names'>开户银行</view>
+    <input type="text" value="{{ bank}}" bindinput="bankInput" placeholder="手动输入开户银行" placeholder-class="placeholder-txt"/>
+  </view>
+  <view class='flex-box-between inputview'>
+    <view class='names'>银行卡号</view>
+    <input type="text" value="{{bank_number}}"  bindinput="bankNumberInput" placeholder="手动输入银行卡号" placeholder-class="placeholder-txt"/>
+  </view>
+</view>
+<view class='btn' bindtap="bangding">授权绑定</view>

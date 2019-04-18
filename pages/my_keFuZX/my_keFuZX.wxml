@@ -1,0 +1,66 @@
+<!--pages/my_xiaoXi/my_xiaoXi.wxml-->
+<view class='content'>
+  <view class='top flex-box-h'>
+    <view class="{{tabType==1?'checked':''}}" catchtap="changeTab" data-type="1">我是车友</view>
+    <view class="{{tabType==1?'':'checked'}}" catchtap="changeTab" data-type="2">我是车主</view>
+  </view>
+  <!-- 我是车友 -->
+  <view class='cool' wx:if='{{false}}' wx:if="{{tabType==1}}">
+    <view class='tips-box flex-box-start-top' wx:if="{{carFriend.children.length}}"> 
+      <view class='icon-item flex-box-center' catchtap='tochenWCY' wx:for="{{carFriend.children}}" wx:key="index" data-id="{{item.id}}" data-pagename="{{item.column_name}}">
+        <icon class='iconfont icon-wode'></icon>
+        <view class='icon-txt'>{{item.column_name}}</view>
+      </view>
+     
+    </view>
+    <view class='hot-title'>热点问题</view>
+    <view class='text-cons'>
+      <view class='text-item flex-box-start' catchtap='towenTiXQ' wx:for="{{hotData}}" wx:key="index" data-id="{{item.id}}">
+        <icon class='iconfont icon-yuandianxiao'></icon>
+        <view class='txt'>{{item.title}}？</view>
+      </view>
+      
+    </view>
+    <view>
+      <checkbox-group class="flex flex-align-center" style="margin-top:30rpx;">
+        <!-- <label class="checkbox flex-box-start-top " bindchange="checkboxChange" >
+          <checkbox value="{{checkValue}}" checked="{{true}}"/>
+          <view class='agreen'>已阅读并同意</view>
+        </label> -->
+        <text data-page="7" bindtap='goWenben'>《平台服务规则》</text>
+        <text data-page="3" bindtap='goWenben'>《用户服务协议》</text>
+        <text data-page="8" bindtap='goWenben'>《五车仪使用说明》</text>
+      </checkbox-group>
+    </view>
+    <button class='btn' open-type="contact" send-message-title="在线官方客服">联系客服</button>
+  </view>
+  <!-- 我是车主 -->
+  <view class='owner' wx:if="{{tabType==2}}">
+    <view class='tips-box flex-box-start-top' wx:if="{{carOwn.children.length}}"> 
+      <view class='icon-item flex-box-center' catchtap='tochenWCY' wx:for="{{carOwn.children}}" wx:key="index" data-id="{{item.id}}" data-pagename="{{item.column_name}}">
+        <icon class='iconfont icon-wode'></icon>
+        <view class='icon-txt'>{{item.column_name}}</view>
+      </view>
+     
+    </view>
+    <view class='hot-title'>热点问题</view>
+    <view class='text-cons'>
+      <view class='text-item flex-box-start' catchtap='towenTiXQ' wx:for="{{hotData}}" wx:key="index" data-id="{{item.id}}">
+        <icon class='iconfont icon-yuandianxiao'></icon>
+        <view class='txt'>{{item.title}}？</view>
+      </view>
+      
+    </view>
+    <view>
+      <checkbox-group class="flex flex-align-center" style="margin-top:30rpx;">
+        <!-- <label class="checkbox flex-box-start-top " bindchange="checkboxChange" >
+          <checkbox value="{{checkValue}}" checked="{{true}}"/>
+          <view class='agreen'>已阅读并同意</view>
+        </label> -->
+        <text data-page="7" bindtap='goWenben'>《平台服务规则》</text>
+        <text data-page="3" bindtap='goWenben'>《用户服务协议》</text>
+      </checkbox-group>
+    </view>
+    <button class='btn' open-type="contact" send-message-title="在线官方客服">联系客服</button>
+  </view>
+</view>

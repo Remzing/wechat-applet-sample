@@ -1,0 +1,33 @@
+<!--pages/my_xiTSZ/my_xiTSZ.wxml-->
+<view class='content'>
+  <view class='personal-img flex-box-center'>
+      <image src="{{appInfo.logo_url||''}}" mode="aspectFill"></image>
+      <view class='title'>{{appInfo.sys_name||"五车出行"}}</view>
+  </view>
+  <view class='item-box'>
+    <view class='item flex-box-between-top'>
+      <view class='item-title'>系统版本号</view>
+      <view class='flex-box-start right-item'>
+        <view class='right-txt'>{{appInfo.version||"V 1.0"}}</view>
+      </view>
+    </view>
+    <view class='item flex-box-between-top' data-page="1" catchtap='toGSJS'>
+      <view class='item-title'>公司介绍</view>
+      <view class='flex-box-start right-item'>
+        <icon class='iconfont icon-zuojiantou'></icon>
+      </view>
+    </view>
+    <!-- <view class='item flex-box-between-top' data-page="2" catchtap='toGSJS'>
+      <view class='item-title'>五车仪介绍</view>
+      <view class='flex-box-start right-item'>
+        <icon class='iconfont icon-zuojiantou'></icon>
+      </view>
+    </view> -->
+    <!-- <view class='item flex-box-between-top' data-page="3" catchtap='toGSJS'>
+      <view class='item-title'>服务协议</view>
+      <view class='flex-box-start right-item'>
+        <icon class='iconfont icon-zuojiantou'></icon>
+      </view>
+    </view> -->
+  </view>
+</view>

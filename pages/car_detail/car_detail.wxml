@@ -1,0 +1,269 @@
+
+<view class="content">
+  <view class="homeic" catchtap='goInx'><view class='iconfont icon-shouye'></view></view>
+  <swiperImg wx:if="{{banners.length}}" style="overflow:hidden;" sHeight="265px" imgList="{{banners}}" url="picUrl"></swiperImg>
+  <view class='xiug' wx:if="{{banners.length}}" bindtap="goPage" data-path="/pages/car_addphoto/car_addphoto" >修改图片</view>
+  <view wx:if="{{!banners.length}}" style='height:265px;padding:100px;box-sizing:border-box;border-bottom:1px solid #eee;'>
+    <button bindtap="goAddPage" data-path="/pages/car_addphoto/car_addphoto" >添加图片</button>
+  </view>
+  <view class="flex ali-cent info-state">
+    <view class="flex ali-cent">
+      <view>{{car_init.car_series_one||""}}{{car_init.car_series_two||""}}</view>
+      <view class="iconfont icon-cheyuechi cheyuechi {{wcy_msg.key_inside==1?'col-ff8001':'col-bbb'}}"> </view>
+      <view  wx:if="{{wcy_msg.batt<20}}" class="iconfont icon-dianchi dianchi"> </view>
+      <view  wx:if="{{20<=wcy_msg.batt&&wcy_msg.batt<40}}" class="iconfont icon-dianchi1 dianchi"> </view>
+      <view  wx:if="{{40<=wcy_msg.batt&&wcy_msg.batt<60}}" class="iconfont icon-dianchi3 dianchi"> </view>
+      <view  wx:if="{{60<=wcy_msg.batt&&wcy_msg.batt<80}}" class="iconfont icon-dianchi2 dianchi"> </view>
+      <view  wx:if="{{80<=wcy_msg.batt&&wcy_msg.batt<101}}" class="iconfont icon-dianchi4 dianchi"> </view>
+    </view>
+    <view>
+      {{stateArr[car_init.state]||'.....'}}
+    </view>
+  </view>
+  <view class="heng"></view>
+  <view style="position: relative;overflow:hidden;">
+    <slideTab tList="{{statusType}}" bind:changeCurrent="swichNav" currentTab="{{currentType}}" >
+      <swiper current="{{currentType}}" duration="300" bindchange="bindChange"  style="min-height: {{windowHeight-265-70}}px;">
+        <!-- <swiper-item 1> -->
+        <swiper-item scroll-y="true">
+          <!-- <swiper-item > -->
+          <scroll-view scroll-x="false" scroll-y="true" class="order-list" scroll-with-animation="true" lower-threshold="1" style="height: {{windowHeight-265-70}}px;" >
+            <view class="flex ali-cent det-tab-item" style="margin-top:92rpx;" bindtap="goDrive" data-driveid="{{car_init.drive_id}}" data-path="/pages/car_shangchuan/car_shangchuan">
+              <view>行驶证和交强险</view>
+              <view  class="flex ali-cent">
+                <view wx:if="{{car_init.drive_id}}" class="iconfont icon-dui col-ff8001 font-42"></view>
+                <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+              </view>
+            </view>
+            <view class="flex ali-cent det-tab-item" bindtap="goDetail" data-path="/pages/car_tianxiexx/car_tianxiexx">
+              <view>车辆信息</view>
+              <view  class="flex ali-cent">
+                <view wx:if="{{car_init.drive_id}}" class="iconfont icon-dui col-ff8001 font-42"></view>
+                <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+              </view>
+            </view>
+            <view class="flex ali-cent det-tab-item" bindtap="goWcy" data-path="/pages/car_wcyxg/car_wcyxg">
+              <view>绑定五车仪</view>
+              <view  class="flex ali-cent">
+                <view class=" col-bbb">{{car_init.wcy_number?'已绑定':'未绑定'}}</view>
+                <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+              </view>
+            </view>
+            <!-- <view class="flex ali-cent det-tab-item">
+              <view>驾驶时间(开发中)</view>
+              <view  class="flex ali-cent">
+                <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+              </view>
+            </view>
+            <view class="flex ali-cent det-tab-item">
+              <view>行驶里程(开发中)</view>
+              <view  class="flex ali-cent">
+                <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+              </view>
+            </view>
+            <view class="flex ali-cent det-tab-item">
+              <view>轨迹回放(开发中)</view>
+              <view  class="flex ali-cent">
+                <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+              </view>
+            </view>
+            <view class="flex ali-cent det-tab-item">
+              <view>电子围栏(开发中)</view>
+              <view  class="flex ali-cent">
+                <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+              </view>
+            </view> -->
+           
+            
+            
+            <view class="flex ali-cent det-tab-item">
+              <view>五车仪位置开关({{car_init.is_gps_upload==1?'已开启':'已关闭'}})</view>
+              <view  class="flex ali-cent">
+                <switch type="switch" color="#ff8001" checked="{{car_init.is_gps_upload==1}}" bindchange="wcyChange"/>
+              </view>
+            </view>
+            <view class="flex ali-cent det-tab-item" bindtap="goShous">
+              <view>手势密码</view>
+              <view  class="flex ali-cent">
+                <view class=" col-bbb">{{car_init.is_gesture==1?'已设置(不可修改)':'去设置'}}</view>
+                <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+              </view>
+            </view>
+
+            <view class="heng"></view>
+            <view style="padding: 20rpx 30rpx;">
+              <button style="margin-bottom:20rpx;" wx:if="{{car_init.state==1||car_init.state==6}}" class="single-but" type="default" size="defaultSize" loading="" plain="plain}" bindtap="confCheck" hover-class="confCheck">提交审核</button>
+               <button wx:if="{{car_init.state!=4&&car_init.state!=2&&car_init.state!=2}}" class="single-but" type="default" size="defaultSize" loading="" plain="plain}" bindtap="delCar" hover-class="confCheck">删除车辆</button>
+              
+            </view>
+          </scroll-view>
+        </swiper-item>
+        <!-- <swiper-item 2> -->
+        <swiper-item scroll-y="true">
+          <scroll-view scroll-x="false" scroll-y="true" class="order-list" scroll-with-animation="true" lower-threshold="1" style="height: {{windowHeight-265-70}}px;" >
+            <view style="width: 100%;height: 92rpx;background: #f4f6f7;"></view>
+            <view class="flex ali-cent det-tab-item" bindtap="goPageSet" data-state="1" data-path="/pages/car_shouquanshez/car_shouquanshez">
+              <view>亲友共享授权设置</view>
+              <view  class="flex ali-cent">
+                <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+              </view>
+            </view>
+            
+          </scroll-view>
+        </swiper-item>
+        <!-- <swiper-item 3> -->
+        <swiper-item scroll-y="true">
+          <scroll-view scroll-x="false" scroll-y="true" class="order-list" scroll-with-animation="true" lower-threshold="1" style="height: {{windowHeight-265-70}}px;" >
+            <view style="width: 100%;height: 92rpx;background: #f4f6f7;"></view>
+            <view class="flex ali-cent det-tab-item"  bindtap="goPageSet" data-state="2"  data-path="/pages/car_shouquanshez/car_shouquanshez">
+              <view>维保授权设置</view>
+              <view  class="flex ali-cent">
+                <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+              </view>
+            </view>
+            
+          </scroll-view>
+        </swiper-item>
+        <!-- <swiper-item 4> -->
+        <swiper-item scroll-y="true">
+          <!-- <swiper-item > -->
+          <scroll-view scroll-x="false" scroll-y="true" class="order-list" scroll-with-animation="true" lower-threshold="1" style="height: {{windowHeight-265-70}}px;">
+            <view style="width: 100%;height: 92rpx;background: #f4f6f7;"></view>
+            <view class="flex ali-cent det-tab-item" bindtap="goPageSet" data-state="3"  data-path="/pages/car_shouquanshez/car_shouquanshez">
+              <view>快递授权设置</view>
+              <view  class="flex ali-cent">
+                <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item>
+        <!-- <swiper-item 5> -->
+        <swiper-item scroll-y="true">
+          <!-- <swiper-item > -->
+          <scroll-view scroll-x="false" scroll-y="true" class="order-list" scroll-with-animation="true" lower-threshold="1" style="height: {{windowHeight-265-70}}px;" >
+            <view style="width: 100%;height: 92rpx;background: #f4f6f7;"></view>
+
+             <view class="flex ali-cent det-tab-item">
+              <view>共享时段</view>
+              <view  class="flex ali-cent">
+                <picker class='bord-1' mode="time" value="{{rent_start_time}}" end="{{rent_end_time}}" bindchange="rentStart">
+        <view class="col-bbb doub2">{{rent_start_time||"开始时间"}}</view>
+      </picker>
+      <view class="col-bbb">--</view>
+      <picker class='bord-1' mode="time" value="{{rent_end_time}}" start="{{rent_start_time}}" bindchange="rentEnd">
+        <view class="col-bbb doub2 doub">{{rent_end_time||"结束时间"}}</view>
+      </picker>
+                <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+              </view>
+            </view>
+            <view class="flex ali-cent det-tab-item">
+              <view>动态调价</view>
+              <view  class="flex ali-cent">
+                <switch type="switch" color="#ff8001" checked="{{is_dynamic_price}}" bindchange="switch2Change"/>
+              </view>
+            </view>
+            <view class="flex ali-cent det-tab-item" bindtap="goPage" data-path="/pages/car_miaoshu/car_miaoshu">
+              <view>车辆描述</view>
+              <view  class="flex ali-cent">
+                <view class=" col-bbb">{{car_init.car_describe?'已填写':'未填写'}}</view>
+                <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+              </view>
+            </view>
+            <picker class='bord-1' mode="selector" range-key="name" bindchange="takeChange" range="{{takeArray}}">
+              <view class="flex ali-cent det-tab-item">
+                <view>取还模式</view>
+                <view  class="flex ali-cent">
+                  <view class=" col-bbb">{{takeArray[takeIndex].name||"请设置"}}</view>
+                  <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+                </view>
+              </view>
+            </picker>
+            <view class="flex ali-cent det-tab-item">
+              <view>续驶里程</view>
+              <view  class="flex ali-cent">
+                <view class=" col-bbb">></view>
+                <input type="text" style='text-align:center;color:#ff8001;width:60rpx;' value="{{remain_gasoline}}"  bindinput="nameInput" placeholder="输入剩余油量" placeholder-class="placeholder-txt"/>
+                <view class=" col-bbb">km</view>
+                <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+              </view>
+            </view>
+            <view class="flex ali-cent det-tab-item" data-path="/pages/car_shiyongtj/car_shiyongtj" bindtap="goPage">
+              <view>车友使用条件</view>
+              <view  class="flex ali-cent">
+                <view class=" col-bbb">{{car_init.ccd_id?'已填写':'未填写'}}</view>
+                <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+              </view>
+            </view>
+            <view style="padding: 20rpx 30rpx;">
+              <button wx:if="{{car_init.state==7}}" class="single-but" type="default" size="defaultSize" loading="" plain="plain}" bindtap="confRent" hover-class="defaultTap">确定共享</button>
+              <button wx:if="{{car_init.state==3}}" class="single-but" type="default" size="defaultSize" loading="" plain="plain}" bindtap="cancelRent" hover-class="defaultTap">取消共享</button>
+            </view>
+            
+            <view style="padding:60rpx 20rpx 0;">数据分析：</view>
+            <view class='flex flex-alg-cen' style="padding:20rpx;">
+              <picker class='record' mode="date" end="{{end_time}}"  value="{{multiIndex}}" bindchange="startDateChange">
+                <view class="picker flex-box-between">
+                  {{start_time||"开始时间"}}
+                  <icon class='iconfont icon-sanjiao3-copy'></icon>
+                </view>
+              </picker>
+              <view>~</view>
+              <picker class='record' mode="date" start="{{start_time}}" value="{{multiIndex}}" bindchange="endDateChange">
+                <view class="picker flex-box-between">
+                  {{end_time||"结束时间"}}
+                  <icon class='iconfont icon-sanjiao3-copy'></icon>
+                </view>
+              </picker>
+            </view>
+            <view class="canvas">
+              <!-- <image style="width: 100%;display: block;" class="" mode='widthFix' src="/assets/imgs/chart_1.png" /> -->
+              <!-- item.id用于遍历 -->
+              <canvas class="canvas" canvas-id="areaCanvas"></canvas>
+            </view>
+            <view>
+              <view style="padding:40rpx 20rpx 0;">用户评价：</view>
+              <view class="flex ping-head" style="padding:30rpx 30rpx 0;">
+                <view>老司机们的评分</view>
+                <view class="flex ali-cent">
+                  <view class="col-ff8001" wx:if="{{starNum==5}}" >5.0分</view>
+                  <view class="col-ff8001" wx:if="{{starNum==4}}" >4.0分</view>
+                  <view class="col-ff8001" wx:if="{{starNum==3}}" >3.0分</view>
+                  <view class="col-ff8001" wx:if="{{starNum==2}}" >2.0分</view>
+                  <view class="col-ff8001" wx:if="{{starNum==1}}" >1.0分</view>
+                  <view class="flex star-case">
+                    <view bindtap="selStar" data-num="1" class="iconfont icon-xingxing {{starNum>0?'col-ff8001':'col-bbb'}}"></view>
+                    <view bindtap="selStar" data-num="2" class="iconfont icon-xingxing {{starNum>1?'col-ff8001':'col-bbb'}}"></view>
+                    <view bindtap="selStar" data-num="3" class="iconfont icon-xingxing {{starNum>2?'col-ff8001':'col-bbb'}}"></view>
+                    <view bindtap="selStar" data-num="4" class="iconfont icon-xingxing {{starNum>3?'col-ff8001':'col-bbb'}}"></view>
+                    <view bindtap="selStar" data-num="5" class="iconfont icon-xingxing {{starNum>4?'col-ff8001':'col-bbb'}}"></view>
+                  </view>
+                </view>
+              </view>
+              <view class="ping-onemsg" wx:for="{{pingData}}">
+                <view class="flex pad-30" style="padding-bottom:6rpx;">
+                  <view class="zuche-img">
+                    <image wx:if="{{item.user_photo}}" class="imagebg" src="{{item.user_photo}}" />
+                    <view wx:if="{{!item.user_photo}}" class='iconfont icon-touxiang1'></view>
+                  </view>
+                  <view class="flex zuche-name">
+                    <view class="flex zuche-id">{{item.phone}}</view>
+                    <view class="col-888">{{item.create_time}}</view>
+                  </view>
+                </view>
+                <view class="pinglun">
+                  <image class="yuanj" src="/assets/imgs/yjiao.png" />
+                  <text>{{item.content}}</text>
+                </view>
+              </view>
+              
+            </view>
+          </scroll-view>
+        </swiper-item>
+        
+      </swiper>
+    </slideTab>
+  </view>
+  <!-- 引入图片预加载组件 -->
+  <import src="../../components/img-loader/img-loader.wxml"/>
+  <template is="img-loader" data="{{ imgLoadList }}"></template>
+</view>

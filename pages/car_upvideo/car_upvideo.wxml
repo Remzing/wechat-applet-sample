@@ -1,0 +1,24 @@
+<view class="content">
+  <view  wx:if="{{video_url}}">
+    <video
+      id="myVideo"
+      src="{{domain + video_url}}"
+      controls
+    ></video>
+  </view>
+  <view wx:if="{{!video_url}}" style="">
+    <view style="margin:100rpx auto 10rpx;width:160rpx;">
+      <icon type="warn" size="80" />
+    </view>
+    <view style="text-align:center;">
+      请上传视频文件
+    </view> 
+  </view>
+  
+  <view style="padding: 300rpx 30rpx 20rpx;">
+    <button class="single-but" type="default" size="defaultSize" loading="" plain="plain}" bindtap="upVid" hover-class="confCheck">{{video_url?'重新上传':'上传视频'}}</button>
+  </view>
+  <view wx:if="{{video_url}}" style="padding: 10rpx 30rpx;">
+    <button class="single-but" type="default" size="defaultSize" loading="" plain="plain}" bindtap="conf" hover-class="confCheck">确定保存</button>
+  </view>
+</view>

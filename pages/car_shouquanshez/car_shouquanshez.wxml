@@ -1,0 +1,29 @@
+<view class="content">
+  <view class="shouq-fff">
+    <view wx:if="{{state==1}}">已授权的亲情号</view>
+    <view wx:if="{{state==2}}">已授权的维保号</view>
+    <view wx:if="{{state==3}}">已授权的快递号</view>
+    <view class="sq-toux" wx:for="{{userData}}">
+      <image src="{{item.user_photo}}" />
+      <view style='text-align:center;color:#aaa;'>{{item.real_name||item.phone}}</view>
+      <view class="iconfont icon-guanbi col-ff8001 del-toux" data-id="{{item.id}}" bindtap="deleteUser">     </view>
+      
+    </view>
+    <view class='no_da' wx:if="{{!userData.length}}">暂未授权</view>
+  </view>
+  <view class="pad-f1">添加授权</view>
+  <view class="flex shouq-but" wx:if="{{show==1}}">
+    <!-- <view>扫码授权</view> -->
+    <view bindtap="phoneSq">手机号码授权</view>
+  </view>
+  <view wx:if="{{show==2}}">
+    <view class="textarea-wrp">
+      <input class="Inp" value="{{phone}}" bindinput="phoneInput" placeholder-style="color: #333;" placeholder="请输入手机号码" maxlength="20" type=""/>
+    </view>
+    <view class="flex comf-but">
+      <button class="but-cancel" type="default"  plain="plain" bindtap="back" hover-class="defaultTap">取消</button>
+      <button class="but-sure" type="default" plain="plain" bindtap="addPhone" hover-class="defaultTap">添加</button>
+    </view>
+  
+  </view>
+</view>

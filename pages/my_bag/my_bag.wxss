@@ -1,0 +1,35 @@
+/* pages/my_wallet/my_wallet.wxss */
+page{
+  background-color: #f4f6f7;
+}
+.content{
+  background-color: #fff;
+}
+.bag-item{
+  padding: 0 30rpx;
+  border-top: 1px solid #eee;
+  height: 108rpx;
+  line-height: 108rpx;
+  color: #353535;
+   display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;
+  -webkit-box-orient:vertical;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;
+  -webkit-flex-wrap:wrap;-webkit-box-lines:multiple;-moz-flex-wrap:wrap;flex-wrap:wrap;
+  -webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;
+  -webkit-box-align:top;-webkit-align-items:top;-ms-flex-align:top;align-items:top;
+  -webkit-box-content:center;-webkit-align-content:center;-ms-flex-content:center;align-content:center;
+}
+.bag-item .num{
+  color: #555555;
+  font-size: 28rpx;
+}
+.bag-item .num text{
+  padding-right: 8rpx;
+}
+.bag-item .iconfont{
+  color: #bbbbbb;
+  font-size: 26rpx;
+  margin-left: 20rpx;
+}
+.bag-item .title{
+  font-size: 28rpx;
+}

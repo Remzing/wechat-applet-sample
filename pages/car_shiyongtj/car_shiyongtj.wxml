@@ -1,0 +1,40 @@
+<view class="content">
+  <view class="flex ali-cent det-tab-item">
+    <view>驾龄 (年)</view>
+    <view  class="flex ali-cent">
+      <picker class='bord-1' mode="selector" bindchange="carAgeStart" range="{{carAgeArr}}">
+        <view class="col-bbb doub2">{{carAgeArr[carAgeInx]||"请选择"}}</view>
+      </picker>
+      <view class="col-bbb">--</view>
+      <picker class='bord-1' mode="selector" bindchange="carAgeEnd" range="{{carAgeEndArr}}">
+        <view class="col-bbb doub2 doub">{{carAgeEndArr[carAgeEndInx]||"请选择"}}</view>
+      </picker>
+      <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+    </view>
+  </view>
+  <picker class='bord-1' mode="selector" range-key="name" bindchange="sexChange" range="{{sexArray}}">
+    <view class="flex ali-cent det-tab-item">
+      <view>性别</view>
+      <view  class="flex ali-cent">
+        <view class="col-bbb">{{sexArray[sexIndex].name||"请设置"}}</view>
+        <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+      </view>
+    </view>
+  </picker>
+  <view class="flex ali-cent det-tab-item">
+    <view>年龄 (岁)</view>
+    <view  class="flex ali-cent">
+      <picker class='bord-1' mode="selector" bindchange="ageStart" range="{{ageArr}}">
+        <view class="col-bbb doub2">{{ageArr[ageInx]||"请选择"}}</view>
+      </picker>
+      <view class="col-bbb">--</view>
+      <picker class='bord-1' mode="selector" bindchange="ageEnd" range="{{ageEndArr}}">
+        <view class="col-bbb doub2 doub">{{ageEndArr[ageEndInx]||"请选择"}}</view>
+      </picker>
+      <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+    </view>
+  </view>
+  <view style="padding: 70rpx 30rpx;">
+    <button class="single-but" type="default" size="defaultSize" loading="" plain="plain}" bindtap="conf" hover-class="defaultTap">确认提交</button>
+  </view>
+</view>

@@ -1,0 +1,35 @@
+<view class="content">
+  <view class="" style="background-color: #f4f6f7;">
+    <view class="flex hint-case" style="padding:30rpx;">
+      <view class="col-888">写一段富有感染力的话，推销你的爱车</view>
+    </view>
+  </view>
+  <view style="padding:0 30rpx;">
+    <textarea maxlength="500" value='{{concent}}'  bindinput="textA" style="width:100%;margin:30rpx 0 20rpx 0;" disabled="{{active==4000}}" placeholder="发挥想象力哦，可以参考下面的精彩样本" />
+  </view>
+  <view class='flex noteLen bord-bot'><view class="col-ff8001">{{concent.length|0}}</view> /{{noteMaxLen}}字</view>
+  <view class="xiaots">
+    小贴士：千万别偷懒，照抄会跟别人重复哦
+  </view>
+  <view class="flex can-tlt">
+    精彩车辆描述（{{caseData.length}}）
+  </view>
+  <block wx:for="{{caseData}}">
+    <view class="shili-tlt col-ff8001"> 示例{{index+1}} </view>
+    <view class="shili-cont bord-bot">
+      {{item.describes}}
+    </view>
+  </block>
+  
+  <!-- <view class="shili-tlt col-ff8001"> 示例2 </view>
+  <view class="shili-cont bord-bot">
+    该车辆外观设计精致大气，细节丰富，线条饱满，充满运动感。车内装饰造型美观，手感出色。车内空间也非常充足，乘坐舒适。动力够用，操控灵活方便。车辆整体性能非常好。
+  </view>
+  <view class="shili-tlt col-ff8001"> 示例3 </view>
+  <view class="shili-cont bord-bot">
+    该车辆外观设计精致大气，细节丰富，线条饱满，充满运动感。车内装饰造型美观，手感出色。车内空间也非常充足，乘坐舒适。动力够用，操控灵活方便。车辆整体性能非常好。
+  </view> -->
+  <view style="padding: 20rpx 30rpx;">
+    <button class="single-but" type="default" size="defaultSize" loading="" plain="plain}" bindtap="conf" hover-class="defaultTap">保存</button>
+  </view>
+</view>

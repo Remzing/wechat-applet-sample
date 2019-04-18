@@ -1,0 +1,58 @@
+page{
+}
+.search-in{
+  height: 100rpx;
+  border-top:  1rpx solid #EEE;
+}
+.search-in .local-text{
+  height: 100%;
+  width: 170rpx;
+  justify-content: center;
+  border-right: 1rpx solid #EEE;
+}
+.local-text .icon-sanjiao3-copy{
+  padding: 4rpx 0 0 8rpx;
+}
+.sear-input{
+  width: 460rpx;
+  padding-left: 20rpx;
+}
+.sear-input input{
+  width: 380rpx;
+  font-size:28rpx;
+
+}
+.shanc{
+  width:80rpx;
+  text-align:center;
+  height:100%;
+  line-height:100rpx;
+}
+.icon-guanbi{
+  font-size: 36rpx;
+}
+.icon-dingwei{
+  font-size: 40rpx;
+}
+.dingwei{
+  width:90rpx;
+  text-align:center;
+  height:100%;
+  line-height:100rpx;
+}
+.addr-info-item{
+  padding: 24rpx 20rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.addr-info-item .iconfont{
+  font-size: 40rpx;
+  margin-right: 20rpx;
+}
+.addr-name{
+  padding: 4rpx 0;
+}
+.addr-det{
+  padding: 4rpx 0;
+  font-size: 24rpx;
+  color: #888;
+}

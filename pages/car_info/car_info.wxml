@@ -1,0 +1,172 @@
+<view class="footer-box">
+  <view class='contact con_kefu'>
+    <button plain open-type="contact" style="position:absolute;" type="default-dark"  session-from="weapp" size="27">
+      <icon class="iconfont icon-kefu iconkefu"> </icon>
+      <view class="footer_icon_title">客服</view> 
+    </button>
+  </view>
+  <view class='contact con-index'  bindtap="goIndex"> 
+    <icon class=" iconfont icon-shouye">
+    </icon>
+    <view class="footer_icon_title">首页</view> 
+  </view>
+  <view class="join-shop-cart" bindtap="querenUse">立即共享</view>
+</view>
+<!-- 引入图片预加载组件 -->
+  <import src="../../components/img-loader/img-loader.wxml"/>
+  <template is="img-loader" data="{{ imgLoadList }}"></template>
+<view class="content">
+  
+  <swiperImg sHeight="530rpx" imgList="{{banners}}" url="picUrl"></swiperImg>
+  <view wx:if="{{page==1}}">
+    <view class="flex car-tx ali-cent">
+      <view>{{car_init.car_series_one||""}}{{car_init.car_series_two||""}}</view>
+      <view>
+        {{car_init.get_model==1?'原地取还':'面对面还车'}}
+      </view>
+    </view>
+    <view class="flex car-feenum"><text class="col-ff8001"> {{car_init.time_fee||""}} </text>元/分+ <text class="col-ff8001"> {{car_init.mileage_fee||""}} </text>元/公里</view>
+    <view class="flex can-tlt" ><view>车费预估</view> </view>
+    <view class="sel-addr">
+      <view class="flex ali-cent start-addr" data-state="1" bindtap="goSearchLocal">
+        <view class="flex ali-cent">
+          <view class="iconfont icon-yuandianxiao col-09bb07"></view>
+          <view class="col-888"> {{calcFeeData.startName||'出发位置'}}</view>
+        </view>
+        <view  class="iconfont icon-zuojiantou col-bbb"></view>
+      </view>
+      <view class="flex ali-cent end-addr" data-state="2" bindtap="goSearchLocal">
+        <view class="flex ali-cent">
+          <view class="iconfont icon-yuandianxiao col-ff8001"></view>
+          <view class="col-888"> {{calcFeeData.endName||'终点位置'}}</view>
+        </view>
+        <view  class="iconfont icon-zuojiantou col-bbb"></view>
+      </view>
+      <!--<view class="flex ali-cent order-time">
+        <view class="flex ali-cent">
+          <view class="iconfont icon-shijian col-888"></view>
+          <view class="col-666"> 昨天 10:30 </view>
+        </view>
+        <view  class="iconfont icon-zuojiantou col-bbb"></view>
+      </view>-->
+    </view>
+    <view style="padding: 20rpx 30rpx;">
+      <button class="single-but" type="default" size="defaultSize" loading="" plain="plain}" bindtap="calcFeeHandle" hover-class="defaultTap">计算</button>
+    </view>
+    <view class="flex car-jishu" wx:if="{{calcResult.total_fee}}">
+      <view class="flex">
+        <view>{{calcResult.distance}}</view>
+        <view>行驶里程(米)</view>
+      </view>
+      <view class="flex">
+        <view>{{calcResult.duration_txt}}</view>
+        <view>行驶时间</view>
+      </view>
+      <!-- <view class="flex">
+        <view>00:05</view>
+        <view>待机时间</view>
+      </view> -->
+      <view class="flex">
+        <view>{{calcResult.total_fee}}</view>
+        <view>费用总计(元)</view>
+      </view>
+    </view>
+    <view class="flex can-tlt" ><view>{{car_init.license_number}}   |  已共享{{ownerInfo.num}}次    <text class="col-ff8001">{{pingData.length||0}}</text>次点评</view> </view>
+    <!--<view class="flex">
+      <view class="pinj-item">驾驶舒适</view>
+      <view class="pinj-item">车主人nice </view>
+    </view>-->
+    <view class="flex ali-cent just-bet pad-30">
+      <view class="col-888"> {{carLocal.name}}</view>
+      <view class="flex ali-cent">
+        <view class="col-888"> {{carLocal.distance||'未知'}}</view>
+        <!-- <view  class="iconfont icon-zuojiantou col-bbb"></view> -->
+      </view>
+    </view>
+    <view class="flex pad-30" style="padding-top:0;">
+      <view class="chez-img">
+        <image wx:if="{{ownerInfo.owner_photo}}" src="{{ownerInfo.owner_photo||''}}" />
+        <view wx:if="{{!ownerInfo.owner_photo}}" class='iconfont icon-touxiang1'></view>
+      </view>
+      <view class="flex chez-name">
+        <view class="flex chez-id">{{ownerInfo.owner_name_txt||'未知车主'}}</view>
+        <view class="col-888">{{ownerInfo.owner_name_txt?'已认证':'未认证'}}</view>
+      </view>
+    </view>
+    <view class="flex can-tlt" ><view>可共享时间</view> </view>
+    <view class="flex pad-30">
+      {{car_init.rent_start_time}}~{{car_init.rent_end_time}}
+    </view>
+    <view class="flex can-tlt" ><view>车辆描述</view> </view>
+    <view class="flex pad-30">
+      {{car_init.car_describe}}
+    </view>
+    <!--<view class="flex can-tlt" ><view>用车条件</view> </view>
+    <view class="flex pad-30">
+      车内保持清洁，不带宠物，不吸烟！！
+    </view>-->
+    <view class="flex can-tlt" bindtap="goPingjia">
+      <view>用户评价 <text class="col-ff8001">（{{pingData.length||'暂无评价'}}）</text> </view>
+      <view class="iconfont icon-zuojiantou col-bbb"> </view>
+    </view>
+    <view class="ping-onemsg" wx:for="{{pingData}}">
+      <view class="flex pad-30" style="padding-bottom:6rpx;">
+        <view class="zuche-img"><image class="imagebg" src="{{item.user_photo}}" /></view>
+        <view class="flex zuche-name">
+          <view class="flex zuche-id">{{item.phone}}</view>
+          <view class="col-888">{{item.create_time}}</view>
+        </view>
+      </view>
+      <view class="pinglun">
+        <image class="yuanj" src="/assets/imgs/yjiao.png" />
+        <text>{{item.content}}</text>
+      </view>
+    </view>
+    
+  </view>
+  <view wx:if="{{page==2}}" style="position: relative;">
+    <slideTab tList="{{statusType}}" bind:changeCurrent="swichNav" currentTab="{{currentType}}" >
+      <swiper current="{{currentType}}" duration="300" bindchange="bindChange" style="height: {{windowHeight}}px;">
+
+          <swiper-item wx:for="{{list}}" scroll-y="true">
+          <!-- <swiper-item > -->
+            <view class="no-order" hidden="{{item.length ? true : false}}">
+              <view class="flex flex-cent err-clk fadein" bindtap="refresh">
+                <view class="iconfont icon-wuche"> </view>
+                <view class="err-pad1">暂无相关订单</view>
+                <view class="err-pad">五车出行邀您体验“时尚、经济、便捷、无忧”的出行服务</view>
+                <button type="default" hover-class="defaultTap" catchtap="refresh">体验五车出行</button>
+              </view>
+            </view>
+            <scroll-view scroll-x="false" scroll-y="true" class="order-list" scroll-with-animation="true" lower-threshold="1"  
+              style="height: {{windowHeight}}px;">
+              <view style="width: 100%;height: 50px;background: #f4f6f7;"></view>
+              <view class="a-order"  wx:for="{{item}}"  wx:key="childIndex" wx:for-item="childItem">
+                <view class="flex order-state">
+                  <view>粤B88966</view>
+                  <view class="flex ali-cent col-888">
+                    <view>进行中</view><view class="iconfont icon-zuojiantou col-bbb"></view>
+                  </view>
+                </view>
+                <view class="flex ali-cent order-time">
+                  <view class="iconfont icon-shijian col-888"></view>
+                  <view class="col-666"> 昨天 10:30 </view>
+                </view>
+                <view class="flex ali-cent start-addr">
+                  <view class="iconfont icon-yuandianxiao col-09bb07"></view>
+                  <view class="col-888"> 宝安大道/七星创意工厂（东南侧）</view>
+                </view>
+                <view class="flex ali-cent end-addr">
+                  <view class="iconfont icon-yuandianxiao col-ff8001"></view>
+                  <view class="col-888"> 新宝安中心-D口</view>
+                </view>
+              </view>
+              
+            </scroll-view>
+          </swiper-item>
+
+      </swiper>
+    </slideTab>
+  </view>
+  
+</view>

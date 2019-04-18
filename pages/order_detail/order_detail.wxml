@@ -1,0 +1,101 @@
+<view class="content">
+  <view wx:if="{{order_info.state==1}}" class="flex-box-center ste">
+    <view class="iconfont icon-icon02"> </view>
+    <view>进行中</view>
+  </view>
+  <view wx:if="{{order_info.state==2}}" class="flex-box-center ste">
+    <view class="iconfont icon-dui"> </view>
+    <view>订单完成</view>
+  </view>
+  <view wx:if="{{order_info.state==3}}" class="flex-box-center ste">
+    <view class="iconfont icon-gantanhao"> </view>
+    <view>订单已取消</view>
+  </view>
+  <view class="flex car-head just-bet ali-cent">
+    <view class="flex">
+      <view class="car-img"><image src="{{car_info.car_image}}" /></view>
+      <view class="flex car-name">
+        <view class="flex car-id">{{car_info.license_number}}</view>
+        <view>{{car_info.car_series_one||""}}{{car_info.car_series_two||""}}</view>
+      </view>
+    </view>
+    <view class="dianh">
+      <view class="iconfont icon-dianhua" data-phone="{{car_info.phone}}" bindtap="callPhone"></view>
+    </view>
+    <!--<view class="qieh" bindtap='qieHuang'>{{stateArr[order_info.state]||"..."}}</view>-->
+  </view>
+  <view  wx:if="{{order_info.total_fee||order_info.travel_kilometre}}" class="flex car-jishu">
+    <view class="flex">
+      <view>{{order_info.travel_kilometre||"0"}}</view>
+      <view>行驶里程</view>
+    </view>
+    <view class="flex">
+      <view>{{order_info.travel_time_txt||"00:00"}}</view>
+      <view>行驶时间</view>
+    </view>
+    <view class="flex">
+      <view>{{order_info.await_time_txt||"00:00"}}</view>
+      <view>待机时间</view>
+    </view>
+    <view class="flex">
+      <view>{{order_info.total_fee||"0"}}</view>
+      <view>费用总计</view>
+    </view>
+  </view>
+  <view>
+    <view class="flex can-tlt" ><view>订单信息</view><view></view> </view>
+    <view class="pad-30 res-cont">
+      <view class="flex reason-item">
+        <view>订单编号</view>
+        <view>{{order_info.order_number}}</view>
+      </view>
+      <view class="flex reason-item">
+        <view>下单时间</view>
+        <view>{{order_info.create_time}}</view>
+      </view>
+      <view wx:if="{{order_info.end_time}}" class="flex reason-item">
+        <view>取消时间</view>
+        <view>{{order_info.end_time}}</view>
+      </view>
+    </view>
+    <view  wx:if="{{order_fee.mileage_fee}}" class="flex can-tlt" ><view>费用明细</view><view></view> </view>
+    <view  wx:if="{{order_fee.mileage_fee}}" class="pad-30 res-cont">
+      <view wx:if="{{order_fee.mileage_fee}}" class="flex reason-item">
+        <view>里程费</view>
+        <view>{{order_fee.mileage_fee}}</view>
+      </view>
+      <view wx:if="{{order_fee.time_fee}}" class="flex reason-item">
+        <view>时长费</view>
+        <view>{{order_fee.time_fee}}</view>
+      </view>
+      <view wx:if="{{order_fee.await_fee}}" class="flex reason-item">
+        <view>待机费</view>
+        <view>{{order_fee.await_fee}}</view>
+      </view>
+      <view wx:if="{{order_fee.insurance_fee}}" class="flex reason-item">
+        <view>保险费</view>
+        <view>{{order_fee.insurance_fee}}</view>
+      </view>
+      <view wx:if="{{order_fee.reservation_fee}}" class="flex reason-item">
+        <view>预订费</view>
+        <view>{{order_fee.reservation_fee}}</view>
+      </view>
+      <view wx:if="{{order_fee.repay_additional_fee}}" class="flex reason-item">
+        <view>还车附加费</view>
+        <view>{{order_fee.repay_additional_fee}}</view>
+      </view>
+      <view wx:if="{{order_fee.send_car_fee}}" class="flex reason-item">
+        <view>送车/代泊费</view>
+        <view>{{order_fee.send_car_fee}}</view>
+      </view>
+      <view wx:if="{{order_fee.time_limit_fee}}" class="flex reason-item">
+        <view>超期费</view>
+        <view>{{order_fee.time_limit_fee}}</view>
+      </view>
+    </view>
+  </view>
+  <view style="padding: 20rpx 30rpx;" wx:if="{{order_info.state!=3&&order_info.is_evaluate!=1}}">
+    <button class="single-but" type="default" size="defaultSize" loading="" plain="plain}" bindtap="goPingjia" hover-class="defaultTap">去评价</button>
+  </view>
+  
+</view>

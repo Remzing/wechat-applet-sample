@@ -1,0 +1,11 @@
+<!--pages/my_guanYW/my_guanYW.wxml-->
+<form bindsubmit="bindFormSubmit">
+  <view class="textarea-wrp" wx:if="{{page==1}}">
+    <textarea auto-height="{{false}}" bindblur="bindCursor" bindinput="areaInput" value="{{remark}}" cursor-spacing="140" placeholder-class="placeholder"  maxlength="{{noteMaxLen}}" auto-focus="true" placeholder="自我介绍，展现独一无二的你！" style="height: 90rpx;" name="textarea" />
+    <view class='noteLen'>{{currentNoteLen|0}}/{{noteMaxLen}}</view>
+  </view>
+  <view class="textarea-wrp" wx:if="{{page==2}}">
+    <input class="Inp" value="{{name}}" bindinput="codeInput" placeholder-style="color: #333;" placeholder="请输入昵称" maxlength="20" type="" auto-focus  />
+  </view>
+  <button formType="submit" class='btn'>确认</button>
+</form>

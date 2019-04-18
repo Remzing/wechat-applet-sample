@@ -1,0 +1,67 @@
+page{
+  background-color: #f4f6f7;
+}
+.err-clk{
+  height: unset !important;
+}
+.no-order{
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		top:0;
+		left: 0;
+		right: 0;
+		text-align: center;
+		padding-top: 203rpx;
+    z-index: 100;
+}
+.icon-wuche{
+  font-size:312rpx;
+  margin:0rpx 0 -120rpx;
+  color: #bbb;
+}
+.a-order{
+  width: 710rpx;
+  /* height: 283rpx; */
+  margin-left: 20rpx;
+	background-color: #ffffff;
+  border-radius: 5px;
+  margin-top: 12rpx;
+  padding: 22rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.order-state{
+  justify-content: space-between;
+  align-items: center;
+}
+.ali-cent{
+  align-items:center;
+}
+.icon-yuandianxiao{
+  font-size: 60rpx;
+  margin-left: -16rpx;
+}
+.order-state{
+  padding: 12rpx 0 20rpx;
+}
+.order-state>view:first-child{
+  font-weight: 700;
+}
+.order-time{
+  padding: 10rpx 0 4rpx;
+}
+.start-addr{
+  margin-bottom: -14rpx;
+}
+.end-addr>view:last-child, .start-addr>view:last-child{
+  margin: 0 0 10rpx -10rpx;
+}
+.icon-shijian{
+  font-size:24rpx;
+  margin-right: 10rpx;
+  padding-top:6rpx;
+}
+.icon-zuojiantou{
+  padding:5rpx 0 0 4rpx;
+}

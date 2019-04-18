@@ -1,0 +1,52 @@
+<!--pages/my_xiTSZ/my_xiTSZ.wxml-->
+<view class='content'>
+  <view class='personal-img flex-box-center'>
+    <view data-url="{{userData.url}}" class='head-img' bindtap='preImg'>
+      <image src='{{userData.url}}' mode="aspectFill"></image>
+    </view>
+  </view>
+  <view class='item-box'>
+    <view class='item flex-box-between-top' bindtap='upImage'>
+      <view class='item-title'>头像</view>
+      <view class='flex-box-start right-item'>
+        <view class='right-img'>
+          <image src='{{userData.url}}' mode="aspectFill"></image>
+        </view>
+        <icon class='iconfont icon-zuojiantou'></icon>
+      </view>
+    </view>
+    <!-- 已有样式可自动将两个分为一组 -->
+    <view class='item flex-box-between-top' data-page="2" catchtap='toguanYW'>
+      <view class='item-title'>昵称</view>
+      <view class='flex-box-start right-item'>
+        <view class='right-txt'>{{userData.nick_name}}</view>
+        <icon class='iconfont icon-zuojiantou'></icon>
+      </view>
+    </view>
+    <picker class='bord-1' mode="selector" range-key="name" bindchange="sexChange" range="{{sexArray}}">
+      <view class='item flex-box-between-top'>
+        <view class='item-title'>性别</view>
+        <view class='flex-box-start right-item'>
+          <view class='right-txt'>{{sexArray[sexIndex].name||"请设置"}}</view>
+          <icon class='iconfont icon-zuojiantou'></icon>
+        </view>
+      </view>
+    </picker>
+    <picker style="padding:0 0 20rpx;" mode="date" value="{{date}}"  bindchange="bindDateChange">
+      <view class='item flex-box-between-top'>
+        <view class='item-title'>生日</view>
+        <view class='flex-box-start right-item'>
+          <view class='right-txt'>{{date||"请设置"}}</view>
+          <icon class='iconfont icon-zuojiantou'></icon>
+        </view>
+      </view>
+    </picker>
+    <view class='item flex-box-between-top' data-page="1" catchtap='toguanYW'>
+      <view class='item-title'>关于我</view>
+      <view class='flex-box-start right-item'>
+        <view class='right-txt'>{{userData.introduce||"自我介绍，展现独一无二的你！"}}</view>
+        <icon class='iconfont icon-zuojiantou'></icon>
+      </view>
+    </view>
+  </view>
+</view>

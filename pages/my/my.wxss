@@ -1,0 +1,224 @@
+page {
+  background: #eee;
+}
+
+.container {
+  min-height: 100%;
+  overflow: hidden;
+  overflow-y: hidden;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  width: 750rpx;
+  height: 366rpx;
+}
+
+.userinfo-avatar {
+  width: 180rpx;
+  height: 180rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  /*margin-top: 50rpx;*/
+}
+
+.userinfo-nickname {
+  color: #353535;
+}
+
+.updata-user {
+  height: 44rpx;
+  line-height: 44rpx;
+  text-align: center;
+  width: 168rpx;
+  border: 1px solid #bfbfbf;
+  border-radius: 22rpx;
+  font-size: 24rpx;
+  color: #888;
+  margin-top: 24rpx;
+}
+
+.updata-user .iconfont {
+  font-size: 30rpx;
+  vertical-align: middle;
+}
+
+.version {
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  text-align: center;
+  padding: 40rpx;
+}
+
+.my-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.my-item navigator,
+.my-item>view:first-child {
+  padding-left: 30rpx;
+}
+
+.my-item>view:last-child {
+  padding-right: 30rpx;
+  color: #888;
+  display: flex;
+  align-items: center;
+}
+
+.my-item,
+.order-state {
+  background: #fff;
+}
+
+.riicon {
+  color: #a4a4a4;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+
+.about {
+  width: 100%;
+  background: url(https://cdn.it120.cc/images/weappshop/arrow-right.png) no-repeat 750rpx center;
+  background-size: 16rpx auto, 750rpx auto;
+  margin: 20rpx 0;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 100rpx;
+}
+
+.order-state {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  height: 190rpx;
+  align-items: center;
+}
+
+.order-state .order-state-item {
+  width: 150rpx;
+  height: 150rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.order-state .order-state-item .iconfont {
+  font-size: 50rpx;
+  margin-bottom: 10rpx;
+}
+
+.order-state .order-state-item text {
+  font-size: 24rpx
+}
+
+.tpe-num {
+  position: absolute;
+  top: 26rpx;
+  right: 20%;
+  width: 32rpx;
+  height: 32rpx;
+  background-color: #ff4f13;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.allOrder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.allOrder>text {
+  display: inline-block;
+  color: #353535;
+  font-size: 28rpx;
+}
+
+.allOrder>view {
+  right: 30px;
+  color: #888;
+  font-size: 24rpx;
+}
+
+.allOrder view image {
+  display: inline-block;
+  width: 35rpx;
+  height: 35rpx;
+  margin-top: -3px;
+}
+
+.my-info {
+  display: flex;
+  width: 100%;
+  height: 160rpx;
+}
+
+.my-info .my-info-item {
+  width: 187.5rpx;
+  height: 160rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column
+}
+
+.my-info .my-info-item image {
+  display: block;
+  width: 45rpx;
+  height: 45rpx;
+  margin: 7px auto;
+}
+
+.my-info .my-info-item text {
+  font-size: 24rpx
+}
+
+.my-item image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: -5rpx;
+  margin-right: 15rpx
+}
+
+.eeblok {
+  height: 22rpx;
+  background: #eee;
+  width: 100%;
+}
+
+.icon-Updated {
+  margin-left: 6rpx;
+  vertical-align: middle;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  margin-top: 140rpx;
+}
+
+.button-item {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  font-size: auto !important;
+  border: none !important;
+}

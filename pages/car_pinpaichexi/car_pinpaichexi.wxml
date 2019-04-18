@@ -1,0 +1,55 @@
+<view class="content">
+  <view style="position:relative;height:{{windowHeight}}px ;overflow:hidden">
+    <!--左侧栏-->
+    <scroll-view class="nav_left" scroll-y="true" style="height:{{windowHeight}}px;min-height:1000rpx;">
+      <view style="height:auto;">
+        <block wx:for="{{oneList}}" wx:if="{{item.cityInfo&&item.cityInfo.length>0}}">
+          <!--当前项的id等于item项的id，那个就是当前状态-->
+          <view class="zimu col-888">{{item.initial}}</view>
+          <view wx:for="{{item.cityInfo}}" wx:for-item="itemcar" data-index="{{index}}"
+            class="car-left-item {{itemcar.id == selectOne ? 'active' : ''}}"
+            bindtap="switchRightTab"  data-id="{{itemcar.id}}" data-txt="{{itemcar.name}}" data-url="{{itemcar.url}}">
+            {{itemcar.name}}
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+    <!--右侧栏-->
+    <scroll-view class="nav_right" scroll-y="true" style="height:{{windowHeight}}px;" bindscrolltolower="loadmore">
+      <view style='height:auto;'>
+        <!--如果有数据，才遍历项-->
+        <view wx:if="{{ twoList.length}}">
+          <view class="col-888 pad-30">{{oneText||'热门品牌'}}</view>
+          <block wx:for="{{twoList}}">
+            <view class="car-right-item {{item.id == selectTwo ? 'act-two' : ''}}" data-cname="{{item.name}}" data-id="{{item.id}}" catchtap="twoSelect">
+              <!--界面跳转 -->
+              <view  class="flex nav_right_items">
+                <image wx:if="{{ !item.loaded }}"  mode="aspectFit" class="imagebg" src="{{item.url}}"></image>
+                <!-- <image wx:if="{{ item.loaded }}" mode="aspectFill" class='fadein' src="{{item.url}}"></image> -->
+                
+              </view>
+              <text>{{item.name}}</text>
+            </view>
+          </block>
+        </view>
+        <!--如果无数据，则显示数据-->
+        <view class="nodata_text col-888" wx:else>该车型暂无</view>
+      </view>
+    </scroll-view>
+    <!--三级侧栏-->
+    <scroll-view wx:if="{{threeColumnShow!=0}}" class="three_right ripple {{threeColumnShow==1?'slideInRight':''}}{{threeColumnShow==2?'slideOutRight':''}}" scroll-y="true" style="height:{{windowHeight}}px;min-height:1000rpx;">
+      <view style="height:auto;">
+        <view class="zimu col-888" style="width:100%;">{{twoText||'梅赛德斯-奔驰'}}</view>
+        <block wx:for="{{threeList}}">
+          <!--当前项的id等于item项的id，那个就是当前状态-->
+          <view class="thr-item" data-name="{{item.name}}" data-id="{{item.id}}" catchtap="threeSelect">
+            {{item.name}}
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 引入图片预加载组件 -->
+  <import src="../../components/img-loader/img-loader.wxml"/>
+  <template is="img-loader" data="{{ imgLoadList }}"></template>
+</view>

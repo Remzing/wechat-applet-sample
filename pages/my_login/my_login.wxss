@@ -1,0 +1,198 @@
+/* pages/my_login/my_login.wxss */
+.page{
+  min-height: 100vh;
+}
+.mask{
+  width:100%;
+  height:100%;
+  position:fixed;
+  background-color:#999;
+  z-index:100;
+  top:0;
+  left:0;
+  opacity:0.5;
+  
+}
+input{
+  font-size: 34rpx;
+}
+
+
+.login-btn{
+  color: #ffffff;
+  width: 590rpx;
+	height: 88rpx;
+  font-size: 36rpx;
+  line-height:88rpx;
+  background-color: #494c5b;
+	border-radius: 10rpx;
+  text-align: center;
+  margin: 60rpx auto 54rpx auto;
+}
+/* 已经登录过：输入账号、密码 start*/
+.login-box{
+  width: 650rpx;
+  position:fixed;
+  background-color: #fff;
+  z-index:200;
+  top: 182rpx;
+  left: 50rpx;
+  right: 50rpx;
+}
+.login-box .title{
+  color: #353535;
+  font-size: 40rpx;
+  margin-left: 50rpx;
+  margin-top: 64rpx;
+  margin-bottom: 20rpx;
+}
+.login-once .iconfont,.login-box .iconfont{
+  font-size: 46rpx;
+  color: #494c5b;
+}
+
+
+.forget{
+  color: #888888;
+  font-size: 28rpx;
+  margin-bottom: 58rpx;
+}
+.science{
+  color: #cccccc;
+  font-size: 24rpx;
+  margin-bottom: 30rpx;
+}
+/* 已经登录过：输入账号、密码 end*/
+
+
+.code-go{
+  color: #353535;
+  font-size: 34rpx;
+  margin-left: 40rpx;
+  margin-bottom: 50rpx;
+  margin-top: 30rpx;
+}
+
+.iptbox{
+  width: 95rpx;
+  height: 95rpx;
+  border-style: solid;
+  border-width: 1px 1px 1px 0px;
+  border-color: rgba(235, 235, 235, 0.993);
+  text-align: center;
+  font-size: 30rpx;
+}
+.iptbox-con{
+  border-left: 1px solid rgba(235, 235, 235, 0.993);
+  margin-left: 34rpx;
+  text-align: center;
+  margin-bottom: 42rpx;
+}
+.ipt{
+  width: 0;
+  height: 0;
+}
+.inputSelect{
+  border: solid 1px #f86a05;
+}
+
+.codeInp{
+  width:385rpx !important;
+}
+.code-but{
+  font-size:24rpx  !important;
+  background:#494c5b  !important;
+  color:#fff !important;
+}
+.impower{
+  margin-bottom: 38rpx;
+  background:#fff !important;
+  border:none !important;
+  height:100rpx !important;
+}
+.impower .iconfont{
+  font-size: 70rpx;
+  color: #09bb07;
+  margin-right: 20rpx;
+}
+.impower text{
+  font-size: 36rpx;
+}
+/* 第一次登录：输入手机号、验证码  end*/
+/* 第一次登录：输入手机号、验证码  start*/
+/* .login-once{
+  width: 650rpx;
+  position:fixed;
+  background-color: #fff;
+  z-index:200;
+  top: 240rpx;
+  left: 50rpx;
+  right: 50rpx;
+} */
+.login-once .title .iconfont{
+  font-size: 44rpx;
+  color: #888888;
+}
+.login-once .title text{
+  color: #353535;
+  font-size: 40rpx;
+  margin-left: 20rpx;
+}
+.login-once .title{
+  margin-left: 40rpx;
+  margin-top: 64rpx;
+  padding-bottom: 20rpx;
+  font-size: 40rpx;
+}
+.login-once .again{
+  color: #ff8001;
+  font-size: 24rpx;
+  border: solid 1px #ff8001;
+  width: 135rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  text-align: center;
+  margin-top: 50rpx;
+  margin-right: 42rpx;
+}
+.input-box{
+  border-bottom: solid 1px #dddddd;
+  padding-bottom: 20rpx;
+  padding-left: 14rpx;
+  margin: 52rpx 30rpx 0 30rpx;
+}
+.input-box input{
+  margin-left: 26rpx;
+  width:456rpx;
+}
+.login-btn{
+  color: #ffffff;
+  width: 590rpx;
+	height: 88rpx;
+  font-size: 36rpx;
+  line-height:88rpx;
+  background-color: #494c5b;
+	border-radius: 10rpx;
+  text-align: center;
+  margin: 60rpx auto 54rpx auto;
+}
+.impower{
+  margin-bottom: 38rpx;
+}
+.impower .iconfont{
+  font-size: 70rpx;
+  color: #09bb07;
+  margin-right: 20rpx;
+}
+.impower text{
+  font-size: 36rpx;
+}
+.science{
+  color: #cccccc;
+  font-size: 24rpx;
+  width:100%;
+  text-align:center;
+  display:inline-block;
+  position:absolute;
+  bottom:40rpx;
+}

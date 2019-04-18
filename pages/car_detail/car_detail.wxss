@@ -1,0 +1,88 @@
+page{
+}
+.content{
+
+}
+/*修改轮播  点的样式*/
+.wx-swiper-dot{
+  margin: 0 12rpx !important;
+  width: 20rpx !important; 
+  height: 20rpx !important;
+  background: #e5e5e5 !important;
+  /*background: #000 !important;*/
+  border-radius: 20rpx !important;
+  transition: all .6s !important;
+}
+.wx-swiper-dot.wx-swiper-dot-active{  
+  /* opacity: 1 !important; */
+  background: #ff8001 !important;
+}
+/*  */
+
+
+.info-state{
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 30rpx;
+}
+.info-state>view>view:first-child{
+  font-weight: 700;
+}
+.cheyuechi{
+  font-size: 46rpx;
+  padding: 0 0 0 12rpx;
+}
+.dianchi{
+  color: #ff8001;
+  font-size: 46rpx;
+}
+.info-state>view:nth-child(2){
+	height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 30rpx;
+	background-color: #494c5b;
+  border-radius: 30rpx 0 0 30rpx;
+  color:#fff;
+}
+.imagebg {
+  background-size:70%;
+}
+.xiug{
+  position:fixed;
+  top:30rpx;
+  right:0;
+  height:60rpx;
+  line-height:60rpx;
+  padding:0 30rpx;
+  background-color:#494c5b;
+  opacity: .7;
+  border-radius:30rpx 0 0 30rpx;
+  color:#fff;
+
+}
+.canvas{
+  width: 750rpx;
+  height: 380rpx;
+}
+.icon-touxiang1{
+  font-size:80rpx;
+  color:#ff8001;
+  margin:0 auto;
+}
+.homeic{
+  position: absolute;
+  top: 300rpx;
+  right: 20rpx;
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 100rpx;
+  background: #fff;
+  z-index: 10;
+}
+.homeic .icon-shouye{
+  color: #ff8001;
+  font-size:36rpx;
+}

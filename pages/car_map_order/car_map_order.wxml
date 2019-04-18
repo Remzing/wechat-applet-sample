@@ -1,0 +1,374 @@
+<!--index.wxml-->
+<view style="height:100%;">
+  <!--pages/homepage/index.wxml-->
+  <view class='map-box'>
+    <map id='myMap' latitude='{{latitude}}' longitude='{{longitude}}' markers='{{markers}}' polyline='{{polyline}}' scale='{{scale}}' bindcontroltap='controltap' bindregionchange='regionchange' bindmarkertap='toVisit' show-location>
+
+        <!-- 中心坐标 -->
+        <!-- <cover-image class='map-icon_point' src='/images/point_in_map.png'/> -->
+        <!-- 控件 -->
+        
+        <cover-image bindtap='toKeFu' class='map-icon map-kefu' src='/images/kefu.png'/>
+        <!-- 客服 -->
+        <cover-view class="ctr-kefu">
+          <button type="default-dark" plain open-type="contact" session-from="weapp" class="guest-button">。</button>
+        </cover-view>
+        <cover-image class='map-icon map-icon_user' src='/images/icon-user.png' bindtap='toUser'/>
+        <!-- <cover-image class='map-icon map-icon_reset' src='/images/reset.png' bindtap='toReset'/> -->
+        <!-- 油量，钥匙 -->
+        <cover-view class="yaoshi-kuang" wx:if="{{page==3||page==4}}">
+          <cover-image class='map-biankuang1' src='/assets/imgs/biankuang1.png' bindtap=''/>
+          <cover-image wx:if="{{wcy_msg.key_inside!=1}}" class='map-yaoshi' src='/assets/imgs/yaoshi1.png'/>
+          <cover-image wx:if="{{wcy_msg.key_inside==1}}" class='map-yaoshi' src='/assets/imgs/yaoshi2.png'/>
+          <cover-image wx:if="{{wcy_msg.batt<20}}" class='map-dianc1' src='/assets/imgs/dianc0.png'/>
+          <cover-image wx:if="{{20<=wcy_msg.batt&&wcy_msg.batt<40}}" class='map-dianc1' src='/assets/imgs/dianc1.png'/>
+          <cover-image wx:if="{{40<=wcy_msg.batt&&wcy_msg.batt<60}}" class='map-dianc1' src='/assets/imgs/dianc2.png'/>
+          <cover-image wx:if="{{60<=wcy_msg.batt&&wcy_msg.batt<80}}" class='map-dianc1' src='/assets/imgs/dianc3.png'/>
+          <cover-image wx:if="{{80<=wcy_msg.batt&&wcy_msg.batt<101}}" class='map-dianc1' src='/assets/imgs/dianc4.png'/>
+          <cover-view  class='map-dianctxt'>{{wcy_msg.batt||0}}%</cover-view>
+        </cover-view>
+        <!-- 底部操作栏 page==1 车友 订单完成-->
+        <cover-view class="index-bot" wx:if="{{page==1}}">
+          <cover-view class="flex flex-column-center">
+            <cover-view class="iconfont icon-dui duiicon"></cover-view>
+            <cover-view class="ding-tlt">订单完成</cover-view>
+            <cover-view class="col-888 wanc-txt">您的订单已完成，期待您的下一次光临！</cover-view>
+          </cover-view>
+          <cover-view class="flex car-jishu" style="padding-bottom:14rpx;">
+            <cover-view class="flex jishu-item">
+              <cover-view class="jishu-child1">1.6</cover-view>
+              <cover-view class="jishu-child2">行驶里程</cover-view>
+            </cover-view>
+            <cover-view class="flex jishu-item">
+              <cover-view class="jishu-child1">01:20</cover-view>
+              <cover-view class="jishu-child2">行驶时间</cover-view>
+            </cover-view>
+            <cover-view class="flex jishu-item">
+              <cover-view class="jishu-child1">00:05</cover-view>
+              <cover-view class="jishu-child2">待机时间</cover-view>
+            </cover-view>
+            <cover-view class="flex jishu-item">
+              <cover-view class="jishu-child1">10.6</cover-view>
+              <cover-view class="jishu-child2">费用总计</cover-view>
+            </cover-view>
+          </cover-view>
+          <cover-view class="bot-fei bord-bot">费用明细 ></cover-view>
+          <cover-view class="flex ali-cent just-bet pad-30">
+            <cover-view class="flex ali-cent">
+              <cover-view class="car-nam">丰田 凯美瑞 2.0L</cover-view>
+              <cover-view class="car-pai">粤B·88888</cover-view>
+            </cover-view>
+            <cover-view class="dianh"></cover-view>
+          </cover-view>
+          <cover-view class="flex ali-cent ord-tlt">
+            订单信息
+          </cover-view>
+          <cover-view class="flex ord-itm ali-cent">
+            <cover-view class="ord-left col-888">订单编号</cover-view>
+            <cover-view class="flex ord-right ali-cent">
+              <cover-view class="ord-txt">755656894565</cover-view>
+              <cover-view class="ord-but">复制</cover-view>
+            </cover-view>
+          </cover-view>
+          <cover-view class="flex ord-itm ali-cent">
+            <cover-view class="ord-left col-888">下单时间</cover-view>
+            <cover-view class="flex ord-right ali-cent">
+              <cover-view class="ord-txt">2018/06/27 14:00:20</cover-view>
+            </cover-view>
+          </cover-view>
+          <cover-view class="heng"></cover-view>
+          <cover-view class="flex ali-cent det-tab-item">
+            <cover-view>交车照片核对</cover-view>
+            <cover-view  class="flex ali-cent">
+              <cover-view class="iconfont icon-zuojiantou col-bbb font-30"></cover-view>
+            </cover-view>
+          </cover-view>
+          <cover-view class="flex ali-cent just-bet pad-30">
+            <cover-view class="flex ali-cent nobord-but">
+              <cover-view class="iconfont icon-dui"></cover-view>
+              <cover-view>修改还车地点</cover-view>
+            </cover-view>
+            <cover-view class="bak-btu">确认还车</cover-view>
+          </cover-view>
+
+
+        </cover-view>
+
+        <!-- 底部操作栏 page==2 车主 待共享-->
+        <cover-view class="index-bot2" wx:if="{{page==2}}">
+          <cover-image class="biankuang3" src="/assets/imgs/biankuang3.png"></cover-image>
+          <cover-view class="z-inx10 wid-auto">
+            <!-- 底部操作栏-车辆信息 -->
+            <cover-view class="flex botc-show car-head">
+              <cover-image class='m-bot-img z-inx10' src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'/>
+              <cover-view class="flex car-name">
+                <cover-view class="car-id">粤B·817238</cover-view>
+                <cover-view class="font-26">梅赛德斯-奔驰</cover-view>
+              </cover-view>
+              <cover-view class="flex">
+                <cover-view class="back-f">原地取还</cover-view>
+                <cover-image style="width:80rpx;" class='pos-nom' src='/assets/imgs/zuojt.png'/>
+              </cover-view>
+            </cover-view>
+          </cover-view>
+          <!-- 底部操作栏-车辆路程计费信息2 -->
+          <cover-view class="flex ali-cent jifei wid-auto">            
+            <cover-view class="flex ali-cent">
+              <cover-image class='pos-nom text-img' src='/assets/imgs/dingwei1.png'/>
+              <cover-view>宝安中心D出口</cover-view>
+              <cover-view style="padding:0 20rpx 4rpx;">|</cover-view>
+              <cover-view>距您</cover-view>
+              <cover-view class="col-ff8001">2.2公里</cover-view>
+            </cover-view>
+          </cover-view>
+          <cover-image style="width:710rpx;height:2rpx;margin:0 auto;" class="pos-nom z-inx10" src="/assets/imgs/xian2.png"></cover-image>
+          <cover-view class="flex ali-cent just-bet bot-oper-case z-inx10 wid-auto">
+            <cover-view class="flex ali-cent oper-case z-inx10">
+              <cover-image class="suo-img pos-nom" src="/assets/imgs/suo2.png"></cover-image>
+              <cover-view>解锁</cover-view>
+            </cover-view>
+            <cover-image style="width:2rpx;height:100%;" class=" pos-nom z-inx10" src="/assets/imgs/xian1.png"></cover-image>
+            <cover-view class="flex ali-cent oper-case ">
+              <cover-image class="suo-img pos-nom" src="/assets/imgs/suo2.png"></cover-image>
+              <cover-view>落锁</cover-view>
+            </cover-view>
+            <cover-image style="width:2rpx;height:100%;" class=" pos-nom z-inx10" src="/assets/imgs/xian1.png"></cover-image>
+            <cover-view class="flex ali-cent oper-case" style="border-right: none !important;">
+              <cover-image class="text-img pos-nom" src="/assets/imgs/shez2.png"></cover-image>
+              <cover-view>设置</cover-view>
+            </cover-view>
+          </cover-view>
+        </cover-view>
+        <cover-view class="flex ali-cent hint-bot" wx:if="{{page==2}}">
+          <cover-image class="biankuang2 " src="/assets/imgs/biankuang2.png"></cover-image>
+          <cover-view class="flex ali-cent">
+            <cover-image class="suo-img pos-nom" src="/assets/imgs/laba.png"></cover-image>
+            <cover-view>车辆 </cover-view>
+            <cover-view class="col-ff8001">粤B·88888 </cover-view>
+            <cover-view>待共享</cover-view>
+          </cover-view>
+          <cover-view class="hin-but">取消共享</cover-view>
+        </cover-view>
+
+        <!-- 底部操作栏 page==3 车友 确认用车-->
+        <cover-view class="index-bot3 daohang" wx:if="{{page==3&&carLocal.lon}}">
+          <cover-image class=" daoh-img" src="/assets/imgs/biankuang4.png"></cover-image>
+          <cover-view class="flex ali-cent z-inx10 daohang-cont">
+            <cover-view class="z-inx10">距离目的地{{carLocal.distance_txt}},步行大约{{carLocal.duration_txt}}</cover-view>
+            <cover-view class="flex ali-cent" style="height:100rpx;">
+              <cover-image class="z-inx10 xian-shu" src="/assets/imgs/xian1.png"></cover-image>
+              <cover-view class="flex daoh-rig" bindtap="daohang">
+                <cover-image class="daoimg" src="/assets/imgs/daohang.png"></cover-image>
+                <cover-view  class="z-inx10 col-ff8001 font-20" style="padding-top:40rpx;">导航</cover-view>
+              </cover-view>
+            </cover-view>
+          </cover-view>
+        </cover-view>
+
+        <!-- 底部操作栏 page==4 车友 车辆进行中 我要还车-->
+    </map>
+  </view>
+
+  <view class="previewAd flex flex-align-center" style="height: 400rpx;">
+    <!-- 底部操作栏 page==1 车友 订单完成-->
+    <!-- <view class="index-bot adbox-item" wx:if="{{page==1}}">
+      <view class="flex flex-column-center">
+        <view class="iconfont icon-dui duiicon"></view>
+        <view class="ding-tlt">订单完成</view>
+        <view class="col-888 wanc-txt">您的订单已完成，期待您的下一次光临！</view>
+      </view>
+      <view class="flex car-jishu" style="padding-bottom:14rpx;">
+        <view class="flex jishu-item">
+          <view class="jishu-child1">1.6</view>
+          <view class="jishu-child2">行驶里程</view>
+        </view>
+        <view class="flex jishu-item">
+          <view class="jishu-child1">01:20</view>
+          <view class="jishu-child2">行驶时间</view>
+        </view>
+        <view class="flex jishu-item">
+          <view class="jishu-child1">00:05</view>
+          <view class="jishu-child2">待机时间</view>
+        </view>
+        <view class="flex jishu-item">
+          <view class="jishu-child1">10.6</view>
+          <view class="jishu-child2">费用总计</view>
+        </view>
+      </view>
+      <view class="bot-fei bord-bot">费用明细 ></view>
+      <view class="flex ali-cent just-bet pad-30">
+        <view class="flex ali-cent">
+          <view class="car-nam">丰田 凯美瑞 2.0L</view>
+          <view class="car-pai">粤B·88888</view>
+        </view>
+        <view class="dianh"></view>
+      </view>
+      <view class="flex ali-cent ord-tlt">
+        订单信息
+      </view>
+      <view class="flex ord-itm ali-cent">
+        <view class="ord-left col-888">订单编号</view>
+        <view class="flex ord-right ali-cent">
+          <view class="ord-txt">755656894565</view>
+          <view class="ord-but">复制</view>
+        </view>
+      </view>
+      <view class="flex ord-itm ali-cent">
+        <view class="ord-left col-888">下单时间</view>
+        <view class="flex ord-right ali-cent">
+          <view class="ord-txt">2018/06/27 14:00:20</view>
+        </view>
+      </view>
+      <view class="heng"></view>
+      <view class="flex ali-cent det-tab-item">
+        <view>交车照片核对</view>
+        <view  class="flex ali-cent">
+          <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+        </view>
+      </view>
+      <view class="flex ali-cent just-bet pad-30">
+        <view class="flex ali-cent nobord-but">
+          <view class="iconfont icon-dui"></view>
+          <view>修改还车地点</view>
+        </view>
+        <view class="bak-btu">确认还车</view>
+      </view>
+    </view> -->
+    <!-- 底部操作栏 page==2 车主 待共享-->
+    <!-- 底部操作栏-车辆信息 -->    
+    <!-- <view class="index-bot2 adbox-item" wx:if="{{page==2}}">
+      <view class="z-inx10 wid-auto">
+        <view class="flex botc-show car-head">
+          <image class='m-bot-img z-inx10' src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'/>
+          <view class="flex car-name">
+            <view class="car-id">粤B·817238</view>
+            <view class="font-26">梅赛德斯-奔驰</view>
+          </view>
+          <view class="flex">
+            <view class="back-f">原地取还</view>
+            <image style="width:80rpx;" class='pos-nom' src='/assets/imgs/zuojt.png'/>
+          </view>
+        </view>
+      </view>
+      <view class="flex ali-cent jifei wid-auto">            
+        <view class="flex ali-cent">
+          <image class='pos-nom text-img' src='/assets/imgs/dingwei1.png'/>
+          <view>宝安中心D出口</view>
+          <view style="padding:0 20rpx 4rpx;">|</view>
+          <view>距您</view>
+          <view class="col-ff8001">2.2公里</view>
+        </view>
+      </view>
+      <image style="width:710rpx;height:2rpx;margin:0 auto;" class="pos-nom z-inx10" src="/assets/imgs/xian2.png"></image>
+      <view class="flex ali-cent just-bet bot-oper-case z-inx10 wid-auto">
+        <view class="flex ali-cent oper-case z-inx10">
+          <image class="suo-img pos-nom" src="/assets/imgs/suo2.png"></image>
+          <view>解锁</view>
+        </view>
+        <image style="width:2rpx;height:100%;" class=" pos-nom z-inx10" src="/assets/imgs/xian1.png"></image>
+        <view class="flex ali-cent oper-case ">
+          <image class="suo-img pos-nom" src="/assets/imgs/suo2.png"></image>
+          <view>落锁</view>
+        </view>
+        <image style="width:2rpx;height:100%;" class=" pos-nom z-inx10" src="/assets/imgs/xian1.png"></image>
+        <view class="flex ali-cent oper-case" style="border-right: none !important;">
+          <image class="text-img pos-nom" src="/assets/imgs/shez2.png"></image>
+          <view>设置</view>
+        </view>
+      </view>
+    </view>
+    <view class="flex ali-cent hint-bot" wx:if="{{page==2}}">
+      <image class="biankuang2 " src="/assets/imgs/biankuang2.png"></image>
+      <view class="flex ali-cent">
+        <image class="suo-img pos-nom" src="/assets/imgs/laba.png"></image>
+        <view>车辆 </view>
+        <view class="col-ff8001">粤B·88888 </view>
+        <view>待共享</view>
+      </view>
+      <view class="hin-but">取消共享</view>
+    </view> -->
+
+    <!-- 底部操作栏 page==3 车友/亲情号 确认用车-->
+    
+    <view class="index-bot2 adbox-item" wx:if="{{page==3}}">
+      <view class="flex ali-cent z-inx10 font-26" style="padding:30rpx 0 30rpx 10rpx;">
+        <image class="suo-img pos-nom z-inx10" src="/assets/imgs/laba.png"></image>
+        <view wx:if="{{infoData.user_info.real_name_txt}}" class="z-inx10"> 车主"{{infoData.user_info.real_name_txt}}"授权 </view>
+        <view wx:if="{{!infoData.user_info.real_name_txt}}" class="z-inx10"> 车主授权 </view>
+        <view class="col-ff8001 z-inx10"> {{infoData.user_info.license_number}} </view>
+        <view class="z-inx10"> 给你使用！</view>
+        <view bindtap="uploadVid" wx:if="{{maintenance_id||expressuse_id}}" style='padding:6rpx 10rpx;background:#ff8001;color:#fff;border-radius:10rpx;display:inline-block;'>上传视频</view>
+      </view>
+      
+        
+      <!-- 底部操作栏-车辆图片显示 -->
+      <view bindtap='goCheckImg' class="flex ali-cent" style="padding: 0 10rpx 30rpx;height:100rpx;position:relative;">
+        <view>
+          <block wx:for="{{infoData.car_info}}" wx:if="{{index<4}}">
+            <image class="car-m-img" style="left:50rpx;" src="{{item.car_image}}"></image>
+          </block>
+        </view>
+        <!-- <view class="flex zuoyou_tab" wx:if="{{infoData.car_info.length>4}}">
+          <view class="tab_jiantou iconfont icon-zuojiantou" ></view>
+        </view> -->
+      </view>
+      <!-- <view class="flex ali-cent just-bet" style="padding:0 30rpx 20rpx;color: #888;" wx:if="{{kinshipuse_id}}">
+        <view class="flex ali-cent" data-lat="{{carLocal.lat}}" data-lon="{{carLocal.lon}}" data-name="{{carLocal.name}}" bindtap="daohang">
+          <view class='iconfont icon-dingwei1'></view>
+          <view>{{carLocal.name||'获取位置出错'}}</view>
+        </view>
+      </view> -->
+      <view class="flex ali-cent just-bet bot-oper-case z-inx10 wid-auto" style="height: 100rpx;">
+        <view class="flex ali-cent oper-case z-inx10 bord-right" data-phone="{{infoData.user_info.phone}}" bindtap='callPhone'>
+          <image class="suo-img pos-nom" src="/assets/imgs/dianhua.png"></image>
+          <view class="col-555">寻车</view>
+        </view>
+        <view class="flex ali-cent oper-case bord-right" bindtap="goUnlock" data-path="/pages/car_map_order/car_map_order" data-page="4">
+          <image class="suo-img pos-nom" src="/assets/imgs/suo1.png"></image>
+          <view class="col-555">解锁</view>
+        </view>
+        <view class="flex ali-cent oper-case" style="border-right: none !important;" bindtap="goCancel" data-path="/pages/car_cancelorder/car_cancelorder">
+          <image class="text-img pos-nom" src="/assets/imgs/guanbi.png"></image>
+          <view class="col-555">取消</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 底部操作栏 page==4 车友/亲情号 车辆进行中 我要还车-->
+    <view class="index-bot2 adbox-item" wx:if="{{page==4}}">
+      <view class="flex ali-cent just-bet" style="padding:30rpx;" wx:if="{{order_id}}">
+        <view class="flex ali-cent z-inx10 font-26" >
+          <view class="suo-img pos-nom iconfont icon-gantanhao1 col-ff8001" ></view>
+          <view class="z-inx10"> 距离还车时间还有 </view>
+          <view class="col-ff8001 z-inx10">
+            <text decode="{{true}}" space="{{true}}">&nbsp;</text>
+            {{rent_time_txt||"00:00:00"}} </view>
+        </view>
+        <view data-page="10" bindtap='goWenben'>超时计价规则></view>
+      </view>
+      <view class="flex ali-cent just-bet" style="padding:30rpx;" wx:if="{{kinshipuse_id}}">
+        <view class="flex ali-cent z-inx10 font-26" >
+          <view class="suo-img pos-nom iconfont icon-gantanhao1 col-ff8001" ></view>
+          <view class="col-ff8001 z-inx10">
+            亲情号授权使用 </view>
+        </view>
+      </view>
+      <view bindtap="uploadVid" wx:if="{{maintenance_id||expressuse_id}}" style='margin-left:30rpx;margin-bottom:30rpx;padding:6rpx 10rpx;background:#ff8001;color:#fff;border-radius:10rpx;display:inline-block;'>上传视频</view>
+      <view class="flex ali-cent just-bet bot-oper-case z-inx10 wid-auto"style="padding: 20rpx;">
+        <view class="flex ali-cent oper-case z-inx10 bord-right" data-phone="{{infoData.user_info.phone}}" bindtap='callPhone' style="flex:1;height:90rpx;">
+          <view class="col-555">联系</view>
+        </view>
+        <view class="flex ali-cent oper-case " bindtap="goWaitlock" data-path="/pages/car_map_order/car_map_order" data-page="2"  style="flex:1;height:90rpx;">
+          <view wx:if="{{lockFlag===0||lockFlag==='0'}}" class="col-555">待机落锁</view>
+          <view wx:if="{{lockFlag==1}}" class="col-555">行车解锁</view>
+          <view wx:if="{{lockFlag==2}}" class="col-555">订单未结算</view>
+        </view>
+        
+        <view class="flex ali-cent oper-case"  style="flex:2" bindtap="backCar" data-path="/pages/car_cancelorder/car_cancelorder">
+          <view class="bak-btu">{{lockFlag==2?'结算订单':'我要还车'}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+</view>

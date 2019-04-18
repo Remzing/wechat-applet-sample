@@ -1,0 +1,8 @@
+<view class="content">
+  <view class="flex flex-cent err-clk fullscreen fadein" data-full="1" style="{{contheight? ('height:'+contheight) : ''}}" bindtap="refresh">
+      <view class="iconfont icon-suoyichang"> </view>
+      <view class="err-pad1">锁车失败</view>
+      <view class="err-pad">请检查钥匙是否放回正确的位置</view>
+      <button type="default" hover-class="defaultTap" catchtap="refresh">返回</button>
+    </view>
+</view>

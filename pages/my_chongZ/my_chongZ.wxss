@@ -1,0 +1,18 @@
+/* pages/my_chongZ/my_chongZ.wxss */
+page{
+  background-color: #f4f6f7;
+}
+.up-box{
+  height: 156rpx;
+  line-height: 156rpx;
+  background-color: #fff;
+}
+.up-box text{
+  font-size: 60rpx;
+  padding-left: 10rpx;
+  padding-right: 40rpx;
+}
+.btn{
+  width: 690rpx;
+  margin: 940rpx auto 0 auto;
+}

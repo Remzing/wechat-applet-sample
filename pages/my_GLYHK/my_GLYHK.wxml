@@ -1,0 +1,18 @@
+<!--pages/my_GLYHK/my_GLYHK.wxml-->
+<view class='content'>
+  <view class='item-box' wx:for="{{bankList}}" wx:key="index">
+    <view class="card-item {{item.txtStyle=='true' ? 'txtStyleFalse':'txtStyleTrue'}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE"  data-index="{{index}}">
+      <view class='bank'>{{item.bank}}</view>
+      <view class='names'>{{item.bank_user_name}}</view>
+      <view class='card-num'>{{item.bank_number}}</view>
+    </view>
+    <view class='handle flex-box-start-top'>
+      <view class='edit' data-id="{{item.id}}" catchtap='toyinHKGL'>编辑</view>
+      <view class='delect' data-id="{{item.id}}" catchtap='detBank'>删除</view>
+    </view>
+  </view>
+  <view class='addCard' catchtap='toyinHKGL'>
+    <icon class='iconfont icon-jiahao'></icon>添加银行卡
+  </view>
+  <view wx:if="{{bankList.length}}" class='record' catchtap='totiXJL'>提现记录</view>
+</view>

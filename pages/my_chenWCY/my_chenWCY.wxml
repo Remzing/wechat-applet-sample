@@ -1,0 +1,14 @@
+<!--pages/my_chenWCY/my_chenWCY.wxml-->
+<view class='content-box'>
+  <view class='reflex flex-box-start-top' wx:for="{{menuTitle}}" wx:key="index">
+    <view class='left-item' catchtap='topShow' data-index="{{index}}">
+      <view class='left-cen' >{{item.column_name}}</view>
+      <icon  class="iconfont {{item.isShow ? 'icon-sanjiao3-copy-copy':'icon-sanjiao3-copy' }}"></icon>
+    </view>
+    <view class='right-item' >
+      <view class='right-cen' data-id='{{item.id}}'  catchtap='towenTiXQ' wx:for="{{item.serviceContentList}}" wx:key="index">{{item.title}}</view>
+    </view>
+  </view>
+</view>
+
+

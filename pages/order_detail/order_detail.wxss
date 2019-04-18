@@ -1,0 +1,53 @@
+page{
+  font-size: 28rpx;
+}
+
+.pad-30{
+  padding: 0 30rpx;
+}
+.yugu{
+  height: 110rpx;
+  
+  align-items: center;
+  justify-content: space-between;
+}
+.icon-dui, .icon-select_normat{
+  font-size: 38rpx;
+}
+.icon-dui{
+  color: #ff8001;
+}
+.icon-select_normat{
+  color: #b2b2b2;
+}
+.reason-item{
+  height: 106rpx;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.res-cont>view:last-child{
+  /* border-bottom: none; */
+}
+.qieh{
+  width:auto;
+padding:0 30rpx;
+
+}
+.ste .iconfont{
+  font-size:130rpx;
+  margin-bottom:10rpx;
+  color:#ff8001;
+
+}
+.dianh{
+  width: 64rpx;
+	height: 64rpx;
+  line-height: 64rpx;
+  border-radius: 40rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color:#666;
+	background-color: #fbfafc;
+	border: solid 1px #d6d5d6;
+}

@@ -1,0 +1,49 @@
+<view class="content">
+  <view class="flex car-head">
+    <view class="car-img"><image src="{{car_info.car_image}}" /></view>
+    <view class="flex car-name">
+      <view class="flex car-id">{{car_info.license_number}}</view>
+      <view>{{car_info.car_series_one||""}}{{car_info.car_series_two||""}}</view>
+    </view>
+  </view>
+  <view wx:if="{{page!=2}}">
+    <view class="flex can-tlt" >预估车费</view>
+    <view class="flex yugu pad-30">
+      <view>预定费</view><view>{{reservation_fee}}元</view>
+    </view>
+    <view class="flex can-tlt" ><view>取消原因</view><view  data-page="11" bindtap='goWenben'>查看取消规则 ></view> </view>
+    <view class="pad-30 res-cont">
+      <view class="flex reason-item" wx:for="{{reasonList}}" wx:key="id" data-content="{{item.content}}" data-id="{{item.id}}" bindtap="selectRes">
+        <view>{{item.content}}</view>
+        <view class="iconfont  {{item.id==active?'icon-dui':'icon-select_normat'}}"></view>
+      </view>
+      <textarea style="width:100%;margin:30rpx 0 120rpx 0;" value="{{cancel_reason}}"  bindinput="nameInput" disabled="{{active==4000}}" placeholder="输入你取消的原因，你的意见对我们很重要，以便下次你使用的时候享受更好的服务" />
+    </view>
+    <view class="bot-one-but">
+      <button type="default" size="defaultSize" loading="" plain="plain}" bindtap="goPageConf" hover-class="defaultTap">提交</button>
+    </view>
+  </view>
+  <view wx:if="{{page==2}}">
+    <view class="flex can-tlt" >车费</view>
+    <view class="flex yugu pad-30">
+      <view>总费用</view><view>{{order_info.total_fee}}元</view>
+    </view>
+    <view class="bot-fei bord-bot" bindtap="goFeeMinx">费用明细 ></view>
+
+    <view class="flex can-tlt" ><view>订单信息</view><view></view> </view>
+    <view class="pad-30 res-cont">
+      <view class="flex reason-item">
+        <view>订单编号</view>
+        <view>{{order_info.order_number}}</view>
+      </view>
+      <view class="flex reason-item">
+        <view>下单时间</view>
+        <view>{{order_info.create_time}}</view>
+      </view>
+    </view>
+    <view class="bot-one-but">
+      <button type="default" size="defaultSize" loading="" plain="plain}" bindtap="payFeeConf" hover-class="defaultTap">提交</button>
+    </view>
+  </view>
+  
+</view>

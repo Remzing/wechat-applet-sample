@@ -1,0 +1,25 @@
+<view class="content">
+  <view class="flex car-head">
+    <view class="car-img"><image src="../../assets/imgs/car_1.png" /></view>
+    <view class="flex car-name">
+      <view class="flex car-id">粤B·88888</view>
+      <view>英朗·15T系列·92(93)号汽油</view>
+    </view>
+  </view>
+  <view class="flex car-jishu" style="justify-content:space-around;">
+    <view class="flex">
+      <view>22</view>
+      <view>共享/次</view>
+    </view>
+    <view class="flex">
+      <view>48</view>
+      <view>时长/小时</view>
+    </view>
+    <view class="flex">
+      <view style="color:#ff8001 !important;">3,000.00</view>
+      <view>总收益/元</view>
+    </view>
+  </view>
+  <view class="heng"> </view>
+  <canvas canvas-id="areaCanvas" style="height:600rpx;width:100%;margin-top:100rpx;"  disable-scroll="true" class="canvas"></canvas>
+</view>

@@ -1,0 +1,8 @@
+<!--pages/my_guanYW/my_guanYW.wxml-->
+<form bindsubmit="bindFormSubmit">
+  <view class="textarea-wrp">
+    <input disabled='{{disWcy}}' class="Inp" value="{{name}}" bindinput="codeInput" placeholder-style="color: #333;" placeholder="请输入五车仪序列号" type="" auto-focus  />
+  </view>
+  <button wx:if="{{!disWcy}}" formType="submit" class='btn'>绑定五车仪</button>
+  <button wx:if="{{disWcy}}" bindtap='jiechuHandle' class='btn'>解除五车仪绑定</button>
+</form>

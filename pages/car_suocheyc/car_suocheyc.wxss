@@ -1,0 +1,7 @@
+page{
+  background-color: #f2f4f5;
+}
+.icon-suoyichang{
+  font-size: 212rpx;
+  margin: 70rpx 0 -30rpx;
+}

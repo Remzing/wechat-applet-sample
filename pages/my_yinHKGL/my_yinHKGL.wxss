@@ -1,0 +1,39 @@
+/* pages/my_yinHKGL/my_yinHKGL.wxss */
+page{
+  background-color: #f0f0f0;
+}
+.placeholder-txt{
+  color: #bbbbbb;
+  font-size: 28rpx;
+  text-align: right;
+}
+.inputview .names{
+  color: #353535;
+  font-size: 28rpx;
+}
+.inputview input{
+  text-align: right;
+}
+.inputview:first-child{
+  border-top: none !important;
+}
+.inputview{
+  padding: 0 30rpx;
+  border-top: 1px solid #e5e5e5;
+  height: 99rpx;
+  line-height: 99rpx;
+}
+.card{
+  background-color: #fff;
+}
+.btn{
+  width: 690rpx;
+  margin: 40rpx auto 500rpx auto;
+}
+.mark{
+  height: 90rpx;
+  line-height: 90rpx;
+  padding-left: 30rpx;
+  color: #888888;
+  font-size: 26rpx;
+}

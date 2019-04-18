@@ -1,0 +1,64 @@
+/* pages/my_xiTSZ/my_xiTSZ.wxss */
+page{
+  background-color: #f4f6f7;
+}
+.item:last-child{
+  border-bottom: none;
+}
+.item:nth-child(2n){
+  margin-bottom: 20rpx;
+  border-bottom: none;
+}
+.item{
+  height: 108rpx;
+  line-height: 108rpx;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 30rpx;
+  background-color: #fff;
+}
+.item .item-title{
+  font-size: 28rpx;
+  color: #353535;
+}
+.right-item .right-img, .right-img image{
+  width: 70rpx;
+	height: 70rpx;
+  border-radius: 50%;
+}
+.right-item .right-txt{
+  color: #888888;
+  font-size: 28rpx;
+}
+.right-item .iconfont{
+  color: #bbbbbb;
+  font-size: 30rpx;
+  margin-left: 10rpx;
+}
+.item-box{
+  margin-top: 20rpx;
+}
+.btn{
+  width: 690rpx;
+  margin: 70rpx auto;
+}
+.personal-img{
+  height: 350rpx;
+  line-height: 350rpx;
+	background-color: #494c5b;
+  text-align: center;
+}
+.head-img{
+  width: 270rpx;
+	height: 270rpx;
+  background-color: #ffffff;
+  border-radius: 50%;
+  overflow:hidden;
+}
+.personal-img image{
+  width: 270rpx;
+  height: 270rpx;
+}
+.bord-1{
+  border-bottom: 1px solid #e5e5e5;
+
+}

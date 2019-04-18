@@ -1,0 +1,51 @@
+<view class="content">
+  <view class="flex ping-head">
+    <view>老司机们的评分</view>
+    <view class="flex ali-cent">
+      <view class="col-ff8001" wx:if="{{starNum==5}}" >5.0分</view>
+      <view class="col-ff8001" wx:if="{{starNum==4}}" >4.0分</view>
+      <view class="col-ff8001" wx:if="{{starNum==3}}" >3.0分</view>
+      <view class="col-ff8001" wx:if="{{starNum==2}}" >2.0分</view>
+      <view class="col-ff8001" wx:if="{{starNum==1}}" >1.0分</view>
+      <view class="flex star-case">
+        <view bindtap="selStar" data-num="1" class="iconfont icon-xingxing {{starNum>0?'col-ff8001':'col-bbb'}}"></view>
+        <view bindtap="selStar" data-num="2" class="iconfont icon-xingxing {{starNum>1?'col-ff8001':'col-bbb'}}"></view>
+        <view bindtap="selStar" data-num="3" class="iconfont icon-xingxing {{starNum>2?'col-ff8001':'col-bbb'}}"></view>
+        <view bindtap="selStar" data-num="4" class="iconfont icon-xingxing {{starNum>3?'col-ff8001':'col-bbb'}}"></view>
+        <view bindtap="selStar" data-num="5" class="iconfont icon-xingxing {{starNum>4?'col-ff8001':'col-bbb'}}"></view>
+      </view>
+    </view>
+  </view>
+  <view class="heng"></view>
+  <view class="flex ping-tab">
+    <view class="tab-act">全部({{pingData.length}})</view>
+    <!--<view>好评(7)</view>
+    <view>差评(1)</view>-->
+  </view>
+  <view class="ping-onemsg" wx:for="{{pingData}}">
+    <view class="flex pad-30" style="padding-bottom:6rpx;">
+      <view class="zuche-img"><image class="imagebg" src="{{item.user_photo}}" /></view>
+      <view class="flex zuche-name">
+        <view class="flex zuche-id">{{item.phone}}</view>
+        <view class="col-888">{{item.create_time}}</view>
+      </view>
+    </view>
+    <view class="pinglun">
+      <image class="yuanj" src="/assets/imgs/yjiao.png" />
+      <text>{{item.content}}</text>
+    </view>
+  </view>
+  <!--<view class="bord-bot">
+    <view class="flex pad-30" style="padding-bottom:6rpx;">
+      <view class="zuche-img"><image src="/assets/imgs/toux_1.png" /></view>
+      <view class="flex zuche-name">
+        <view class="flex zuche-id">135****9578</view>
+        <view class="col-888">2018.06.20 18:00</view>
+      </view>
+    </view>
+    <view class="pinglun">
+      <image class="yuanj" src="/assets/imgs/yjiao.png" />
+      <text>不错，下次还找他！！！</text>
+    </view>
+  </view>-->
+</view>

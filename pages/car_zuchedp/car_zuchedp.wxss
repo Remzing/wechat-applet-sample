@@ -1,0 +1,41 @@
+page{
+}
+.zuche-info{
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dianh{
+  width: 64rpx;
+	height: 64rpx;
+  line-height: 64rpx;
+  border-radius: 40rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color:#666;
+	background-color: #fbfafc;
+	border: solid 1px #d6d5d6;
+}
+.ali-cen{
+  align-items: center;
+}
+.pinf{
+  font-size: 24rpx;
+  color: #ff8001;
+  padding: 14rpx 0 0 16rpx;
+}
+/*  */
+
+.star-case{
+  padding: 40rpx 30rpx 26rpx;
+}
+
+.pinf-text{
+  padding: 0 30rpx 20rpx;
+  font-size: 28rpx;
+}
+.pinf-text>view>text:first-child{
+  margin-right: 12rpx;
+}

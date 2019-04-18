@@ -1,0 +1,107 @@
+<view class="content">
+  <view class="flex car-head">
+    <view class="car-img"><image src="{{car_info.car_image}}" /></view>
+    <view class="flex car-name">
+      <view class="flex car-id">{{car_info.license_number}}</view>
+      <view>{{car_info.car_series_one||""}}{{car_info.car_series_two||""}}</view>
+    </view>
+  </view>
+  <view class="flex ali-cent just-bet" style="padding:30rpx;">
+    <view class="flex ali-cent z-inx10 font-26" >
+      <view class="suo-img pos-nom iconfont icon-gantanhao1 col-ff8001" ></view>
+      <view class="z-inx10"> 当前计费如下，如不落锁结算，系统将继续计费 </view>
+    </view>
+    <view class="iconfont icon-refresh" bindtap='refreshFee'></view>
+  </view>
+  <view class="flex car-jishu">
+    <view class="flex">
+      <view>{{order.distance}}</view>
+      <view>行驶里程</view>
+    </view>
+    <view class="flex">
+      <view>{{order.time_txt}}</view>
+      <view>行驶时间</view>
+    </view>
+    <view class="flex">
+      <view>{{order.await_time_txt}}</view>
+      <view>待机时间</view>
+    </view>
+    <view class="flex">
+      <view>{{order.total_fee}}</view>
+      <view>费用总计</view>
+    </view>
+  </view>
+  <view class="bot-fei bord-bot" bindtap="goFeeMinx">费用明细 ></view>
+   <!-- page=1 确认还车 -->
+  <view wx:if="{{page==1}}">
+    <view class="flex fee-title back-col1">
+      <view>外观检查（免责条款）</view>
+    </view>
+    <view bindtap='goCheckImg' class="flex ali-cent" style="padding: 0 50rpx 30rpx;height:100rpx;position:relative;">
+      <view>
+        <block wx:for="{{car_image}}">
+          <image class="car-m-img" style="left:50rpx;" src="{{item.image}}"></image>
+        </block>
+      </view>
+      <view class="flex zuoyou_tab" wx:if="{{infoData.car_info.length>4}}">
+        <view class="tab_jiantou iconfont icon-zuojiantou" ></view>
+      </view>
+    </view>
+    <view class="flex ali-cent just-bet" style="padding:30rpx;">
+      <view class="flex ali-cent z-inx10 font-26" >
+        <!-- <view class="suo-img pos-nom iconfont icon-dingwei1 col-ff8001" ></view>
+        <view class="z-inx10"> 距离还车点还有{{}}公里 </view> -->
+      </view>
+      <view class="" data-page="12" bindtap='goWenben'>还车附加费规则 ></view>
+    </view>
+    <view class="flex comf-but">
+      <button class="but-cancel" type="default"  plain="plain" bindtap="goBack" hover-class="defaultTap" style="text-align:center;width:200rpx !important;height:86rpx!important;line-height:82rpx!important;">
+        <view class="flex ali-cent">
+          <view class="iconfont icon-fanhui"></view>
+          <view>返回</view>
+        </view>
+      </button>
+      <button class="but-sure" type="default" plain="plain" bindtap="conf" hover-class="defaultTap" style="width:430rpx !important;">确定落锁还车</button>
+    </view>
+  </view>
+  <!-- page=2 订单完成 -->
+  <view wx:if="{{page==2}}">
+    <view class="flex fee-title back-col1">
+      <view>订单信息</view>
+    </view>
+    <view class="flex ord-itm ali-cent">
+      <view class="ord-left col-888">订单编号</view>
+      <view class="flex ord-right ali-cent">
+        <view class="ord-txt">{{order.order_number}}</view>
+        <view class="ord-but" data-txt="{{order.order_number}}" bindtap="copyTxt">复制</view>
+      </view>
+    </view>
+    <view class="flex ord-itm ali-cent">
+      <view class="ord-left col-888">下单时间</view>
+      <view class="flex ord-right ali-cent">
+        <view class="ord-txt">{{order.create_time}}</view>
+      </view>
+    </view>
+    <view class="flex ord-itm ali-cent">
+      <view class="ord-left col-888">还车时间</view>
+      <view class="flex ord-right ali-cent">
+        <view class="ord-txt">{{order.end_time}}</view>
+      </view>
+    </view>
+    <view class="flex ord-itm ali-cent">
+      <view class="ord-left col-888">支付方式</view>
+      <view class="flex ord-right ali-cent">
+        <view class="ord-txt">微信支付</view>
+      </view>
+    </view>
+    <view class="flex comf-but">
+      <button class="but-cancel" type="default"  plain="plain" bindtap="goIndex" hover-class="defaultTap" style="text-align:center;width:240rpx !important;height:86rpx!important;line-height:82rpx!important;">
+        <view class="flex ali-cent">
+          <view class="iconfont icon-fanhui"></view>
+          <view>再来一单</view>
+        </view>
+      </button>
+      <button class="but-sure" type="default" plain="plain" bindtap="goPingj" hover-class="defaultTap" style="width:430rpx !important;">共享车评价</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+page{
+}
+.xiaots{
+  padding: 26rpx 30rpx;
+  font-size: 24rpx;
+}
+.shili-tlt{
+  padding: 30rpx 30rpx 20rpx;
+}
+.shili-cont{
+  padding: 0 30rpx 30rpx;
+}

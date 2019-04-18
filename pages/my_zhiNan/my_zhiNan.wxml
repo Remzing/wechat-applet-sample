@@ -1,0 +1,8 @@
+<view class="content">
+  <navigator class="flex ali-cent det-tab-item" hover-class="navigator-hover" wx:for="{{infoData}}" wx:key="{{index}}" bindtap="goDetail" data-path="/pages/my_zhiNanXQ/my_zhiNanXQ" data-img="{{item.img}}" data-minimg="{{item.min_img}}">
+    <view>{{item.name}}</view>
+    <view  class="flex ali-cent">
+      <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+    </view>
+  </navigator>
+</view>

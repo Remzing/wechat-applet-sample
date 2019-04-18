@@ -1,0 +1,10 @@
+.content{
+  padding: 30rpx 20rpx 0;
+  flex-wrap: wrap;
+}
+.det-tab-item>view:first-child{
+  width: 640rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

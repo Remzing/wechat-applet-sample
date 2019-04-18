@@ -1,0 +1,15 @@
+/* pages/my_GSJS/my_GSJS.wxss */
+@import "/wxParse/wxParse.wxss";
+page{
+  background-color: #fff;
+  font-size: 28rpx;
+  line-height: 55rpx;
+  color: #353535;
+}
+.content{
+  padding: 30rpx;
+  border-top: 1px solid #eee;
+}
+image{
+  max-width: 100%;
+}

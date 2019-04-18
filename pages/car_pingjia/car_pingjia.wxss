@@ -1,0 +1,32 @@
+page{
+}
+.ping-head{
+  height: 110rpx;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+}
+.star-case{
+  margin-left: 10rpx;
+}
+.ping-tab{
+  padding: 30rpx;
+}
+.ping-tab>view{
+  padding: 14rpx 24rpx;
+	background-color: #ffffff;
+	border-radius: 80rpx;
+  border: solid 1rpx #ff8001;
+  color: #ff8001;
+  margin-right: 20rpx;
+  box-sizing: border-box;
+}
+.tab-act{
+  background-color: #ff8001 !important;
+  color: #ffffff !important;
+}
+.icon-touxiang1{
+  font-size:80rpx;
+  color:#ff8001;
+  margin:0 auto;
+}

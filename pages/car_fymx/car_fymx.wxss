@@ -1,0 +1,46 @@
+page{
+}
+.fee-car-info{
+  padding:30rpx;
+}
+.fee-car-info image{
+  width: 200rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+}
+.fee-car-txt{
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 28rpx;
+
+}
+.fee-car-txt>view:first-child{
+  width: 176rpx;
+	height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-weight: 700;
+	background-color: #f1f1f1;
+	border-radius: 5rpx;
+  border: solid 1rpx #dddddd;
+  
+}
+
+.fee-title{
+  height: 90rpx;
+  padding: 0 30rpx;
+}
+.fee-item{
+  height: 72rpx;
+  padding: 0 30rpx;
+}
+.fee-title, .fee-item{
+  justify-content: space-between;
+  align-items: center; 
+}
+.back-col1{
+  background-color: #f4f6f7;
+}
+.back-col2{
+  background-color: #eef1f2;
+}

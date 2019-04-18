@@ -1,0 +1,13 @@
+<view>
+  <!-- <button bindtap="openBluetoothAdapter">获取数据</button> -->
+  <button style='margin:100rpx 0;' bindtap="openLock">开锁</button>
+
+  <scroll-view class="device_list" scroll-y scroll-with-animation>
+    <view wx:for="{{chs}}" wx:key="index" style="font-size: 12px; margin-top: 10px;">
+      <view>特性UUID: {{item.uuid}}</view>
+      <view>特性值: {{item.value}}</view>
+      <view>字符串: {{item.str}}</view>
+      
+    </view>
+  </scroll-view>
+</view>

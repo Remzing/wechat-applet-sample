@@ -1,0 +1,79 @@
+/* pages/my_tiXian/my_tiXian.wxss */
+page{
+  background-color: #f4f6f7;
+}
+.content{
+  /* background-color: #ffffff; */
+  border-radius: 10rpx;
+  margin: 30rpx;
+  padding-bottom: 50rpx;
+  min-height: 80vh;
+}
+.top-box{
+  background-color: #fbfbfb;
+  padding-top: 40rpx;
+  padding-bottom: 47rpx;
+}
+.top-box .bank{
+  font-size: 28rpx;
+  color: #353535;
+  padding-left: 30rpx;
+  margin-right: 28rpx;
+}
+.bank-time{
+  width:442rpx;
+}
+.top-box .bank-time .card{
+  color: #353535;
+  font-size: 34rpx;
+  margin-bottom: 14rpx;
+  margin-right: 170rpx;
+}
+.top-box .bank-time .time{
+  color: #888888;
+  font-size: 28rpx;
+}
+.top-box .iconfont{
+  font-size: 26rpx;
+  color: #bbbbbb;
+}
+.money{
+  background:#fff;
+  padding-bottom: 30rpx;
+}
+.money-num{
+  border-bottom: 1px solid #eee;
+  margin: 0 30rpx;
+  padding-bottom: 20rpx;
+}
+.money-num .tips{
+  font-size: 60rpx;
+  padding-right: 30rpx;
+  margin-left: -12rpx;
+}
+.money .title{
+  margin-bottom: 40rpx;
+  font-size: 34rpx;
+  margin-left: 34rpx;
+  padding-top: 40rpx;
+}
+.recordBottom{
+  text-align: center;
+  text-decoration: underline;
+}
+.drawal{
+  margin-top: 36rpx;
+  font-size: 28rpx;
+  color: #888888;
+  margin-bottom: 50rpx;
+  padding-left: 30rpx;
+}
+.all-num{
+  color: #ff8001;
+  margin-left: 24rpx;
+}
+.btn{
+  width: 630rpx;
+  margin: 0 auto;
+
+}

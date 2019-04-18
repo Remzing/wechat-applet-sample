@@ -1,0 +1,9 @@
+<!--页面加载以及断网重连表现形式-->
+<import src="../../components/page_state/index.wxml" />
+<template is="pageState" data="{{...pageState}}" ></template>
+
+<view wx:if="{{pageState.state=='finish'}}" class="content">
+  <view>
+    正文内容
+  </view>
+</view>

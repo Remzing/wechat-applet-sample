@@ -1,0 +1,125 @@
+Page{
+    width: 100%;
+    height: unset;
+    background-color: #f4f6f7;
+}
+
+.we-container{
+    width: 100%;
+    height: 100%;
+}
+
+.we-container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.we-wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    -ms-transition-property: -ms-transform;
+    transition-property: transform;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.we-container-vertical>.we-wrapper {
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.we-slide {
+    -webkit-flex-shrink: 0;
+    -ms-flex: 0 0 auto;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.previewAd{
+    height: 790rpx;
+    background-color: #f4f6f7;
+    margin: 124rpx 0 40rpx;
+}
+.previewAd swiper{
+    height: 100%;
+}
+.tiaozhuan{
+  position: absolute;
+  top: 16rpx;
+  right: 16rpx;
+  color: #ddd;
+  background-color: rgba(187, 187, 187, 0.7);
+  padding: 4rpx 10rpx;
+  border-radius: 50rpx;
+  font-size: 24rpx;
+}
+.ad-item{
+    /* width: 600rpx;
+	height: 730rpx; */
+  position: relative;
+	background-color: #ffffff;
+	box-shadow: 0px 5rpx 4rpx 0px 
+		rgba(187, 187, 187, 0.46);
+    border-radius: 15rpx;
+    overflow: hidden;
+    height:480rpx;
+}
+.ad-item image{
+    height:100%;
+}
+.ad-item image{
+    /* width:620rpx;
+    height:740rpx;
+    margin-left: -8rpx; */
+}
+.flex-align-center{
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    -ms-flex-align:center;
+    align-items:center;
+    justify-content: center;
+}
+.showIndex{
+    width: 20rpx;
+    height: 20rpx;
+    border-radius: 20rpx;
+    background-color: #e5e5e5;
+    margin: 0 12rpx;
+}
+.back-act{
+    background-color: #ff8001 !important;
+}
+.ad-btn{
+    margin: 40rpx 0 30rpx;
+}
+.ad-btn button{
+    width: 490rpx !important;
+	height: 88rpx !important;
+	line-height: 88rpx !important;
+	background-color: #494c5b !important;
+    border-radius: 10rpx !important;
+    font-size: 32rpx;
+    color: #fff;
+}
+.add-bot-txt{
+    font-size: 24rpx;
+}

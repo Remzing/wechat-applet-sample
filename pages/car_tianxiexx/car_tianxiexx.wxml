@@ -1,0 +1,67 @@
+<view class="content">
+  <view class="" style="background-color: #f4f6f7;">
+    <view class="flex hint-case" style="padding:30rpx;">
+      <view class="iconfont icon-gantanhao1 col-ff8001"></view>
+      <view class="col-888">请填写以下信息，确保您的车辆配置和详情描述与实际一致，因信息有误导致的责任由车主承担</view>
+    </view>
+  </view>
+  <view class="flex ali-cent det-tab-item">
+    <view>牌照</view>
+    <view  class="flex ali-cent">
+      <picker class='bord-1' mode="selector" range-key="abbreviation" bindchange="bindPickerChange" range="{{carPlate}}">
+        <view class="flex ali-cent">
+          <view>{{carPlate[index].abbreviation || "选择归属地"}}</view>
+          <view class="iconfont icon-sanjiao3-copy col-bbb"> </view>
+        </view>
+      </picker>
+      <view class=""><input type="" style="text-align:right;width:220rpx;" placeholder="请输入车牌号码" placeholder-style='text-align:right' value="{{ carNum}}" bindinput="carNumInput"/></view>
+    </view>
+  </view>
+  <view class="flex ali-cent det-tab-item" bindtap='goChexi'>
+    <view>品牌车系</view>
+    <view class="flex ali-cent">
+      <view class="col-bbb">{{carSysName || "请选择"}}</view>
+      <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+    </view>
+  </view>
+  <view class="flex ali-cent det-tab-item">
+    <view>五车仪序列号{{wcInpDis?'(不可修改)':''}}</view>
+    <view  class="flex ali-cent">
+      <input disabled='{{wcInpDis}}' type="" style="text-align:right;" placeholder="请输入有效序列号" placeholder-style='text-align:right' value="{{ wcNum}}" bindinput="wcNumInput" bindblur="checkCarNum"/>
+    </view>
+  </view>
+  <picker class='bord-1' mode="selector" range-key="speed_box" bindchange="carBoxChange" range="{{carBoxList}}">
+    <view class="flex ali-cent det-tab-item">
+      <view>变速箱</view>
+      <view  class="flex ali-cent">
+        <view class="col-bbb">{{carBoxList[carBoxIndex].speed_box||"请选择"}}</view>
+        <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+      </view>
+    </view>
+  </picker>
+  
+  <view class="" style="border-bottom: 1rpx solid #e5e5e5">
+    <view style="padding:30rpx;">车辆颜色</view>
+    <view  class="flex ali-cent" style="flex-wrap: wrap;">
+      <view wx:for="{{colorList}}" data-id="{{item.id}}" bindtap="selColor" class="color-item {{item.id==colorIndex?'act':''}}">{{item.colour}}</view>
+    </view>
+  </view>
+  <view class="">
+    <view style="padding:30rpx;">油型</view>
+    <view  class="flex ali-cent" style="flex-wrap: wrap;">
+      <view wx:for="{{oilList}}" data-id="{{item.id}}" bindtap="selOil" class="color-item {{item.id==oilIndex?'act':''}}">{{item.gasoline}}</view>
+    </view>
+  </view>
+  <view>
+    <checkbox-group class="checkbox-con flex ali-cent">
+      <label class="checkbox flex-box-start-top " bindchange="checkboxChange" >
+        <checkbox value="{{checkValue}}" checked="{{true}}"/>
+        <view class='agreen'>已阅读并同意</view>
+      </label>
+      <text data-page="6" bindtap='goWenben'>《用户服务协议》</text>
+    </checkbox-group>
+  </view>
+  <view style="padding: 20rpx 30rpx;">
+    <button class="single-but" type="default" size="defaultSize" loading="" plain="plain}" bindtap="conf" hover-class="defaultTap">确定提交</button>
+  </view>
+</view>

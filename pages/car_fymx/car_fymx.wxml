@@ -1,0 +1,70 @@
+<view class="content">
+  <view class="flex car-head">
+    <view class="car-img"><image src="{{car_info.car_image}}" /></view>
+    <view class="flex car-name">
+      <view class="flex car-id">{{car_info.license_number}}</view>
+      <view>{{car_info.car_series_one||""}}{{car_info.car_series_two||""}}</view>
+    </view>
+  </view>
+  <view class="flex car-jishu">
+    <view class="flex">
+      <view>{{order.distance}}</view>
+      <view>行驶里程</view>
+    </view>
+    <view class="flex">
+      <view>{{order.time_txt}}</view>
+      <view>行驶时间</view>
+    </view>
+    <view class="flex">
+      <view>{{order.await_time_txt}}</view>
+      <view>待机时间</view>
+    </view>
+    <view class="flex">
+      <view>{{order.total_fee}}</view>
+      <view>费用总计</view>
+    </view>
+  </view>
+  <view class="flex fee-title back-col2">
+    <view>费用详情</view>
+  </view>
+  <view class="flex fee-item back-col1">
+    <view> 去程·里程费 </view>
+    <view> {{order.mileage_fee}} 元 </view>
+  </view>
+  <view class="flex fee-item back-col1">
+    <view> 去程·时长费 </view>
+    <view> {{order.time_fee}} 元 </view>
+  </view>
+  <view class="flex fee-title back-col2">
+    <view> 待机费 </view>
+    <view> {{order.await_fee}} 元 </view>
+  </view>
+  <!-- <view class="flex fee-item back-col1">
+    <view> 回程·里程费 </view>
+    <view> 320.00元 </view>
+  </view>
+  <view class="flex fee-item back-col1">
+    <view> 回程·时长费 </view>
+    <view> 320.00元 </view>
+  </view>
+  <view class="flex fee-title back-col2">
+    <view> 保险费 </view>
+    <view> 100.00元 </view>
+  </view> -->
+  <view class="flex fee-item back-col1">
+    <view> 预订费 </view>
+    <view> {{order.reservation_fee}} 元 </view>
+  </view>
+  <!-- <view class="flex fee-item back-col1">
+    <view> 还车附加费 </view>
+    <view> 0.00元 </view>
+  </view>
+  <view class="flex fee-item back-col1">
+    <view> 送车费/代泊费 </view>
+    <view> 0.00元 </view>
+  </view>
+  <view class="flex fee-item back-col1">
+    <view> 超时费 </view>
+    <view> 0.00元 </view>
+  </view> -->
+</view>

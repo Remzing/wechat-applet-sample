@@ -1,0 +1,15 @@
+<swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" style="height:{{sHeight}};">    
+  <block wx:for="{{imgList}}" wx:key="key">    
+    <swiper-item>    
+      <image src="{{item.miniUrl}}" wx:if="{{ !item.loaded }}" class="slide-image imagebg" mode="aspectFill" data-urltype="{{item.urlType}}" data-id="{{item.productUrl}}" data-url="{{item.url}}" bindtap="goImagePage"/>    
+      <image src="{{item.url}}" wx:if="{{ item.loaded }}" class="slide-image" mode="aspectFill" 
+      data-urltype="{{item.urlType}}" 
+      data-ordernum="{{item.orderNum}}" 
+      data-producturl="{{item.productUrl}}" 
+      data-classid="{{item.classifyId}}"
+      data-classname="{{item.classifyName}}" 
+      data-url="{{item.url}}" 
+      bindtap="goImagePage"/> 
+    </swiper-item>
+  </block>    
+</swiper> 

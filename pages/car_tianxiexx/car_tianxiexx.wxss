@@ -1,0 +1,18 @@
+page{
+}
+.color-item{
+  padding: 0 24rpx;
+	height: 67rpx;
+	line-height: 67rpx;
+	background-color: #ffffff;
+	border-radius: 60rpx;
+  border: solid 1rpx #dddddd;
+  margin: 0 0 20rpx 30rpx;
+  box-sizing: border-box;
+}
+.act{
+  background-color: #ff8001 !important;
+  color: #fff !important;
+  border:solid 1rpx #ff8001 !important;
+  
+}

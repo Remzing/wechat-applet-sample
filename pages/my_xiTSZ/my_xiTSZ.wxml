@@ -1,0 +1,35 @@
+<!--pages/my_xiTSZ/my_xiTSZ.wxml-->
+<view class='content'>
+  <view class='item-box'>
+    <!-- 已有样式可自动将两个分为一组 -->
+    <view class='item flex-box-between-top' catchtap='togeRXX'>
+      <view class='item-title'>个人信息</view>
+      <view class='flex-box-start-top right-item'>
+        <view class='right-txt'>{{stateData.is_perfect==1?"已完善":"去完善"}}</view>
+        <icon class='iconfont icon-zuojiantou'></icon>
+      </view>
+    </view>
+    <view class='item flex-box-between-top' catchtap='toyanZSF'>
+      <view class='item-title'>实名认证</view>
+      <view class='flex-box-start-top right-item'>
+        <view wx:if="{{stateData.is_approve==1}}" class='right-txt'>已认证</view>
+        <view wx:if="{{stateData.is_approve==2}}" class='right-txt'>审核中</view>
+        <view wx:if="{{stateData.is_approve==0}}" class='right-txt'>未实名认证</view>
+        <icon class='iconfont icon-zuojiantou'></icon>
+      </view>
+    </view>
+    <view class='item flex-box-between-top' catchtap='tozhangHAQ'>
+      <view class='item-title'>账户安全</view>
+      <view class='flex-box-start-top right-item'>
+        <icon class='iconfont icon-zuojiantou'></icon>
+      </view>
+    </view>
+    <view class='item flex-box-between-top' catchtap='toGYWM'>
+      <view class='item-title'>关于我们</view>
+      <view class='flex-box-start-top right-item'>
+        <icon class='iconfont icon-zuojiantou'></icon>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='btn'>退出登录</view> -->
+</view>

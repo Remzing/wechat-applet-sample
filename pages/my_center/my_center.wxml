@@ -1,0 +1,84 @@
+<view class="container content">
+  <view wx:if="{{isQiehuan}}">
+    <view class="qieh" bindtap='qieHuang'>{{is_owner==1?"切换为车友":"切换为车主"}}</view>
+  </view>
+	<view class="userinfo">
+    <view class="userinfo-avatar">
+      <image wx:if="{{userInfo.url}}" class="" mode="" src="{{ userInfo.url||'' }}" background-size="cover"></image>
+      <view wx:if="{{!userInfo.url}}" class='iconfont icon-touxiang1'></view>
+    </view>
+		
+		<text class="userinfo-nickname">{{ userInfo.nick_name }}</text>
+    <text class="userinfo-nickname">{{ phone }}</text>
+    <!-- <view class="updata-user" bindtap="getUserInfo">更新资料<text class="iconfont icon-Updated"></text></view> -->
+    <!-- 审核中 -->
+    <view wx:if="{{stateData.is_approve==2}}" style='margin-top:20rpx;' class='iconfont icon-shenhezhong col-ff8001 font-40'></view>
+    <!-- 已认证 -->
+    <view wx:if="{{stateData.is_approve==1}}" style='margin-top:20rpx;' class='iconfont icon-yirenzheng col-ff8001 font-40'></view>
+    <!-- 未认证 -->
+    <view wx:if="{{stateData.is_approve==0}}" style='margin-top:20rpx;' class='iconfont icon-weirenzheng col-494c5b font-40'></view>
+    
+	</view>
+  <view class="eeblok"></view>
+  <view class="eeblok"></view>
+  <navigator url="/pages/my_order/my_order" hover-class="navigator-hover" class="flex my-item">
+    <view class="flex flex-align-center">
+      <view class="iconfont icon-hangcheng font-40 col-494c5b"></view>
+      <view class="txt-set">我的行程</view>
+    </view>
+    <view class="iconfont icon-youjiantou font-30"></view>
+  </navigator>
+  <navigator url="/pages/my_bag/my_bag?nowpage=" hover-class="navigator-hover" class="my-item">
+    <view class="flex flex-align-center">
+      <view class="iconfont icon-qianbao font-40 col-494c5b"></view>
+      <view class="txt-set">我的钱包</view>
+    </view>
+    <view class="iconfont icon-youjiantou font-30"></view>
+  </navigator>
+  <navigator url="/pages/my_xiaoXi/my_xiaoXi" hover-class="navigator-hover" class="my-item">
+    <view class="flex flex-align-center">
+      <view class="iconfont icon-xiaoxi font-40 col-494c5b"></view>
+      <view class="txt-set">我的消息
+        <view wx:if="{{msgNum}}" class='iconfont icon-yuandianxiao col-ff8001'></view>
+      </view>
+    </view>
+    <view class="iconfont icon-youjiantou font-30"></view>
+  </navigator>
+  <!-- <view class="my-item" style="position:relative" hover-class="navigator-hover">
+    <view class="flex flex-align-center">
+      <view class="iconfont icon-kefu1 font-40 col-494c5b"></view>
+      <view class="txt-set">客服中心</view>
+    </view>
+    <button  open-type="contact" send-message-title="在线官方客服" style="width:100%;height:100%;position:absolute;opacity:0"></button>
+    <view class="iconfont icon-youjiantou font-30"></view>
+  </view> -->
+  <navigator url="/pages/my_keFuZX/my_keFuZX" hover-class="navigator-hover" class="my-item">
+    <view class="flex flex-align-center">
+      <view class="iconfont icon-kefu1 font-40 col-494c5b"></view>
+      <view class="txt-set">客服中心</view>
+    </view>
+    <view class="iconfont icon-youjiantou font-30"></view>
+  </navigator>
+  <view class="eeblok"></view>
+  <navigator url="/pages/my_zhiNan/my_zhiNan" hover-class="navigator-hover" class="my-item">
+    <view class="flex flex-align-center">
+      <view class="iconfont icon-zhiinan font-40 col-494c5b"></view>
+      <view class="txt-set">使用指南
+        <view wx:if="{{msgNum}}" class='iconfont icon-yuandianxiao col-ff8001'></view>
+      </view>
+    </view>
+    <view class="iconfont icon-youjiantou font-30"></view>
+  </navigator>
+  <navigator url="/pages/my_xiTSZ/my_xiTSZ" hover-class="navigator-hover" class="my-item">
+    <view class="flex flex-align-center">
+      <view class="iconfont icon-shezhi font-40 col-494c5b"></view>
+      <view class="txt-set">设置</view>
+    </view>
+    <view class="iconfont icon-youjiantou font-30"></view>
+  </navigator>
+
+  <view class="foot-set">
+    <footmode foottype="{{1}}" istop="{{nowIsTop}}"></footmode>
+  </view>
+  <login-modal backdrop='{{false}}' bind:confirmEvent="setUserInfo" id="loginModal"></login-modal>
+</view>

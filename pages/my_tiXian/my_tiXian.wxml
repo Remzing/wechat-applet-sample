@@ -1,0 +1,25 @@
+<!--pages/my_tiXian/my_tiXian.wxml-->
+<view class='content'>
+  <view class='top-box flex-box-start-top' catchtap='toGLYHK'>
+    <view class='bank'>到账银行卡</view>
+    <view class='bank-time'>
+      <view class='card'>{{bankInfo.bank}}（{{bankInfo.bank_number_str}}）</view>
+      <view class='time'>两个小时内可到账</view>
+    </view>
+    <icon class='iconfont icon-zuojiantou'></icon>
+    
+  </view>
+  <view class='money'>
+    <view class='title'>提现金额</view>
+    <view class='money-num flex-box-start'>
+      <view class='tips'>￥</view>
+      <input type="digit" value="{{numbers}}" bindinput="numberInput" placeholder="请输入提现金额"  placeholder-class="placeholder"/>
+    </view>
+    <view class='drawal'>
+      <text>当前可提现收益 {{bagData.earnings}}元</text><text class='all-num' bindtap='setMon' wx:if="{{bagData.earnings>0}}">全部提现</text>
+    </view>
+    <view class='btn' bindtap='tixian'>提现</view>
+  </view>
+  
+</view>
+<view class='recordBottom' catchtap='totiXJL'>提现记录</view>

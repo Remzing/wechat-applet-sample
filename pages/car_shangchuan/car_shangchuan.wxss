@@ -1,0 +1,75 @@
+page{
+}
+.upload-tab{
+  height: 88rpx;
+  line-height: 88rpx;
+  border-top: 1rpx solid #eee;
+}
+.upload-tab>view{
+  text-align: center;
+  box-sizing: border-box;
+  width: 50%;
+  border-bottom: 1rpx solid #eee;
+}
+.upload-tab>view:first-child{
+  border-right: 1rpx solid #eee;
+}
+.act{
+  color: #ff8001;
+  border-bottom: none !important;
+}
+.scroll-view-x .scroll-view-item{
+  width: 50% !important;
+}
+.strong-img{
+  width: 590rpx;
+	height: 630rpx;
+  line-height: 630rpx;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+.strong-img .icon-tianjiatupian{
+  font-size: 100rpx;
+  color: #a2a2a2;
+}
+.sc-text{
+  text-align: center;
+  padding:20rpx;
+  line-height:50rpx;
+}
+.canc-but{
+  background-color: #fff !important;
+  color: #353535 !important;
+  border: 1rpx solid #d6d5d6 !important;
+}
+.doub-img{
+  width: 340rpx;
+  height: 232rpx;
+  line-height: 232rpx;
+  text-align: center;
+	background-color: #f2f2f2;
+}
+.doub-img .icon-tianjiatupian{
+  font-size: 80rpx;
+  color: #a2a2a2;
+}
+.succ-case{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top:210rpx;
+}
+.succ-case .icon-dui{
+  font-size:200rpx;
+}
+.succ-case>view:nth-child(2){
+  font-size: 40rpx;
+  padding:30rpx;
+
+}
+.succ-case>view:nth-child(3){
+  color:#888;
+}
+.un_back{
+  background-color: unset !important;
+}

@@ -1,0 +1,31 @@
+<view class="content">
+  <view class="flex ali-cent search-in">
+    
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="flex ali-cent local-text">
+        <view>{{region[1]||'未选择'}}</view>
+        <view class="iconfont icon-sanjiao3-copy col-bbb"> </view>
+      </view>
+    </picker>
+    <view class="flex ali-cent sear-input">
+      <input type="" placeholder="您要去哪儿？" value="{{keyword}}"  bindinput="keywordInput" auto-focus />
+      <view class="shanc" bindtap="clearinp">
+        <view class="iconfont icon-guanbi col-bbb"> </view>
+      </view>
+    </view>
+    <view class="dingwei" bindtap="selfLoacl">
+      <view class="iconfont icon-dingwei col-494c5b"> </view>
+    </view>
+  </view>
+  <view class="heng"></view>
+  <view>
+    <view bindtap="selectItem" data-name="{{item.name}}" data-local="{{item.location}}" data-district="{{item.district}}" data-address="{{item.address}}" class="flex ali-cent addr-info-item" wx:for="{{tips}}">
+      <view class="iconfont icon-dingwei1 col-bbb"></view>
+      <view>
+        <view class="addr-name">{{item.name}}</view>
+        <view class="addr-det">{{item.district||''}}{{item.address||''}}</view>
+      </view>
+    </view>
+    
+  </view>
+</view>

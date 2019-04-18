@@ -1,0 +1,4 @@
+/* pages/car_upvideo/car_upvideo.wxss */
+#myVideo{
+  width: 100%;
+}

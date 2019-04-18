@@ -1,0 +1,85 @@
+<view class="content">
+  <view style="position: relative;overflow:hidden;">
+    <slideTab tList="{{statusType}}" itemwidth="50%" bind:changeCurrent="swichNav" currentTab="{{currentType}}" >
+      <swiper current="{{currentType}}" duration="300" bindchange="bindChange"  style="min-height: {{windowHeight}}px;">
+        <!-- <swiper-item 1> -->
+        <swiper-item scroll-y="true">
+          <!-- <swiper-item > -->
+          <scroll-view scroll-x="false" scroll-y="true" class="order-list" scroll-with-animation="true" lower-threshold="1" style="height: {{windowHeight}}px;" >
+          <view style="width: 100%;height: 46px;background: #f4f6f7;"></view>
+            <view class="flex ali-cent">
+              <view class="flex hint-case" style="padding:30rpx;">
+                <view class="iconfont icon-gantanhao1 col-ff8001"></view>
+                <view class="col-888">车辆信息已提交，车主已可正常用车，以下信息仅为了车辆审核！</view>
+              </view>
+            </view>
+            <view class="flex pad-30" style="justify-content:space-between;">
+              <view>
+                <view class="doub-img {{carFrontImg.url?'un_back':''}}" data-state="1" catchtap="upImage">
+                  <view wx:if="{{!carFrontImg.url}}" class="iconfont icon-tianjiatupian" > </view>
+                  <image wx:if="{{carFrontImg.url}}" mode="aspectFit" class="" src="{{carFrontImg.url}}"></image>
+                </view>
+                <view class="sc-text">
+                  <view class="col-bbb font-24">请横向拍摄行驶证正页</view>
+                  <view class="col-bbb font-24">照片上不要有阴影和反光</view>
+                </view>
+              </view>
+              <view>
+                <view class="doub-img {{carEndImg.url?'un_back':''}}" catchtap="upImage" data-state="2">
+                  <view wx:if="{{!carEndImg.url}}" class="iconfont icon-tianjiatupian">
+                    
+                  </view>
+                  <image wx:if="{{carEndImg.url}}" mode="aspectFit" class="" src="{{carEndImg.url}}"></image>
+                </view>
+                <view class="sc-text">
+                  <view class="col-bbb font-24">请横向拍摄行驶证反页</view>
+                  <view class="col-bbb font-24">照片上不要有阴影和反光</view>
+                </view>
+              </view>
+            </view>
+            
+            <view style="padding: 0 30rpx;">
+              <button class="single-but" type="default" size="defaultSize" loading="" plain="plain}" bindtap="swichNav1" data-currentNum="1" hover-class="defaultTap">上传本人行驶证照片</button>
+            </view>
+            <view style="padding: 20rpx 30rpx;">
+              <button class="single-but canc-but" type="default" size="defaultSize" loading="" plain="plain}" bindtap="backBtn" hover-class="defaultTap">稍后上传</button>
+            </view>
+          </scroll-view>
+        </swiper-item>
+        <!-- <swiper-item 2> -->
+        <swiper-item scroll-y="true">
+          <scroll-view scroll-x="false" scroll-y="true" class="order-list" scroll-with-animation="true" lower-threshold="1" style="height: {{windowHeight}}px;" >
+            <view wx:if="{{strongFlag==1}}">
+              <view style="width: 100%;height: 46px;background: #f4f6f7;"></view>
+              <view class="flex hint-case" style="padding:30rpx;">
+                <view class="iconfont icon-gantanhao1 col-ff8001"></view>
+                <view class="col-888">此信息仅为了车辆审核！</view>
+              </view>
+              <view class="flex ali-cent" style="justify-content:center;">
+                <view class="strong-img {{carQiangImg.url?'un_back':''}}"  data-state="3" catchtap="upImage">
+                  <view wx:if="{{!carQiangImg.url}}" class="iconfont icon-tianjiatupian"> </view>
+                  <image wx:if="{{carQiangImg.url}}" mode="aspectFit" class="" src="{{carQiangImg.url}}"></image>
+                </view>
+              </view>
+              <view class="sc-text">
+                <view class="col-bbb font-24">请上传交强险单的照片或扫描件</view>
+                <view class="col-bbb font-24">照片上必须清晰看到文字，不可遮挡，不要有阴影和反光</view>
+              </view>
+              <view style="padding: 0 30rpx;">
+                <button class="single-but" type="default" size="defaultSize" loading="" plain="plain}" bindtap="upStrongImg" hover-class="defaultTap">上传交强险</button>
+              </view>
+              <view style="padding: 20rpx 30rpx;">
+                <button class="single-but canc-but" type="default" size="defaultSize" loading="" plain="plain}" bindtap="backBtn" hover-class="defaultTap">稍后上传</button>
+              </view>
+            </view>
+            <view wx:if="{{strongFlag==2}}" class="flex succ-case">
+              <view class="iconfont icon-dui col-ff8001"></view>
+              <view>提交成功</view>
+              <view>您上传的交强险已提交系统审核中</view>
+            </view>
+          </scroll-view>
+        </swiper-item>
+      </swiper>
+    </slideTab>
+  </view>
+</view>

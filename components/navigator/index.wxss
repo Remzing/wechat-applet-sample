@@ -1,0 +1,35 @@
+.scroll-view-x{
+  background-color: #fff;
+  white-space: nowrap;
+  position: absolute;
+  z-index:10;
+  top:0;
+  height:91rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.scroll-view-x .scroll-view-item{
+  display:inline-block;
+  cursor: pointer;
+  width:187rpx;
+  border:1rpx solid #eee;
+  border-left: none;
+  font-size:28rpx;
+  height:88rpx;
+  line-height:88rpx;
+  text-align:center;
+  overflow: hidden;
+  /* box-sizing: border-box; */
+}
+.scroll-view-x .scroll-view-item:last-child{
+  border-right: none !important;
+}
+.on{
+  color:#ff8001;
+}
+.on-act{
+  border-bottom: none !important;
+  height:92rpx !important;
+  box-sizing: border-box;
+
+}

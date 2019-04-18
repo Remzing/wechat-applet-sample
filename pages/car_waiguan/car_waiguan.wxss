@@ -1,0 +1,26 @@
+page{
+}
+.previewImage {
+  position: fixed;
+  top: -180rpx;
+  left: 0;
+  bottom:0;
+  right:0;
+  margin:auto;
+  width: 100%;
+  height: 530rpx;
+  z-index: 100;
+}
+.previewImage swiper{
+  height: 530rpx;
+}
+.previewImage image{
+  height: 530rpx !important;
+}
+.showIndex{
+  text-align:center;
+  font-size:28rpx;
+}
+.swiper-image{
+  width: 100%;
+}

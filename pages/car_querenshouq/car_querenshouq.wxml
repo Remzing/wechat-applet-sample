@@ -1,0 +1,16 @@
+<view class="content">
+  <view class="shouq-fff">
+    <view class="flex hint-case" style="padding:0;">
+      <view class="iconfont icon-gantanhao1 col-ff8001"></view>
+      <view class="col-888">您确定授权给下面的用户使用你的爱车？</view>
+    </view>
+    <view class="flex sq-toux-cent">
+      <image src="{{userData.url}}" />
+      <view>{{userData.name}}</view>
+    </view>
+  </view>
+  <view class="flex shouq-selc">
+    <view bindtap="back">取消授权</view>
+    <view bindtap="conf">确定授权</view>
+  </view>
+</view>

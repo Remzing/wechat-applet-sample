@@ -1,0 +1,141 @@
+<!--index.wxml-->
+<view style="height:100%;">
+  <!--pages/homepage/index.wxml-->
+  <view class='map-box'>
+    <map id='myMap' latitude='{{latitude}}' longitude='{{longitude}}' markers='{{markers}}' polyline='{{polyline}}' scale='{{scale}}'bindmarkertap='toVisit' show-location>
+        <!--  bindcontroltap='controltap' bindregionchange='regionchange'  -->
+        <!-- 中心坐标 -->
+        <!--<cover-image class='map-icon_point' src='/images/point_in_map.png'/>-->
+        <!-- 控件 -->
+        
+        <cover-image bindtap='toKeFu' class='map-icon map-kefu' src='/images/kefu.png'/>
+        <!-- 客服 -->
+        <cover-view class="ctr-kefu">
+          <button type="default-dark" plain open-type="contact" session-from="weapp" class="guest-button">。</button>
+        </cover-view>
+        <cover-image wx:if="{{haveNetwork}}" class='map-icon map-icon_user' src='/images/icon-user.png' bindtap='toUser'/>
+        <cover-image wx:if="{{haveNetwork}}" class='map-icon map-icon_reset' src='/images/reset.png' bindtap='toReset'/>
+        <!-- 油量，钥匙 -->
+        <cover-view class="yaoshi-kuang" wx:if="{{is_owner==1&&haveNetwork&&list.length}}">
+          <cover-image class='map-biankuang1' src='/assets/imgs/biankuang1.png' bindtap=''/>
+          <cover-image wx:if="{{wcy_msg.key_inside!=1}}" class='map-yaoshi' src='/assets/imgs/yaoshi1.png'/>
+          <cover-image wx:if="{{wcy_msg.key_inside==1}}" class='map-yaoshi' src='/assets/imgs/yaoshi2.png'/>
+          <cover-image wx:if="{{wcy_msg.batt<20}}" class='map-dianc1' src='/assets/imgs/dianc0.png'/>
+          <cover-image wx:if="{{20<=wcy_msg.batt&&wcy_msg.batt<40}}" class='map-dianc1' src='/assets/imgs/dianc1.png'/>
+          <cover-image wx:if="{{40<=wcy_msg.batt&&wcy_msg.batt<60}}" class='map-dianc1' src='/assets/imgs/dianc2.png'/>
+          <cover-image wx:if="{{60<=wcy_msg.batt&&wcy_msg.batt<80}}" class='map-dianc1' src='/assets/imgs/dianc3.png'/>
+          <cover-image wx:if="{{80<=wcy_msg.batt&&wcy_msg.batt<101}}" class='map-dianc1' src='/assets/imgs/dianc4.png'/>
+          <cover-view  class='map-dianctxt'>{{wcy_msg.batt||0}}%</cover-view>
+        </cover-view>
+        <!-- <cover-image class='map-icon map-icon_refresh' src='/images/btn-back.png' bindtap='toRefresh'/> -->
+        <!-- <cover-image class='map-icon map-icon_refresh_in' src='/images/refre.png' bindtap='toRefresh'/> -->
+        <!-- 底部操作栏 -->
+    </map>
+  </view>
+  <view class="previewAd">
+  <!-- current="{{currentType}}" -->
+    <swiper class="flex"  current-item-id="{{currentCarId}}"  bindchange="bindChange" style="height: 400rpx;" wx:if="{{list.length}}">
+      <block wx:for="{{list}}" wx:for-index="bindex">
+        <swiper-item class="flex flex-align-center" item-id="{{item.car_id}}">
+          <view class="ad-item">
+            <!-- {{item._id}}-------{{index}}-->
+            <!-- 底部操作栏-车辆信息 -->
+            <view class="flex botc-show car-head" >
+              <view class="flex" style="position:relative;" >
+                <view data-lat="{{item.lat}}" data-lon="{{item.lon}}" catchtap='getCent' class="m-bot-img" wx:if="{{!item.car_image||!haveNetwork}}">
+                  <view class="iconfont icon-wuche"></view>
+                </view>
+                <image data-lat="{{item.lat}}" data-lon="{{item.lon}}" catchtap='getCent' wx:if="{{item.car_image&&haveNetwork}}" class='m-bot-img' src='{{item.car_image}}' />
+                <view class="flex car-name" data-userid="{{item.user_owner_id}}" data-id="{{item.car_id}}"  data-qingq="{{item.qingqFlag}}" catchtap='goDetail'>
+                  <view class="car-id">{{(item.qingqFlag||is_owner==1)?item.license_number:item.license_number_txt}}</view>
+                  <text class="font-26">{{item.car_series_one||""}}{{item.car_series_two||""}}</text>
+                </view>
+                <view class="qingqtxt" wx:if="{{item.qingqFlag}}">亲情车辆</view>
+                <view class="qingqtxt" wx:if="{{item.weibFlag}}">维保车辆</view>
+                <view class="qingqtxt" wx:if="{{item.kuaidFlag}}">快递车辆</view>
+              </view>
+              
+              <view class="flex" catchtap="goPage" data-path="/pages/car_xuanzcl/car_xuanzcl">
+                <view class="back-f"  wx:if="{{!item.qingqFlag&&is_owner===0}}">{{item.get_model==1?'原地取还':'面对面还车'}}</view>
+                <view style="color: #bbb;" class='pos-nom iconfont icon-zuojiantou'></view>
+              </view>
+            </view>
+            <view style='height:96rpx'>
+              <!-- 底部操作栏-车辆路程计费信息 -->
+            <view class="flex ali-cent jifei" wx:if="{{!item.qingqFlag&&is_owner===0}}">
+              <view class="flex ali-cent">
+                <view class='iconfont icon-youxiang'></view>
+                <view>{{item.remain_gasoline}}km</view>
+              </view>
+              <view class="flex ali-cent">
+                <view>最晚</view><text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text><view class="col-ff8001">{{item.rent_end_time}}</view><text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text><view>前还车</view>
+              </view>
+              <view class="flex ali-cent">
+                <view class="col-ff8001">{{item.time_fee}}</view>
+                <view>元/分+</view>
+                <view class="col-ff8001">{{item.mileage_fee}}</view>
+                <view>元/公里</view>
+              </view>
+            </view>
+            <!-- 底部操作栏-车辆路程计费信息2车主显示位置-->
+            <view class="flex ali-cent jifei" wx:if="{{is_owner===1||true}}">
+              <view class="flex ali-cent" data-lat="{{item.lat}}" data-lon="{{item.lon}}" data-name="{{item.name}}" bindtap="daohang">
+                <view class='iconfont icon-dingwei1'></view>
+                <view>{{item.name||'获取位置出错'}}</view>
+                <!-- <view>距您</view> -->
+                <!--<view class="col-ff8001">{{'导航'}}</view>-->
+              </view>
+            </view>
+            </view>
+            
+            <!-- 车友确认用车 -->
+            <view wx:if="{{is_owner===0}}" class="m-bot-but-one" data-carid="{{item.car_id}}" data-userid="{{item.user_owner_id}}" data-qingq="{{item.qingqFlag}}" bindtap="querenUse">
+              确认用车
+            </view>
+            <view wx:if="{{is_owner===1}}" class="flex ali-cent just-bet bot-oper-case z-inx10 wid-auto" style="height: 100rpx;">
+              <view data-kinshipuse="{{item.is_kinship_use}}" data-owneruse="{{item.is_owner_use}}" data-state="{{item.state}}" data-wcynumber="{{item.wcy_number}}" data-id="{{item.car_id}}" data-userid="{{item.user_id}}" data-lanyamac="{{item.lanya_mac}}" data-index="{{bindex}}" bindtap="ownerUnLock" class="flex ali-cent oper-case bord-right {{(!item.is_kinship_use&&item.state!=4&&item.is_owner_use!=1)?'col-494c5b':'col-bbb'}}">
+                <view class='iconfont icon-jiesuo'></view>
+                <view>解锁</view>
+              </view>
+              
+              <view data-kinshipuse="{{item.is_kinship_use}}" data-owneruse="{{item.is_owner_use}}" data-state="{{item.state}}" data-wcynumber="{{item.wcy_number}}" data-id="{{item.car_id}}" data-userid="{{item.user_id}}" data-lanyamac="{{item.lanya_mac}}" data-index="{{bindex}}" bindtap="ownerLock" class="flex ali-cent oper-case bord-right {{(!item.is_kinship_use&&item.state!=4&&item.is_owner_use==1)?'col-494c5b':'col-bbb'}}">
+                <view class='iconfont icon-lasuo'></view>
+                <view>落锁</view>
+              </view>
+              
+              <view  data-id="{{item.car_id}}" bindtap="goDetail" class="flex ali-cent oper-case col-494c5b" >
+                <view class='iconfont icon-shezhi'></view>
+                <view>设置</view>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    
+    <view wx:if="{{!list.length}}" style="height: 400rpx;" class="flex flex-align-center">
+      <view class="fadein" wx:if="{{pageState==0}}">
+        <view class="loaderAct"></view>
+        <!-- <view class="loaderAct2">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </view> -->
+      </view>
+      <!-- 车友页面  无可用车辆时显示 -->
+      <view wx:if="{{pageState!=0&&is_owner===0}}" class="no_box">
+        <view class="no_car_txt">暂无可用车辆,刷新试试</view>
+        <button class="no_car_btn" type="default" bindtap="toRefresh" hover-class="defaultTap">刷新</button>
+        
+      </view>
+      <!-- 车主页面  无可用车辆时显示 -->
+      <view wx:if="{{pageState!=0&&is_owner===1}}" class="no_box">
+        <view class="no_car_txt" >暂未添加车辆，去添加</view>
+        <button class="no_car_btn" type="default" bindtap="goAddCar" hover-class="defaultTap">添加车辆</button>
+      </view>
+    </view>
+  </view>
+  
+</view>

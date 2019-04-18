@@ -1,0 +1,28 @@
+
+
+<block wx:if="{{foottype==1}}">
+  <view class="flex foot-case">
+    <view>五车云提供技术支持</view>
+  </view>
+</block>
+<block wx:if="{{foottype==2||foottype==3}}" >
+  <view class="flex foot-case">
+    <view class="flex"><view class="iconfont icon-dianhua2"></view>{{storetext.phone}}</view>
+    <view>{{storetext.store_name}}</view>
+    <view>{{storetext.addr_info}}</view>
+  </view>
+</block>
+<block wx:if="{{foottype==3}}">
+  <view class="flex fix-case">
+    <button plain open-type="contact" class="fix-itm about-btn"><text class="iconfont icon-kefu"></text></button>
+    <view class="fix-itm" wx:if="{{!istop}}" bindtap="goTop"><text class="iconfont icon-zhiding"></text></view>
+  </view>
+</block>
+<block wx:if="{{foottype==4}}">
+  <view class="flex fix-case">
+    <!--<button plain open-type="contact" class="fix-itm about-btn"><text class="iconfont icon-kefu"></text></button>-->
+    <view class="fix-itm" wx:if="{{!istop}}" bindtap="goTop"><text class="iconfont icon-zhiding"></text></view>
+  </view>
+</block>
+
+

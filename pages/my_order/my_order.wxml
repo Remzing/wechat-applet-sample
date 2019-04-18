@@ -1,0 +1,45 @@
+<view class="content">
+  <slideTab tList="{{statusType}}"   bind:changeCurrent="swichNav" currentTab="{{currentType}}" >
+    <swiper current="{{currentType}}" duration="300" bindchange="bindChange" style="height: {{windowHeight}}px;">
+
+        <swiper-item wx:for="{{list}}" scroll-y="true">
+        <!-- <swiper-item > -->
+          
+          <scroll-view scroll-x="false" scroll-y="true" class="order-list" scroll-with-animation="true" lower-threshold="1" bindscrolltolower="fetchData" enable-back-to-top="true" lower-threshold="10"
+            style="height: {{windowHeight}}px;">
+            <view class="no-order" hidden="{{item.length ? true : false}}">
+              <view class="flex flex-cent err-clk fadein">
+                <view class="iconfont icon-wuche"> </view>
+                <view class="err-pad1">暂无相关订单</view>
+                <!-- <view class="err-pad">五车出行邀您体验“时尚、经济、便捷、无忧”的出行服务</view> -->
+                <button type="default" hover-class="defaultTap" bindtap='goIndex' >体验五车出行</button>
+              </view>
+            </view>
+            <view style="width: 100%;height: 50px;background: #f4f6f7;"></view>
+            <view class="a-order"  wx:for="{{item}}"  wx:key="childIndex" wx:for-item="childItem" data-id="{{childItem.id}}" bindtap="goDetail">
+              <view class="flex order-state">
+                <view>{{childItem.license_number||""}}</view>
+                <view class="flex ali-cent col-888">
+                  <view>{{stateArr[childItem.state]||"状态出错"}}</view><view class="iconfont icon-zuojiantou col-bbb"></view>
+                </view>
+              </view>
+              <view class="flex ali-cent order-time">
+                <view class="iconfont icon-shijian col-888"></view>
+                <view class="col-666">{{childItem.create_time||"未存储"}} </view>
+              </view>
+              <view class="flex ali-cent start-addr">
+                <view class="iconfont icon-yuandianxiao col-09bb07"></view>
+                <view class="col-888">{{childItem.start_place||"未找到出发位置"}} </view>
+              </view>
+              <view class="flex ali-cent end-addr">
+                <view class="iconfont icon-yuandianxiao col-ff8001"></view>
+                <view class="col-888"> {{childItem.destination||"未找到终点位置"}}</view>
+              </view>
+            </view>
+            
+          </scroll-view>
+        </swiper-item>
+
+    </swiper>
+  </slideTab>
+</view>

@@ -1,0 +1,43 @@
+<view class="content">
+  <view class="flex choo-diz">
+    <view class="iconfont icon-dingwei2"> </view>
+    <view>当前位置 <text class="col-ff8001">{{localTxt||'获取中...'}}</text> ，检索5公里范围可用车辆如下：</view>
+  </view>
+  <view class="flex choo-search">
+    <input type="" value="{{license_number}}" bindinput="license_numberInput"  placeholder="输入车牌号" />
+    <view bindtap='goSearch'><view class="iconfont icon-sousuo"> </view></view>
+  </view>
+  <view class="flex car-item-info" wx:for="{{list}}" wx:key="key" data-id="{{item.car_id}}" bindtap='goDetail'>
+    <view wx:if="{{is_owner==1}}" class="carstate {{item.state==2?'backhig':''}}">{{stateArr[item.state]||'.....'}}</view>
+    <view wx:if="{{is_owner==0&&item.qingqFlag}}" class="carstate backhig">亲情车辆</view>
+    <view wx:if="{{is_owner==0&&item.weibFlag}}" class="carstate backhig">维保车辆</view>
+    <view wx:if="{{is_owner==0&&item.kuaidFlag}}" class="carstate backhig">快递车辆</view>
+
+    <view class="car-img">
+      <view wx:if="{{!item.car_image}}" style="font-size:110rpx;padding:0 30rpx;" class="iconfont icon-wuche"></view>
+      <image wx:if="{{item.car_image}}" src="{{item.car_image}}" />
+    </view>
+    <view class="flex car-name">
+      <view class="car-id">{{(item.qingqFlag||is_owner==1)?item.license_number:item.license_number_txt}}</view>
+      <view>{{item.car_series_one||""}}{{item.car_series_two||""}}</view>
+    </view>
+    <view class="flex car-qiyou">
+      <view class="iconfont icon-youxiang"></view>
+      <view wx:if="{{item.remain_gasoline}}">{{item.remain_gasoline}}km</view>
+      <view wx:else >未知</view>
+    </view>
+    <view class="flex car-juli" wx:if="{{is_owner==0}}">
+      <view class="iconfont icon-lubiao"></view>
+      <view>{{item.distance}}</view>
+    </view>
+  </view>
+  <view class="no_txt" wx:if="{{!list.length}}">
+    <view>
+      <view class='iconfont icon-wuche'></view>
+      <view>暂无数据</view>
+    </view>
+  </view>
+  <view style="padding: 20rpx 30rpx;" wx:if="{{is_owner==1}}">
+    <button class="single-but" type="default" size="defaultSize" loading="" plain="plain}" bindtap="addCar" hover-class="confCheck">添加车辆</button>
+  </view>
+</view>

@@ -1,0 +1,54 @@
+<view class="content flex">
+  <view class="imgitem" wx:for="{{list}}" >
+    <image class="imagebg" src="{{item.url}}" />
+    <view class="quxiao" bindtap='detImg' data-id="{{item.id}}" data-inx="{{index}}"><view class=' iconfont icon-quxiao1'></view></view>
+  </view>
+  <view class="upimg">
+    <view data-state="1" class="iconfont icon-tianjiatupian" catchtap="upImage"> </view>
+  </view>
+</view>
+<view wx:if="{{page==1}}" class="flex hint-case" style="margin:50rpx 0 0 0;">
+  <view class="iconfont icon-gantanhao1 col-ff8001"></view>
+  <view class="col-888">
+    <view>车辆主图拍照要求：</view>
+    <view>1、车辆主图审核通过后无法修改，请谨慎选择！</view>
+    <view>2、左前45°，车辆及拍照清晰可见。</view>
+  </view>
+</view>
+<view style='display:inline-block;'>
+  <view style="margin:10rpx 0 0 30rpx;color:#888;font-size:24rpx;" wx:if="{{page==1}}">
+    上传主图：{{!mainList.length?"(下图为示例图,点击上传图片)":''}}
+  </view>
+  <view class="content flex" style='padding-top:10rpx;' wx:if="{{page==1}}">
+    <view class="imgitem" wx:if="{{mainList.length}}" wx:for="{{mainList}}" catchtap="upImage" data-state="2">
+      <image class="imagebg" src="{{item.url}}" />
+    </view>
+    <view class="upimg" wx:if="{{!mainList.length}}" catchtap="upImage" data-state="2">
+      <!-- <view data-state="2" class="iconfont icon-tianjiatupian" catchtap="upImage"> -->
+        <image style='width:223rpx;height:223rpx;' class="imagebg" src="https://upload.5autos.cn/img/demo/demo.png" />
+      <!-- </view> -->
+    </view>
+  </view>
+</view>
+<!-- <view style='width:45%;display:inline-block;'>
+  <view style="margin:10rpx 0 0 30rpx;color:#888;font-size:24rpx;" wx:if="{{page==1}}">
+    车辆主图图例：
+  </view>
+  <view class="content flex" style='padding-top:10rpx;' wx:if="{{page==1}}">
+    <view class="imgitem" data-state="2">
+      <image class="imagebg" src="https://upload.5autos.cn/img/demo/demo.png" />
+    </view>
+    
+  </view>
+</view> -->
+
+<view class="flx-bot">
+  <view class="flex hint-case">
+    <view class="iconfont icon-gantanhao1 col-ff8001"></view>
+    <view class="col-888">请拍照上传当前使用车的情况！</view>
+  </view>
+  <view class="flex comf-but">
+    <button class="but-cancel" type="default"  plain="plain" bindtap="goBack" hover-class="defaultTap">取消</button>
+    <button class="but-sure" type="default" plain="plain" bindtap="conf" hover-class="defaultTap">确定提交</button>
+  </view>
+</view>

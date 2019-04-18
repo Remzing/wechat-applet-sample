@@ -1,0 +1,31 @@
+<!--pages/my_yue/my_yue.wxml-->
+<view class='content'>
+  <view class='flex flex-alg-cen' style="padding:0 0 20rpx 20rpx;">
+    <picker class='record' mode="date" end="{{end_time}}"  value="{{multiIndex}}" bindchange="startDateChange">
+      <view class="picker flex-box-between">
+        {{start_time||"开始时间"}}
+        <icon class='iconfont icon-sanjiao3-copy'></icon>
+      </view>
+    </picker>
+    <view>~</view>
+    <picker class='record' mode="date" start="{{start_time}}" value="{{multiIndex}}" bindchange="endDateChange">
+      <view class="picker flex-box-between">
+        {{end_time||"结束时间"}}
+        <icon class='iconfont icon-sanjiao3-copy'></icon>
+      </view>
+    </picker>
+  </view>
+  
+  <view class="item-box">
+    <view class='detail-item' wx:for="{{dataList}}" wx:key="index">
+      <view class='title-con'>
+        <view class='money'>{{item.bank}}（{{item.bank_number_str}}）</view>
+        <view class='time' wx:if="{{item.state==4}}">{{item.apply_time}}</view>
+        <view class='time' wx:if="{{item.state==3}}">待打款</view>
+        <view class='time' wx:if="{{item.state==2}}">退回提现</view>
+        <view class='time' wx:if="{{item.state==1}}">待审核</view>
+      </view>
+      <view class='mon-state'><text>{{item.real_money}}</text><icon class='iconfont icon-zuojiantou'></icon></view>
+    </view>
+  </view>
+</view>

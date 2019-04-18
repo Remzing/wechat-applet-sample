@@ -1,0 +1,49 @@
+page{
+  background-color: #f4f6f7;
+}
+.shouq-fff{
+  background-color: #fff;
+  padding: 30rpx;
+}
+.sq-toux{
+  position: relative;
+  display: inline-block;
+  margin-top: 30rpx;
+
+}
+.sq-toux-cent{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sq-toux-cent image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 120rpx;
+  background-color: #f4f6f7;
+  margin: 30rpx 0 16rpx;
+}
+.sq-toux-cent>view{
+  font-weight: bolder;
+}
+.shouq-selc{
+  justify-content: space-between;
+  padding: 30rpx;
+}
+.shouq-selc>view{
+  width: 330rpx;
+	height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  font-size: 36rpx;
+}
+.shouq-selc>view:nth-child(1){
+  background-color: #fbfafc;
+	border-radius: 10rpx;
+	border: solid 1rpx #d6d5d6;
+}
+.shouq-selc>view:nth-child(2){
+  background-color: #494c5b;
+  color: #fff;
+}

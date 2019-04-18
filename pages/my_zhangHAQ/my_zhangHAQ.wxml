@@ -1,0 +1,15 @@
+<!--pages/my_xiTSZ/my_xiTSZ.wxml-->
+<view class='content'>
+  <view class='item-box'>
+    <!-- 已有样式可自动将两个分为一组 -->
+    <view class='item flex-box-between-top' catchtap='tozhaoHSJ'>
+      <view class='item-title'>手机号码</view>
+      <icon class='iconfont icon-zuojiantou'></icon>
+    </view>
+    <!-- <view class='item flex-box-between-top' catchtap='tozhaoHMM'>
+      <view class='item-title'>修改密码</view>
+      <icon class='iconfont icon-zuojiantou'></icon>
+    </view> -->
+    
+  </view>
+</view>

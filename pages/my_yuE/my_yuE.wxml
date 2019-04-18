@@ -1,0 +1,43 @@
+<!--pages/my_yue/my_yue.wxml-->
+<view class='content'>
+  <view class='top'>
+    <view class='title'>余额（元）</view>
+    <view class='num'><text>{{bagData.balance||"0.00"}}</text></view>
+  </view>
+    <!-- 此处record根据需要修改宽度 ui原宽已注释-->
+  <view class='flex flex-alg-cen' style='background:#fff;padding:30rpx 0 10rpx;'>
+    <picker class='record' mode="date" end="{{end_time}}"  value="{{end_time}}" bindchange="startDateChange">
+      <view class="picker flex-box-between">
+        {{start_time||"开始时间"}}
+        <icon class='iconfont icon-sanjiao3-copy'></icon>
+      </view>
+    </picker>
+    <view>~</view>
+    <picker class='record' mode="date" start="{{start_time}}" value="{{end_time}}" bindchange="endDateChange">
+      <view class="picker flex-box-between">
+        {{end_time||"结束时间"}}
+        <icon class='iconfont icon-sanjiao3-copy'></icon>
+      </view>
+    </picker>
+  </view>
+  
+  <view class="item-box">
+    <view class='detail-item' wx:for="{{infoData}}" wx:key="index">
+      <view class='title-con'>
+        <view class='money'>{{traceType[item.type||0]}}</view>
+        <view class='time'>{{item.create_time}}</view>
+      </view>
+      <view class='mon-state'><text>{{item.money}}</text><icon class='iconfont icon-zuojiantou'></icon></view>
+    </view>
+  </view>
+  <view wx:id="{{!infoData.length}}" style='text-align:center;color:#bbb;font-size:36rpx;margin-top:50rpx;'>
+    <view wx:if="{{loadFlag}}">
+      加载中..
+    </view>
+    <view wx:if="{{!infoData.length}}">
+      <view class='iconfont icon-kong'></view>
+      <view>暂无数据</view>
+    </view>
+  </view>
+</view>
+<view class='btn' catchtap='tochongZ'>余额充值</view>

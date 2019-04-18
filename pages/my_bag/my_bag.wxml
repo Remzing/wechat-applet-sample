@@ -1,0 +1,14 @@
+<!--pages/my_wallet/my_wallet.wxml-->
+<view class="content">
+  <view class='bag-item' catchtap='toyuE'>
+    <view class='title'>我的余额</view><view class='num'><text>{{bagData.balance||"0.00"}}</text>元<icon class='iconfont icon-zuojiantou'></icon></view>
+  </view>
+  <view class='bag-item' wx:if="{{is_owner==1}}" catchtap='toshouYi'>
+    <view class='title'>我的收益</view><view class='num'><text>{{bagData.earnings||"0.00"}}</text>元<icon class='iconfont icon-zuojiantou'></icon></view>
+  </view>
+  <view class='bag-item' catchtap='toGLYHK'>
+    <view class='title'>我的银行卡</view><view class='num'>
+    {{bagData.num>0?(bagData.num+'张'):'未绑定'}}
+    <icon class='iconfont icon-zuojiantou'></icon></view>
+  </view>
+</view>

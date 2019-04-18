@@ -1,0 +1,16 @@
+<!--pages/my_xiaoXi/my_xiaoXi.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class='content'>
+  <view class='top'>
+    <view class='title'>{{infoData.title}}</view>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    <!-- <view class='txt-cen'>{{infoData.content}}</view> -->
+  </view>
+  <view class='hot-title'>相关问题</view>
+  <view class='text-cons'>
+    <view class='text-item flex-box-start' data-id="{{item.id}}" wx:for="{{infoList}}" wx:key="index" catchtap='towenTiXQ'>
+      <icon class='iconfont icon-yuandianxiao'></icon>
+      <view class='txt'>{{item.title}}？</view>
+    </view>
+  </view>
+</view>

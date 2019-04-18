@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "上传行驶证和保单",
+  "usingComponents": {
+    "slideTab": "../../components/navigator/index",
+    "swiperImg": "../../components/swiper_img/index"
+  }
+}

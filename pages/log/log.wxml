@@ -1,0 +1,14 @@
+
+  <view class="we-container {{directionClass}}">
+    <view class="we-wrapper"
+      bindtouchstart="touchstart"
+      bindtouchmove="touchmove"
+      bindtouchend="touchend"
+      animation="{{animationData}}">
+      <view class="we-slide" style="background:#ddd">slide 1<view class="qieh">切换车友身份</view></view>
+      <view class="we-slide" style="background:#333">slide 2</view>
+      <view class="we-slide" style="background:#ccc">slide 3</view>
+    </view>
+    <button type="default-dark" bindtap='uploadvideo' class="guest-button">shangchuan</button>
+  </view>
+

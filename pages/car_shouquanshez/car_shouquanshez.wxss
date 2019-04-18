@@ -1,0 +1,62 @@
+page{
+  background-color: #f4f6f7;
+}
+.shouq-fff{
+  background-color: #fff;
+  padding: 30rpx;
+}
+.sq-toux{
+  position: relative;
+  display: inline-block;
+  margin-top: 30rpx;
+  margin-right:40rpx;
+}
+.sq-toux image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 120rpx;
+  background-color: #f4f6f7;
+  margin:0 auto;
+  display:block;
+}
+.del-toux{
+  position:absolute;
+  top:0;
+  right:-20rpx;
+  font-size:44rpx;
+}
+
+.shouq-but{
+  justify-content: space-between;
+  padding: 30rpx;
+}
+.shouq-but>view{
+  font-size: 34rpx;
+  width: 330rpx;
+	height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+	background-color: #ffffff;
+	border-radius: 10rpx;
+	border: solid 1rpx #d6d5d6;
+}
+.pad-f1{
+  padding: 30rpx 30rpx 0;
+}
+.textarea-wrp{
+  background-color: #fff;
+  
+}
+.Inp{
+  padding-left:30rpx;
+  padding-right:30rpx;
+  margin-top:20rpx;
+  height:100rpx;
+  line-height:100rpx;
+}
+.no_da{
+  text-align:center;
+  color:#bbb;
+  padding-top:30rpx;
+  padding-bottom:15rpx;
+}

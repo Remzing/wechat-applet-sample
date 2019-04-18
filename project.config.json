@@ -1,0 +1,403 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": false,
+		"autoAudits": false,
+		"uglifyFileName": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.1",
+	"appid": "wxe8b939ec5119af5c",
+	"projectname": "wuchechuxing",
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 59,
+			"list": [
+				{
+					"id": -1,
+					"name": "我的-登录",
+					"pathName": "pages/my_login/my_login",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "我的-钱包",
+					"pathName": "pages/my_bag/my_bag",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "我的-余额",
+					"pathName": "pages/my_yuE/my_yuE",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "我的-收益",
+					"pathName": "pages/my_shouYi/my_shouYi",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的-充值",
+					"pathName": "pages/my_chongZ/my_chongZ",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的-提现",
+					"pathName": "pages/my_tiXian/my_tiXian",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的-提现记录",
+					"pathName": "pages/my_tiXJL/my_tiXJL",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的-管理银行卡",
+					"pathName": "pages/my_GLYHK/my_GLYHK",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的-我的消息",
+					"pathName": "pages/my_xiaoXi/my_xiaoXi",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的-客服中心",
+					"pathName": "pages/my_keFuZX/my_keFuZX",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的-问题详情",
+					"pathName": "pages/my_wenTiXQ/my_wenTiXQ",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的-系统设置",
+					"pathName": "pages/my_xiTSZ/my_xiTSZ",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的-个人信息",
+					"pathName": "pages/my_geRXX/my_geRXX",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的-关于我们",
+					"pathName": "pages/my_GYWM/my_GYWM",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的-找回密码",
+					"pathName": "pages/my_zhaoHMM/my_zhaoHMM",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的-找回手机",
+					"pathName": "pages/my_zhaoHSJ/my_zhaoHSJ",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的-关于我",
+					"pathName": "pages/my_guanYW/my_guanYW",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的-验证身份",
+					"pathName": "pages/my_yanZSF/my_yanZSF",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的-账户安全",
+					"pathName": "pages/my_zhangHAQ/my_zhangHAQ",
+					"query": ""
+				},
+				{
+					"id": 19,
+					"name": "我的-成为车友",
+					"pathName": "pages/my_chenWCY/my_chenWCY",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的-公司介绍",
+					"pathName": "pages/my_GSJS/my_GSJS",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的-银行卡管理",
+					"pathName": "pages/my_yinHKGL/my_yinHKGL",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "log",
+					"pathName": "pages/log/log",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "网络异常",
+					"pathName": "pages/err/err",
+					"query": ""
+				},
+				{
+					"id": 24,
+					"name": "车-费用明细",
+					"pathName": "pages/car_fymx/car_fymx",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "车-选择车辆",
+					"pathName": "pages/car_xuanzcl/car_xuanzcl",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "锁车异常",
+					"pathName": "pages/car_suocheyc/car_suocheyc",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的订单/行程",
+					"pathName": "pages/my_order/my_order",
+					"query": ""
+				},
+				{
+					"id": 28,
+					"name": "添加图片",
+					"pathName": "pages/car_addphoto/car_addphoto",
+					"query": ""
+				},
+				{
+					"id": 29,
+					"name": "车辆外观",
+					"pathName": "pages/car_waiguan/car_waiguan",
+					"query": "page&user_owner_id=a069b3b31e9f4f79877ff610420889f4&order_id=d7dd2f4c61024efc9775dcaac1b64897&kinshipuse_id="
+				},
+				{
+					"id": -1,
+					"name": "取消订单",
+					"pathName": "pages/car_cancelorder/car_cancelorder",
+					"query": ""
+				},
+				{
+					"id": 31,
+					"name": "共享车点评",
+					"pathName": "pages/car_zuchedp/car_zuchedp",
+					"query": "car_id=6d1204bc74a04689958d2ad350536d64&order_id=5306d2a12c5d4c98a0b82875a5438845"
+				},
+				{
+					"id": -1,
+					"name": "我的车辆",
+					"pathName": "pages/car_mycar/car_mycar",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "广告",
+					"pathName": "pages/guanggao/guanggao",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "查看大图",
+					"pathName": "pages/car_waiguan/car_waiguan",
+					"query": "page=2"
+				},
+				{
+					"id": 35,
+					"name": "车辆信息",
+					"pathName": "pages/car_info/car_info",
+					"query": "car_id=4d896edc880f44b8abf5c9707006d73d&userid=a069b3b31e9f4f79877ff610420889f4"
+				},
+				{
+					"id": -1,
+					"name": "位置",
+					"pathName": "pages/car_location/car_location",
+					"query": ""
+				},
+				{
+					"id": 37,
+					"name": "用户评价",
+					"pathName": "pages/car_pingjia/car_pingjia",
+					"query": "id=f6ea22dbdfcf401d8e818725037a1978"
+				},
+				{
+					"id": 38,
+					"name": "车辆详情",
+					"pathName": "pages/car_detail/car_detail",
+					"query": "id=4d896edc880f44b8abf5c9707006d73d"
+				},
+				{
+					"id": -1,
+					"name": "上传行驶证和保单",
+					"pathName": "pages/car_shangchuan/car_shangchuan",
+					"query": ""
+				},
+				{
+					"id": 40,
+					"name": "填写车辆信息",
+					"pathName": "pages/car_tianxiexx/car_tianxiexx",
+					"query": "id=f6ea22dbdfcf401d8e818725037a1978"
+				},
+				{
+					"id": 41,
+					"name": "使用条件",
+					"pathName": "pages/car_shiyongtj/car_shiyongtj",
+					"query": "id=f6ea22dbdfcf401d8e818725037a1978"
+				},
+				{
+					"id": -1,
+					"name": "品牌与车系",
+					"pathName": "pages/car_pinpaichexi/car_pinpaichexi",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "车辆描述",
+					"pathName": "pages/car_miaoshu/car_miaoshu",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "交车照片核对",
+					"pathName": "pages/car_zhaopianhd/car_zhaopianhd",
+					"query": ""
+				},
+				{
+					"id": 45,
+					"name": "亲情号授权设置",
+					"pathName": "pages/car_shouquanshez/car_shouquanshez",
+					"query": "car_id=f6ea22dbdfcf401d8e818725037a1978&ccd_id=eb768b36642145f0b6a6acff4e1ae835"
+				},
+				{
+					"id": -1,
+					"name": "确认授权设置",
+					"pathName": "pages/car_querenshouq/car_querenshouq",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "数据分析",
+					"pathName": "pages/car_shujufenxi/car_shujufenxi",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "叠层轮播",
+					"pathName": "pages/demo-dieceng/demo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "层叠2",
+					"pathName": "pages/demo-dieceng2/demo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "层叠3",
+					"pathName": "pages/demo-dieceng3/demo",
+					"query": ""
+				},
+				{
+					"id": 51,
+					"name": "地图-车辆显示",
+					"pathName": "pages/car_map_order/car_map_order",
+					"query": "page=3&kinshipuse_id=d67f46d7d1924c8e99e785d0d5c16cde&user_owner_id=0ac34e24108548f58f9d5db29db5f1f7"
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "取消订单",
+					"pathName": "pages/car_cancelorder/car_cancelorder",
+					"query": ""
+				},
+				{
+					"id": 54,
+					"name": "车-我要还车",
+					"pathName": "pages/car_returncar/car_returncar",
+					"query": "car_id=9cbd0e4664284ed7b55892fdf64bbc0f&order_id=e6479f6a420348cd958a8fa99f2a5ffd&page=2"
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/my_center/my_center",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "蓝牙",
+					"pathName": "pages/car_bluetooth/car_bluetooth",
+					"query": ""
+				},
+				{
+					"id": 57,
+					"name": "手势解锁",
+					"pathName": "pages/gestureLock/index",
+					"query": "car_id=7173b90ed58d49d28ff6223c69339f6a&wcy_number=505393230"
+				},
+				{
+					"id": -1,
+					"name": "1",
+					"pathName": "pages/car_detail/car_detail",
+					"query": "id=7173b90ed58d49d28ff6223c69339f6a"
+				},
+				{
+					"id": -1,
+					"name": "使用指南",
+					"pathName": "pages/my_zhiNan/my_zhiNan"
+				}
+			]
+		}
+	}
+}

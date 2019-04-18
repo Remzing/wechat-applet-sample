@@ -1,0 +1,19 @@
+<base-modal id="baseModal" modalSize="{{modalSize}}" animated="{{animated}}" backdrop="{{backdrop}}">
+	<!--<view slot="header" class='modal-header'>
+		<text>授权登录</text>
+	</view>-->
+
+	<view slot="body" class='modal-body'>
+		为提供更好的用户体验，需要您微信授权以后才能使用
+	</view>
+
+	<view slot="footer" class='modal-footer'>
+		<!--<view class="bod-right">
+			<button plain bindtap="_cancelModal">拒绝</button>
+		</view>-->
+		<view>
+			<button type="primary" open-type="getUserInfo" bindgetuserinfo="_confirmModal">同意</button>
+		</view>
+	</view>
+
+</base-modal>

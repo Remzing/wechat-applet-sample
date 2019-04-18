@@ -1,0 +1,8 @@
+<!--pages/my_chongZ/my_chongZ.wxml-->
+<view class='content'>
+  <view class='up-box flex-box-start'>
+    <text>￥</text>
+    <input type="digit" value="{{numbers}}" bindinput="numberInput" placeholder="请输入充值金额"  placeholder-class="placeholder"/>
+  </view>
+  <view class='btn' bindtap="weixPay">微信支付</view>
+</view>

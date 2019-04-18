@@ -1,0 +1,46 @@
+
+  <view class='content' wx:if="{{is_owner!==''}}">
+    <view wx:if="{{isQiehuan}}">
+      <view class="qieh" bindtap='qieHuang'>{{is_owner==1?"切换为车友":"切换为车主"}}</view>
+    </view>
+    <view class="previewAd">
+      <swiper class="flex" catchchange='changIndex'>
+        <block wx:for="{{adBanner}}">
+          <swiper-item class="flex flex-align-center">
+            <view class="ad-item">
+              <image mode="aspectFill" src="{{item.url||'/assets/imgs/ad_1.png'}}" />
+              <view class='tiaozhuan'>
+                自动跳转 {{loopnum}}
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="flex flex-align-center" >
+      <view  wx:for="{{adBanner}}" class="showIndex {{ad_index==index?'back-act':''}}"></view>
+    </view>
+    <view class="ad-btn" wx:if="{{is_owner==0}}">
+      <button size="defaultSize" plain="plain}"  hover-class="defaultTap" bindtap='adOper'>马上使用车辆</button>
+    </view>
+    <view class="ad-btn" wx:if="{{is_owner==1}}">
+      <button size="defaultSize" plain="plain}"  hover-class="defaultTap" bindtap='addCar'>{{is_car>0?'查看车辆':'立即上传车辆'}}</button>
+    </view>
+    <view class="flex flex-align-center add-bot-txt" wx:if="{{is_owner==1}}">
+      <!-- 如何成为好车主？ -->
+    </view>
+  </view>
+  <!-- <view class="we-container {{directionClass}}">
+    <view class="we-wrapper"
+      bindtouchstart="touchstart"
+      bindtouchmove="touchmove"
+      bindtouchend="touchend"
+      animation="{{animationData}}">
+      <view class="we-slide" wx:for="{{list}}" style="background:#f4f6f7">
+      slide 1-{{index}}
+        <view class="qieh">切换车友身份</view>
+      </view>
+      
+    </view>
+  </view> -->
+

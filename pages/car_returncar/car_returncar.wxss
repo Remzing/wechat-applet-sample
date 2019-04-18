@@ -1,0 +1,43 @@
+page{
+}
+.quedhc{
+	height: 88rpx;
+	line-height: 88rpx;
+  background-color: #494c5b;
+  padding: 0 90rpx;
+  border-radius: 10rpx;
+  color: #fff;
+  font-size: 38rpx;
+}
+
+.icon-fanhui{
+  font-size: 34rpx;
+  margin-right: 8rpx;
+}
+.fee-title{
+  height: 90rpx;
+  padding: 0 30rpx;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.back-col1{
+  background-color: #f4f6f7;
+}
+.ord-itm{
+  height: 75rpx;
+  padding: 0 30rpx;
+  justify-content: space-between;
+}
+.ord-but{
+	width: 60rpx;
+	height: 37rpx;
+  line-height: 37rpx;
+  text-align: center;
+	background-color: #fbfafc;
+	border-radius: 18rpx;
+  border: solid 1rpx #d6d5d6;
+  font-size: 18rpx;
+  margin-left: 20rpx;
+  color: #555555;
+}

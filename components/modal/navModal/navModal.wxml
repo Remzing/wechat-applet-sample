@@ -1,0 +1,23 @@
+<base-modal bind:hideback="hide" id="baseModal" modalSize="{{modalSize}}" animated="{{animated}}" backdrop="{{backdrop}}">
+	<view slot="cont" >
+		<view class="fiexd-nav-show nav-height">
+			<view class='fiexd-nav bord-top-bot' bindtap="navhide">
+				<view class="iconfont icon-youshuang  arrow-right"> </view>
+				<view><text>收起</text></view>
+				
+			</view>
+			<view class="nav-cont bord-top-bot">
+				<navigator class="nav-item" url="/pages/index/index" open-type="switchTab" hover-class="other-navigator-hover">
+					<image src="../../../assets/imgs/nav/tab_home_normat.png" />
+					<view>首页</view>
+				</navigator>
+			</view>
+		</view>
+	</view>
+</base-modal>
+<view class="fiexd-nav-set nav-height">
+	<view class='fiexd-nav bord-top-bot' wx:if="{{!navShow}}" bindtap="show">
+		<view class="iconfont icon-zuoshuang  arrow-left"> </view>
+		<view><text>快速\n导航</text></view>
+	</view>
+</view>

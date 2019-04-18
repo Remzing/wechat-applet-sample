@@ -1,0 +1,47 @@
+<!--pages/my_xiaoXi/my_xiaoXi.wxml-->
+<view class='content'>
+  <view class='top flex-box-h'>
+    <view class="{{tabType==1?'checked':''}}" catchtap="changeTab" data-type="1">订单消息</view>
+    <view class="{{tabType==1?'':'checked'}}" catchtap="changeTab" data-type="2">系统消息</view>
+  </view>
+  <!-- 订单消息 -->
+  <view class='order' wx:if='{{false}}' wx:if="{{tabType==1}}">
+    <view class='item-box' wx:for="{{msgList}}"> 
+      <view class='times'>{{item.create_time}}</view>
+      <view class='car-box flex-box-start'>
+        
+        <view class='font-over car-txt'>
+          {{item.content}}
+        </view>
+      </view>
+    </view>
+    <view class="no_msg" wx:if="{{!msgList.length}}">
+      <view wx:if="{{loadFlag}}">
+        加载中..
+      </view>
+      <view wx:if="{{!loadFlag}}">
+        <view class='iconfont icon-kong'></view>
+        <view>暂无消息</view>
+      </view>
+    </view>
+  </view>
+  <!-- 系统消息 -->
+  <view class='system' wx:if="{{tabType==2}}">
+    <view class='item-box'  wx:for="{{msgList}}">
+      <view class='times'>{{item.create_time}}</view>
+      <view class='car-box flex-box-start'>
+        <view class='system-txt'>{{item.content}}</view>
+      </view>
+    </view>
+    <view class="no_msg" wx:if="{{!msgList.length}}">
+      <view wx:if="{{loadFlag}}">
+        加载中..
+      </view>
+      <view wx:if="{{!loadFlag}}">
+        <view class='iconfont icon-kong'></view>
+        <view>暂无消息</view>
+      </view>
+    </view>
+  </view>
+  
+</view>

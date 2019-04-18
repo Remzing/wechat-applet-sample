@@ -1,0 +1,98 @@
+/* pages/my_GLYHK/my_GLYHK.wxss */
+page{
+  background-color: #f4f6f7;
+}
+.content{
+  width: 690rpx;
+  overflow: hidden;
+  margin: 34rpx 30rpx 0 30rpx;
+}
+.item-box{
+  font-size: 28rpx;
+  color: #ffffff;
+  margin: 0 30rpx 20rpx 0; 
+  width: 930rpx;
+  overflow: hidden;
+  white-space:nowrap;
+  display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;
+  -webkit-box-orient:vertical;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;
+  -webkit-flex-wrap:nowrap;-webkit-box-lines:multiple;-moz-flex-wrap:nowrap;flex-wrap:nowrap;
+  -webkit-box-pack:flex-start;-webkit-justify-content:flex-start;-ms-flex-pack:flex-start;justify-content:flex-start;
+  -webkit-box-align:top;-webkit-align-items:top;-ms-flex-align:top;align-items:top;
+  -webkit-box-content:center;-webkit-align-content:center;-ms-flex-content:center;align-content:center;
+}
+.item-box .card-item{
+  font-size: 28rpx;
+  color: #ffffff;
+  /* width: 660rpx; 
+  border-radius: 10rpx; */
+  /* width: 470rpx;
+  border-radius: 10rpx 0px 0px 10rpx; */
+  padding-left: 30rpx;
+  padding-top: 40rpx;
+  padding-bottom: 16rpx;
+  transition:width 0.2s ease-in-out;
+  -moz-transition:width 0.2s ease-in-out; /* Firefox 4 */
+  -webkit-transition:width 0.2s ease-in-out; /* Safari and Chrome */
+  -o-transition:width 0.2s ease-in-out; /* Opera */
+}
+.item-box .txtStyleTrue{
+  width: 660rpx !important;border-radius: 10rpx !important;
+}
+.item-box .txtStyleFalse{
+  width: 470rpx !important;border-radius: 10rpx 0px 0px 10rpx !important;
+}
+.item-box:nth-child(1n) .card-item{
+  background-color: #366ec1;
+}
+.item-box:nth-child(2n) .card-item{
+  background-color: #ef4f4f;
+}
+.bank{
+  margin-bottom: 16rpx;
+}
+.names{
+  margin-bottom: 20rpx;
+}
+.card-num{
+  font-size: 34rpx;
+}
+.handle{
+  white-space:nowrap;
+}
+.handle .edit{
+  padding: 68rpx 28rpx;
+  writing-mode: vertical-lr;
+  text-align: center;
+  background-color: #a8a8a8;
+}
+.handle .delect{
+  padding: 68rpx 28rpx;
+  writing-mode: vertical-lr;
+  text-align: center;
+  background-color: #bdbdbd;
+  border-radius: 0px 10rpx 10rpx 0px;
+}
+.addCard{
+  font-size: 28rpx;
+  color: #353535;
+  width: 690rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  background-color: #ffffff;
+}
+.addCard .iconfont{
+  color: #888888;
+  font-size: 26rpx;
+  margin-right: 20rpx;
+}
+.record{
+  color: #353535;
+  font-size: 28rpx;
+  text-decoration: underline;
+  text-align: center;
+  margin-top: 100rpx;
+  margin-bottom: 40rpx;
+}

@@ -1,0 +1,54 @@
+/* pages/my_chenWCY/my_chenWCY.wxss */
+page{
+  background-color: #f4f6f7;
+}
+.content-box{
+  background-color: #fff;
+  margin-bottom: 350rpx;
+}
+
+.reflex{
+  border-top: 1px solid #eee; 
+}
+
+.left-item{
+  width: 154rpx;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin: 23rpx 0;
+  padding-top: 50rpx;
+  padding-bottom: 63rpx;
+}
+.left-item .left-cen{
+  color: #353535;
+  font-size: 24rpx;
+  
+}
+.left-item .iconfont{
+  color: #bbbbbb;
+  font-size: 20rpx;
+  margin-top: -14rpx;
+}
+.right-cen{
+  /* padding: 16rpx 0 40rpx 0; */
+  height: 105rpx;
+  /* line-height: 105rpx; */
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee; 
+}
+.right-item .right-cen:first-child{
+  margin-top: -8rpx;
+}
+.right-item .right-cen:last-child{
+  border-bottom:none;
+  margin-bottom: -8rpx;
+}
+.right-item{
+  padding-left: 30rpx;
+  width: 530rpx;
+  border-left: 1px solid #eeeeee;
+  margin: 23rpx 0;
+}

@@ -1,0 +1,113 @@
+<!--pages/my_login/my_login.wxml-->
+<view class='content'>
+  <!-- 遮罩 -->
+  <!-- <view class='mask' wx:if="{{true}}"></view> -->
+  <!-- 已经登录过：输入账号、密码 -->
+  <view class='login-box' wx:if="{{false}}">
+    <view class='title'>输入密码</view>
+    <view class='input-box flex-box-start-top'>
+      <icon class='iconfont icon-shouji'></icon>
+      <input type="text" value="{{phone}}" bindinput="phoneInput" placeholder="请输入手机号" maxlength="11" placeholder-class="placeholder"/>
+    </view>
+    <view class='input-box flex-box-start-top'>
+      <icon class='iconfont icon-lasuo'></icon>
+      <input type="text" value="{{password}}" password='{{loginpsw}}' bindinput="pswInput" placeholder="输入您的密码" placeholder-class="placeholder"/>
+      <icon class="iconfont {{loginpsw ? 'icon-biyan' : 'icon-chakanmima'}}" catchtap='biyanShow'></icon>
+    </view>
+    <view class='flex-box-center'>
+      <view class='login-btn'>
+        登录
+      </view>
+      <view class='forget' catchtap='toForget'>忘记密码？</view>
+    </view>
+  </view>
+  <!-- 第一次登录：输入手机号 -->
+  <view class='login-once' wx:if="{{false}}">
+    <view class='title'>
+      <icon class='iconfont icon-zhiding'></icon>
+      <text>登录</text>
+    </view>
+    <view class='input-box flex-box-start-top'>
+      <icon class='iconfont icon-shouji'></icon>
+      <input type="text" value="{{phone}}" bindinput="phoneInput" placeholder="请输入手机号" maxlength="11" placeholder-class="placeholder"/>
+    </view>
+    <view class='login-btn'>
+        下一步
+    </view>
+  </view>
+  <!-- 第一次登录：验证码 -->
+  <!-- <view class='login-once' wx:if="{{page==2}}">
+    <view class='flex-box-between'>
+      <view class='title'>
+        <icon class='iconfont icon-zhiding' data-next="1" bindtap="goNext"></icon>
+        <text>输入验证</text>
+      </view>
+      <view class='again'>重新发送</view>
+    </view>
+    <view class='code-go'>验证码已发送到{{loginPhone}}</view>
+    <view class='flex-box-start-top iptbox-con'>
+      <block wx:for="{{Length}}" wx:key="item">
+        <input class="iptbox flex-box-center {{ Value.length== index ? 'inputSelect':''}}" value="{{Value.length>=index+1?Value[index]:''}}" disabled password='{{ispassword}}' catchtap='Tap'></input>
+      </block>
+      <input name="password" password="{{true}}" class='ipt' maxlength="{{Length}}" focus="{{isFocus}}" bindinput="Focus"></input>
+    </view>
+    <view>
+    <checkbox-group bindchange="checkboxChange" class="checkbox-con">
+      <label class="checkbox flex-box-start-top" >
+        <checkbox value="{{checkValue}}" checked="{{true}}"/>
+        <view class='agreen'>已阅读并同意<text>《五车出行会员协议》</text></view>
+      </label>
+    </checkbox-group>
+
+    </view>
+  </view> -->
+  <view class='login-once' wx:if="{{page==2}}">
+    <view class='flex-box-between'>
+      <view class='title'>
+        <icon class='iconfont icon-zhiding' data-next="1" bindtap="goNext"></icon>
+        <text>登录</text>
+      </view>
+    </view>
+    <view class='input-box flex-box-start-top'>
+      <text>{{loginPhone}}</text>
+    </view>
+    <view class='input-box flex-box-start-top'>
+      <view class="flex">
+        <input class="codeInp" value="{{codeNum}}" placeholder="请输入验证码" bindinput="codeInput" maxlength="6" type="" placeholder="" auto-focus  />
+        <button class="code-but" type="default" plain="plain}" disabled="{{codeBtnDis}}" bindtap="getCode">{{codeTxt}}</button>
+      </view>
+    </view>
+    <view>
+      <checkbox-group class="checkbox-con flex ali-cent" style="margin-bottom:10rpx;">
+        <label class="checkbox flex-box-start-top " bindchange="checkboxChange" >
+          <checkbox value="{{checkValue}}" checked="{{true}}"/>
+          <view class='agreen'>已阅读并同意以下协议</view>
+        </label>
+      </checkbox-group>
+      <view style='margin-left:60rpx;'>
+        <text data-page="4" bindtap='goWenben'>《软件使用协议》</text>
+        <text data-page="5" bindtap='goWenben'>《个人信息保护及隐私政策》</text>
+      </view>
+    </view>
+    <view class='login-btn' data-next="2" bindtap="goLogin">
+        登录
+    </view>
+  </view>
+  <!-- 第一次登录：注册 -->
+  <view class='login-once' wx:if="{{page==1}}">
+    <!-- <view class='title'>注册</view> -->
+    <view class='input-box flex-box-start-top'>
+      <icon class='iconfont icon-shouji'></icon>
+      <input type="text" value="{{loginPhone}}" bindinput="phoneInput" placeholder="请输入手机号" maxlength="11" placeholder-class="placeholder"/>
+    </view>
+    <view class='flex-box-center'>
+      <view class='login-btn' data-next="2" bindtap="goNext">
+        下一步
+      </view>
+      <button plain open-type="getPhoneNumber" class='impower flex-box-start' bindgetphonenumber="getShou" >
+        <icon class='iconfont icon-weixin'></icon><text>微信授权获取</text>
+      </button>
+      
+    </view>
+  </view>
+</view>

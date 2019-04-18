@@ -1,0 +1,97 @@
+page{
+}
+.choo-diz{
+  padding: 20rpx;
+  font-size: 24rpx;
+  align-items: flex-start;
+  color: #888;
+}
+.choo-search{
+  padding: 0 20rpx;
+  align-items: center;
+}
+.choo-search>input{
+  width: 620rpx;
+	height: 80rpx;
+	background-color: #f1f2f3;
+  border-top-left-radius: 40rpx;
+  border-bottom-left-radius: 40rpx;
+  background: #eee;
+  padding-left: 40rpx;
+  font-size: 26rpx;
+}
+.choo-search>view{
+  width: 91rpx;
+	height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+	background-color: #ff8001;
+	border-radius: 0 40rpx 40rpx 0;
+}
+.choo-search .icon-sousuo{
+  color: #fff;
+  font-size: 34rpx;
+}
+.car-item-info{
+  position: relative;
+  /* justify-content: space-between; */
+  padding: 30rpx;
+  border-bottom: solid 1rpx #eee;
+}
+.car-img image{
+  width: 200rpx;
+	height: 120rpx;
+}
+.car-name, .car-qiyou, .car-juli{
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 18rpx;
+}
+.car-name{
+  align-items: flex-start;
+  width: 250rpx;
+  margin-left: 10rpx;
+}
+.car-qiyou{
+  color: #888888;
+  width: 100rpx;
+}
+.car-juli{
+  color: #ff8001;
+  width: 100rpx;
+}
+.car-qiyou .iconfont, .car-juli .iconfont{
+  font-size: 48rpx;
+  padding-bottom: 12rpx;
+}
+/* .car-id{
+  padding: 0 20rpx;
+	height: 44rpx;
+  line-height: 44rpx;
+  text-align: center;
+  font-weight: 700;
+	background-color: #f1f1f1;
+	border-radius: 5rpx;
+  border: solid 1rpx #dddddd;
+  margin-bottom: 16rpx;
+} */
+.carstate{
+  position: absolute;
+  top: 10rpx;
+  left: 0;
+  padding: 0 30rpx 0 20rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #fff;
+  font-size: 20rpx;
+	background-color: #494c5b;
+	border-radius: 0 20rpx 20rpx 0;
+}
+.backhig{
+  background: #ff8001;
+}
+.icon-wuche{
+  font-size: 200rpx;
+  height: 170rpx;
+}

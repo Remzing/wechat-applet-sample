@@ -1,0 +1,5 @@
+<view class="content">
+  <view bindtap='preImg'>
+    <image style='width:100%;' src="{{img}}" class="slide-image imagebg" mode="aspectFill"/> 
+  </view>
+</view>

@@ -1,0 +1,53 @@
+<view class="content">
+  <view class="flex zuche-info" wx:if="{{car_info.real_name}}">
+    <view class="flex ">
+      <view class="zuche-img"><image src="{{car_info.car_image||''}}" /></view>
+      <view class="flex zuche-name">
+        <view class="flex zuche-id">{{car_info.real_name_txt}}</view>
+        <view>车主</view>
+      </view>
+    </view>
+    <view class="dianh">
+      <view class="iconfont icon-dianhua" data-phone="{{car_info.phone}}" bindtap="callPhone"></view>
+    </view>
+  </view>
+  <view class="flex car-head">
+    <view class="car-img"><image src="{{car_info.car_image}}" /></view>
+    <view class="flex car-name">
+      <view class="flex" wx:if="{{starNum}}"><view class="car-id">{{car_info.license_number}}</view><view class="pinf" wx:if="{{starNum&&starNum>0}}">{{starNum}}分</view></view>
+      <view>{{car_info.car_series_one||""}}{{car_info.car_series_two||""}}</view>
+    </view>
+  </view>
+  <view class="heng"></view>
+  <view class="flex star-case">
+    <view bindtap="selStar" data-num="1" class="iconfont icon-xingxing {{starNum>0?'col-ff8001':'col-bbb'}}"></view>
+    <view bindtap="selStar" data-num="2" class="iconfont icon-xingxing {{starNum>1?'col-ff8001':'col-bbb'}}"></view>
+    <view bindtap="selStar" data-num="3" class="iconfont icon-xingxing {{starNum>2?'col-ff8001':'col-bbb'}}"></view>
+    <view bindtap="selStar" data-num="4" class="iconfont icon-xingxing {{starNum>3?'col-ff8001':'col-bbb'}}"></view>
+    <view bindtap="selStar" data-num="5" class="iconfont icon-xingxing {{starNum>4?'col-ff8001':'col-bbb'}}"></view>
+  </view>
+  <view class="pinf-text">
+    <view  wx:if="{{starNum==1}}">
+      <text class="col-ff8001">1.0分</text> <text> 不满意!</text> 
+    </view>
+    <view wx:if="{{starNum==2}}">
+      <text class="col-ff8001">2.0分</text> <text>不太满意!</text> 
+    </view>
+    <view wx:if="{{starNum==3}}">
+      <text class="col-ff8001">3.0分</text> <text>一般，需要改善!</text> 
+    </view>
+    <view wx:if="{{starNum==4}}">
+      <text class="col-ff8001">4.0分</text> <text>比较满意，仍可改善!</text> 
+    </view>
+    <view wx:if="{{starNum==5}}">
+      <text class="col-ff8001">5.0分</text> <text>非常满意!</text> 
+    </view>
+  </view>
+  <view style="padding:0 30rpx;">
+    <textarea maxlength="50" value='{{content}}'  bindinput="textA" style="width:100%;margin:30rpx 0 20rpx 0;" disabled="{{active==4000}}" placeholder="输入点评内容" />
+  </view>
+  <view class='noteLen'>{{concent.length|0}}/{{noteMaxLen}}</view>
+  <view class="bot-one-but" style="bottom:60rpx;">
+    <button type="default" size="defaultSize" loading="" plain="plain}" bindtap="conf" hover-class="defaultTap">完成评价</button>
+  </view>
+</view>

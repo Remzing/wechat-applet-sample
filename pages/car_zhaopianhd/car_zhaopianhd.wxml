@@ -1,0 +1,33 @@
+<view>
+  <view class="content flex">
+    <view class="imgitem" wx:for="{{list}}">
+      <image class="imagebg" src="/assets/imgs/ban_1.png" />
+    </view>
+    <view class="upimg">
+      <view class="iconfont icon-tianjiatupian" catchtap="upImage"> </view>
+    </view>
+    
+  </view>
+  <view class="flex can-tlt" style="margin-top:60rpx;">
+    车辆使用指南
+  </view>
+  <view class="flex ali-cent det-tab-item">
+    <view>打车前看到的预估价为什么和我支付的不一样？</view>
+    <view  class="flex ali-cent">
+      <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+    </view>
+  </view>
+  <view class="flex ali-cent det-tab-item">
+    <view>同样的路线，为什么这次打车比以前要贵？</view>
+    <view  class="flex ali-cent">
+      <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+    </view>
+  </view>
+  <view class="flex ali-cent det-tab-item">
+    <view>我和朋友做的“预估价”小测验为什么会有价格差…</view>
+    <view  class="flex ali-cent">
+      <view class="iconfont icon-zuojiantou col-bbb font-30"></view>
+    </view>
+  </view>
+</view>
+
